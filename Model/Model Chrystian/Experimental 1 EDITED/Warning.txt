@@ -1,0 +1,3 @@
+Reconstruction capsnet reconstruction loss removed
+Decoder removed
+CapsuleNet add secondary layer
