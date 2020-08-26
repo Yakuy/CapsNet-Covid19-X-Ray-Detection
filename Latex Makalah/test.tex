@@ -10,7 +10,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{indentfirst}
-\graphicspath{ {./images/logo/} }
+\usepackage{hyperref}
+\graphicspath{ {./images/} }
 
 \begin{document}
   \begin{titlepage}
@@ -26,7 +27,7 @@
 
       \begin{figure}[H]
         \centering
-        \includegraphics[width=200px]{Lambang UGM.jpg}
+        \includegraphics[width=200px]{/logo/Lambang UGM.jpg}
       \end{figure}
           
       \vspace{3cm}
@@ -61,7 +62,8 @@
   \pagenumbering{arabic}
 
   \section{Latar Belakang}
-   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar [6]. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. \par
+   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar [6]. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
+   \par
    Jumlah alat testing yang terbatas membuat tidak mungkin setiap pasien dengan penyakit pernafasan untuk dites dengan teknik konvensional (RT-PCR) untuk mendeteksi COVID-19. Jumlah ruang di rumah sakit, jumlah ventilator, dan jumlah alat protektif (PPE) bagi tenaga medis sangat terbatas, sehingga perlu digunakan dengan seefisien mungkin. Untuk meningkatkan efisiensi penggunaan alat medis, sangat penting untuk dapat membedakan pasien dengan \textit{severe acute respiratory illness} (SARI) yang mungkin terinfeksi COVID-19. Oleh karena itu, kami mencoba menggunakan gambar X-Ray dada untuk mendeteksi infeksi COVID-19.
    Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional [5] :
    
@@ -74,8 +76,10 @@
    Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney [3] yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Sumber kedua adalah dari COVID-19 Chest X-Ray dataset (2020) milik Bachir [4] yang berisi 357 gambar X-Ray dada yang terinfeksi COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
    
    \section{Tujuan dan Manfaat}
-   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. \par
-   Perlu kami tekankan bahwa kami tidak mengusulkan penggunaan model ini untuk menggantikan metode tes diagnostik konvensional. Kami berharap bahwa model ini dapat bersifat saling melengkapi dengan tes konvensional, dimana hasil prediksi dari model dapat memastikan hasil dari tes konvensional atau menjadi metode alternatif bila tes konvensional tidak memungkinkan. \par
+   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
+   \par
+   Perlu kami tekankan bahwa kami tidak mengusulkan penggunaan model ini untuk menggantikan metode tes diagnostik konvensional. Kami berharap bahwa model ini dapat bersifat saling melengkapi dengan tes konvensional, dimana hasil prediksi dari model dapat memastikan hasil dari tes konvensional atau menjadi metode alternatif bila tes konvensional tidak memungkinkan. 
+   \par
    Tujuan kedua dari penambangan data yang kami lakukan adalah untuk mengeksplorasi metadata dari dataset yang tersedia melalui \textit{Exploratory Data Analysis}. Kami mencoba untuk menelusuri apa pengaruh unsur-unsur seperti jenis kelamin dan umur terhadap infeksi COVID-19. Kami berharap informasi yang dapat kami ekstraksi dapat bermanfaat dalam upaya pendeteksi dan pengendalian kasus COVID-19.
    
    \section{Batasan yang Digunakan}
@@ -90,11 +94,13 @@
 
    \section{Metode Penambangan Data}
    	\subsection{Introduksi CapsNet}
-   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. \par
+   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. 
+   	\par
    	Salah satu keuntungan utama CapsNet adalah CapsNet dapat menjadi solusi “\textit{Picasso Problem}” di bidang pengenalan gambar. Contoh “\textit{Picasso Problem}” adalah ketika sebuah gambar wajah seseorang memiliki semua fitur-fitur seperti hidung dan mulut, namun posisi hidung ditukar dengan posisi mulut. \textit{Convolutional Neural Network} biasa akan kesulitan mendeteksi gambar tersebut sebagai sebuah wajah. CapsNet dapat mengatasi masalah ini dengan mengeksploitasi fakta bahwa walaupun perubahan sudut pandang memiliki efek non-linear di tingkat pixel, efeknya linear di tingkat objek.
    	
    	\subsection{Latar Belakang}
-   	Awal mula perkembangan CapsNet terjadi pada tahun 2000, dimana Geoffrey Hinton mendeskripsikan sistem untuk merepresentasikan gambar dengan menggunakan gabungan teknik \textit{segmentation} dan \textit{parse trees}. Sistem ini terbukti berguna dalam mengklasifikasikan digit-digit tulisan tangan di dataset MNIST. \par
+   	Awal mula perkembangan CapsNet terjadi pada tahun 2000, dimana Geoffrey Hinton mendeskripsikan sistem untuk merepresentasikan gambar dengan menggunakan gabungan teknik \textit{segmentation} dan \textit{parse trees}. Sistem ini terbukti berguna dalam mengklasifikasikan digit-digit tulisan tangan di dataset MNIST. 
+   	\par
    	Pada tahun 2017, Hinton dan timnya memperkenalkan mekanisme \textit{dynamic routing} untuk \textit{capsule networks}. Pendekatan ini berhasil meningkatkan performa model dalam mengolah data MNIST dan mengurangi ukuran data latihan. Hasilnya diklaim mengalahkan performa CNN terutama pada digit-digit yang \textit{overlap}.
    	
    	\subsection{Transformasi}
@@ -123,14 +129,53 @@
    	\end{enumerate}
    	
    	\subsection{Capsules}
-   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll [7]. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. \par
-   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. \par
-   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 persen karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. \par
+   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll [7]. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
+   	\par
+   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
+   	\par
+   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 persen karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. 
+   	\par
    	\textit{Capsules} di lapisan lebih tinggi mengambil keluaran dari \textit{capsules} di lapisan lebih rendah, lalu menerima dari \textit{capsules} yang keluarannya berkelompok. Sebuah kelompok akan menyebabkan \textit{capsule} lebih tinggi untuk menghasilkan keluaran dengan probabilitas tinggi bahwa entitas terdapat dalam observasi tersebut. \textit{Capsules} tingkat tinggi mengabaikan \textit{outlier} karena mereka hanya berkonsentrasi pada keluaran yang berkelompok dengan keluaran-keluaran lain.
    	
    	\subsection{Routing-by-agreement}
+   	Keluaran dari suatu \textit{capsule} (anak) akan dihubungkan ke \textit{capsule} (orangtua) di lapisan berikutnya sesuai dengan kemampuan \textit{capsule} anak untuk memprediksi keluaran dari \textit{capsule} orangtua. Setelah melalui beberapa iterasi, keluaran setiap \textit{capsule} orangtua dapat bersatu dengan prediksi beberapa \textit{capsule} anak dan berpisah dengan beberapa \textit{capsule} anak lain. 
+   	\par
+   	Untuk setiap \textit{capsule} orangtua yang mungkin, setiap \textit{capsule} anak menghitung vektor prediksi dengan mengalikan keluarannya dengan matriks beban yang dilatih dengan \textit{backpropagation}. Lalu, keluaran dari \textit{capsule} orangtua dihitung sebagai produk skalar dari sebuah prediksi dengan koefisien yang merepresentasikan probabilitas bahwa \textit{capsule} anak  adalah milik \textit{capsule} orangtua tersebut. Sebuah \textit{capsule} anak yang prediksinya relatif dekat dengan keluaran hasilnya akan meningkatkan koefisien antara \textit{capsule} anak dan \textit{capsule} orangtua, sedangkan prediksi yang relatif jauh akan mengurangi koefisien. Koefisien yang meningkat akan meningkatkan kontribusi dari \textit{capsule} anak ke \textit{capsule} orangtua, meningkatkan produk skalar dari prediksi \textit{capsule} dengan keluaran \textit{capsule} orangtua. Setelah beberapa iterasi, koefisien yang dihasilkan akan menghubungkan secara kuat \textit{capsule} orangtua dengan \textit{capsule-capsule} yang paling mungkin sebagai anak. Hal ini mengindikasikan bahwa keberadaan \textit{capsule-capsule} anak mengimplikasikan keberadaan entitas yang direpresentasikan \textit{capsule} orangtua. Semakin banyak \textit{capsule} anak yang prediksinya mirip dengan keluaran \textit{capsule} orangtua, semakin cepat koefisien bertambah dan mempercepat konvergensi. \textit{Pose} dari \textit{capsule} orangtua secara progresif menjadi lebih cocok dengan \textit{pose} anak-anaknya. 
+   	\par
+   	Logit awal dari koefisien-koefisien adalah probabilitas log prior bahwa sebuah \textit{capsule} anak adalah miliki sebuah \textit{capsule} orangtua. Prior-prior dapat dilatih bersama dengan beban-beban pada matriks beban. Prior tergantung lokasi dan tipe dari \textit{capsule} orangtua dan anak, namun tidak tergantung masukan yang sedang diolah. Di setiap iterasi, koefisien akan disesuaikan melalui metode \textit{softmax} sehingga jumlah setiap koefisien adalah 1. \textit{Softmax} akan semakin memperbesar nilai-nilai yang besar dan semakin mengurangi nilai-nilai kecil.
+   	\par
+   	Mekanisme pembuatan rute dinamis ini menyediakan sarana yang dibutuhkan untuk memisahkan objek-objek yang \textit{overlap}. 
+   	\par 
+   	Algoritma ini dapat direpresentasikan secara matematis sebagai berikut : 
+   	
+   	\begin{center}
+   		\Large $\hat{u}_{j|i} = W_{ij}u_{i}$
+   	\end{center}
+   	
+   	\par
+   	\textit{Pose} vektor $u_{i}$ dirotasikan dan ditranslasi oleh matriks $W_{ij}$ menjadi vektor $\hat{u}_{j|i}$ yang memprediksikan keluaran dari \textit{capsule} orangtua.
+   	
+   	\begin{center}
+   		\Large $s_{j} = \Sigma c_{ij} \hat{u}_{j|i}$
+   	\end{center}
+   
+   \par
+   \textit{Capsule} $s_{j}$ di lapisan yang lebih tinggi akan diberikan jumlahan dari prediksi-prediksi semua \textit{capsule-capsule} di lapisan yang lebih rendah, dimana setiap prediksi dikalikan dengan koefisien $c_{ij}$.
    	
    	\subsection{Training}
+   	CapsNet dilatih secara \textit{supervised} dengan cara meminimalisir jarak euclidean antara gambar dan keluaran dari sebuah CNN yang merekonstruksikan gambar masukan dari keluaran \textit{capsule-capsule} terminal. Jaringan dilatih secara diskriminatif dengan menggunakan \textit{routing-by-agreement} iteratif. 
+   	\par
+   	Terdapat dua tipe \textit{loss} yang digunakan untuk melatih model. \textit{Loss} tipe pertama adalah \textit{margin loss}. Panjang dari sebuah vektor instansiasi merepresentasikan probabilitas bahwa entitas dari \textit{capsule} terdapat pada sebuah gambar. Untuk membolehkan keberadaan entitas-entitas dengan jumlah banyak, \textit{margin loss} terpisah harus dihitung untuk setiap \textit{capsule}. Menurunkan bobot \textit{loss} dari entitas-entitas yang absen menghentikan pembelajaran mengecilkan panjang vektor aktivitas untuk semua entitas. \textit{Loss} total adalah jumlah dari \textit{loss} setiap entitas. Hinton menggunakan \textit{loss function} sebagai berikut :
+   	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=450px]{/rumus/rumus_loss.png}
+	\end{figure}
+	
+	   	
+	Hilton menggunakan nilai 0.9 untuk $m^{+}$ dan nilai 0.1 untuk $m^{-}$ supaya panjang tidak terlalu maksimal atau jatuh. Penurunan bobot dari bobot inisial kelas-kelas yang abses diatur dengan $\lambda$, dimana Hilton menggunakan nilai 0.5. 
+   	\par 
+   	\textit{Loss} tipe kedua adalah \textit{reconstruction loss}. \textit{Reconstruction loss} mendorong entitas-entitas untuk  menyandikan parameter-parameter instansiasi dari masukan mereka. Vektor aktivitas final lalu digunakan untuk merekonstruksi gambar masukan menggunakan CNN \textit{decoder} yang terdiri dari tiga lapisan yang terhubung penuh. Rekonstruksi meminimalisir jumlah dari kuadrat perbedaan antara keluaran unit logistik dan intensitas pixel. Hilton menggunakan nilai 0.0005 sebagai koefisien untuk memperkecil \textit{reconstruction loss} supaya tidak mendominasi \textit{margin loss} ketika latihan. 
    	
    	\subsection{Kelebihan CapsNet}
    	CapsNet diklaim memiliki empat kelebihan konseptual dibandingkan \textit{convolutional neural networks} :
@@ -149,14 +194,14 @@
    \section{Daftar Pustaka}
    
    \begin{enumerate}
-    \item Cohen, J.P., Morrison, P., Dao, L.: Covid-19 image data collection. arXiv 2003.11597 (2020), https://github.com/ieee8023/covid-chestxray-dataset .
-    \item Bachir: Detecting COVID-19 in X-ray images with TensorFlow (2020), https://www.kaggle.com/bachrr/detecting-covid-19-in-x-ray-images-with-tensorflow .
-    \item Mooney, P.: Kaggle chest x-ray images (pneumonia) dataset (2018), https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia .
-    \item Bachir: COVID-19 chest x-ray dataset (2020), https://www.kaggle.com/bachrr/covid-chest-xray .
+    \item Cohen, J.P., Morrison, P., Dao, L.: Covid-19 image data collection. arXiv 2003.11597 (2020), \url{https://github.com/ieee8023/covid-chestxray-dataset} .
+    \item Bachir: Detecting COVID-19 in X-ray images with TensorFlow (2020), \url{https://www.kaggle.com/bachrr/detecting-covid-19-in-x-ray-images-with-tensorflow} .
+    \item Mooney, P.: Kaggle chest x-ray images (pneumonia) dataset (2018), \url{https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia} .
+    \item Bachir: COVID-19 chest x-ray dataset (2020), \url{https://www.kaggle.com/bachrr/covid-chest-xray} .
     \item Mangal, A., Kalia, S., Rajgopal, H., Rangarajan, K., Namboodiri, V., Banerjee, S., Arora, C. : CovidAID: COVID-19 Detection Using Chest X-Ray. arXiv:2004.09803v1 [eess.IV] (2020)
-    \item Zuraya, N. : Tiga Dampak Besar Pandemi Covid-19 bagi Ekonomi RI (2020). https://republika.co.id/berita/qdgt5p383/tiga-dampak-besar-pandemi-covid19-bagi-ekonomi-ri.
+    \item Zuraya, N. : Tiga Dampak Besar Pandemi Covid-19 bagi Ekonomi RI (2020). \url{https://republika.co.id/berita/qdgt5p383/tiga-dampak-besar-pandemi-covid19-bagi-ekonomi-ri}.
     \item Hinton, G., Sabour, S., Frosst, N. : Dynamic Routing Between Capsules. arXiv:1710.09829v2 [cs.CV] (2017)
-   Hinton, G., Krizhevsky, A., Wang, S. : Transforming Auto-encoders. 
+    \item Hinton, G., Krizhevsky, A., Wang, S. : Transforming Auto-encoders. 
    \end{enumerate}
    
 
