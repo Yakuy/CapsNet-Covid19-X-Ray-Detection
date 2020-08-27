@@ -95,102 +95,145 @@
    \end{itemize}
 
    \section{Metode Penambangan Data}
-   	\subsection{Introduksi CapsNet}
-   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. 
-   	\par
-   	Salah satu keuntungan utama CapsNet adalah CapsNet dapat menjadi solusi “\textit{Picasso Problem}” di bidang pengenalan gambar. Contoh “\textit{Picasso Problem}” adalah ketika sebuah gambar wajah seseorang memiliki semua fitur-fitur seperti hidung dan mulut, namun posisi hidung ditukar dengan posisi mulut. \textit{Convolutional Neural Network} biasa akan kesulitan mendeteksi gambar tersebut sebagai sebuah wajah. CapsNet dapat mengatasi masalah ini dengan mengeksploitasi fakta bahwa walaupun perubahan sudut pandang memiliki efek non-linear di tingkat pixel, efeknya linear di tingkat objek.
-   	
-   	\subsection{Latar Belakang}
-   	Awal mula perkembangan CapsNet terjadi pada tahun 2000, dimana Geoffrey Hinton mendeskripsikan sistem untuk merepresentasikan gambar dengan menggunakan gabungan teknik \textit{segmentation} dan \textit{parse trees}. Sistem ini terbukti berguna dalam mengklasifikasikan digit-digit tulisan tangan di dataset MNIST. 
-   	\par
-   	Pada tahun 2017, Hinton dan timnya memperkenalkan mekanisme \textit{dynamic routing}\cite{hinton} untuk \textit{capsule networks}. Pendekatan ini berhasil meningkatkan performa model dalam mengolah data MNIST dan mengurangi ukuran data latihan. Hasilnya diklaim mengalahkan performa CNN terutama pada digit-digit yang \textit{overlap}.
-   	
-   	\subsection{Transformasi}
-   	Dalam bidang citra komputer, terdapat tiga jenis sifat yang dapat dimiliki sebuah objek : 
-   	
-   	\begin{enumerate}
-   	 \item \textit{Invariant} : sifat objek yang tidak berubah sebagai hasil dari suatu bentuk transformasi. Sebagai contoh, area dari lingkaran tidak berubah ketika lingkaran digeser ke kiri atau kanan.
-   	 \item \textit{Equivariant} : sifat objek yang perubahannya dapat diprediksi bila dilakukan sebuah transformasi. Contohnya adalah titik pusat lingkaran berubah sesuai dengan arah gerak lingkaran tersebut.
-   	 \item \textit{Non-equivariant} : sifat objek yang perubahannya tidak dapat diprediksi bila dilakukan sebuah transformasi. Contohnya adalah bila sebuah lingkaran ditransformasi menjadi sebuah oval, rumus untuk menghitung keliling objek tersebut sudah bukan 2 $\pi$ r. 
-   	\end{enumerate}
-   	
-   	\par
-   	Kelas sebuah objek dalam citra komputer diharapkan bersifat \textit{invariant} ketika diterapkan banyak transformasi. Sebagai contoh, sebuah mobil harusnya tetap diklasifikasikan sebagai mobil walaupun gambarnya dibalik atau dikecilkan. Namun pada kenyataannya, sebagian besar karakteristik gambar bersifat \textit{equivariant}. \par
-   	Karakteristik-karakteristik \textit{equivariant} seperti volume dan letak bagian-bagian objek disimpan dalam sebuah \textit{pose}. \textit{Pose} adalah data yang mendeskripsikan translasi, rotasi, skala, dan refleksi dari objek. Translasi adalah perubahan lokasi di satu atau lebih dimensi, rotasi adalah perubahan orientasi, skala adalah perubahan ukuran, dan refleksi adalah gambar yang dicerminkan. \par
-   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.\cite{hinton_2}
-   	
-   	\subsection{Pooling}
-   	Dalam CNN konvensional, digunakan teknik \textit{pooling layer} yang berguna untuk mengurangi jumlah detail informasi yang diproses di lapisan yang lebih tinggi. \textit{Pooling} mengizinkan sedikit \textit{invariance translasional} (objek berada di lokasi yang berbeda) dan meningkatkan jumlah tipe fitur yang dapat direpresentasikan. CapsNet menolak penggunaan teknik \textit{pooling}, dengan alasan :
-   	
-   	\begin{enumerate}
-   	 \item \textit{Pooling} melanggar persepsi bentuk biologis karena tidak ada bingkai koordinat intrinsik;
-   	 \item \textit{Pooling} membuang informasi posisional, sehingga menghasilkan \textit{invariance} dan bukan \textit{equivariance};
-   	 \item \textit{Pooling} mengabaikan \textit{linear manifold} yang mendasari banyak variasi dalam gambar-gambar;
-   	 \item \textit{Pooling} membuat rute informasi antar lapisan secara statis, tidak mengkomunikasikan info potensial ke fitur-fitur secara dinamis;
-   	 \item \textit{Pooling} merusak detektor fitur yang dengan dengan \textit{pooling layer}, karena ada sejumlah informasi yang dihapus.
-   	\end{enumerate}
-   	
-   	\subsection{Capsules}
-   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll \cite{hinton}. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
-   	\par
-   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
-   	\par
-   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 persen karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. 
-   	\par
-   	\textit{Capsules} di lapisan lebih tinggi mengambil keluaran dari \textit{capsules} di lapisan lebih rendah, lalu menerima dari \textit{capsules} yang keluarannya berkelompok. Sebuah kelompok akan menyebabkan \textit{capsule} lebih tinggi untuk menghasilkan keluaran dengan probabilitas tinggi bahwa entitas terdapat dalam observasi tersebut. \textit{Capsules} tingkat tinggi mengabaikan \textit{outlier} karena mereka hanya berkonsentrasi pada keluaran yang berkelompok dengan keluaran-keluaran lain.
-   	
-   	\subsection{Routing-by-agreement}
-   	Keluaran dari suatu \textit{capsule} (anak) akan dihubungkan ke \textit{capsule} (orangtua) di lapisan berikutnya sesuai dengan kemampuan \textit{capsule} anak untuk memprediksi keluaran dari \textit{capsule} orangtua. Setelah melalui beberapa iterasi, keluaran setiap \textit{capsule} orangtua dapat bersatu dengan prediksi beberapa \textit{capsule} anak dan berpisah dengan beberapa \textit{capsule} anak lain. 
-   	\par
-   	Untuk setiap \textit{capsule} orangtua yang mungkin, setiap \textit{capsule} anak menghitung vektor prediksi dengan mengalikan keluarannya dengan matriks beban yang dilatih dengan \textit{backpropagation}. Lalu, keluaran dari \textit{capsule} orangtua dihitung sebagai produk skalar dari sebuah prediksi dengan koefisien yang merepresentasikan probabilitas bahwa \textit{capsule} anak  adalah milik \textit{capsule} orangtua tersebut. Sebuah \textit{capsule} anak yang prediksinya relatif dekat dengan keluaran hasilnya akan meningkatkan koefisien antara \textit{capsule} anak dan \textit{capsule} orangtua, sedangkan prediksi yang relatif jauh akan mengurangi koefisien. Koefisien yang meningkat akan meningkatkan kontribusi dari \textit{capsule} anak ke \textit{capsule} orangtua, meningkatkan produk skalar dari prediksi \textit{capsule} dengan keluaran \textit{capsule} orangtua. Setelah beberapa iterasi, koefisien yang dihasilkan akan menghubungkan secara kuat \textit{capsule} orangtua dengan \textit{capsule-capsule} yang paling mungkin sebagai anak. Hal ini mengindikasikan bahwa keberadaan \textit{capsule-capsule} anak mengimplikasikan keberadaan entitas yang direpresentasikan \textit{capsule} orangtua. Semakin banyak \textit{capsule} anak yang prediksinya mirip dengan keluaran \textit{capsule} orangtua, semakin cepat koefisien bertambah dan mempercepat konvergensi. \textit{Pose} dari \textit{capsule} orangtua secara progresif menjadi lebih cocok dengan \textit{pose} anak-anaknya. 
-   	\par
-   	Logit awal dari koefisien-koefisien adalah probabilitas log prior bahwa sebuah \textit{capsule} anak adalah miliki sebuah \textit{capsule} orangtua. Prior-prior dapat dilatih bersama dengan beban-beban pada matriks beban. Prior tergantung lokasi dan tipe dari \textit{capsule} orangtua dan anak, namun tidak tergantung masukan yang sedang diolah. Di setiap iterasi, koefisien akan disesuaikan melalui metode \textit{softmax} sehingga jumlah setiap koefisien adalah 1. \textit{Softmax} akan semakin memperbesar nilai-nilai yang besar dan semakin mengurangi nilai-nilai kecil.
-   	\par
-   	Mekanisme pembuatan rute dinamis ini menyediakan sarana yang dibutuhkan untuk memisahkan objek-objek yang \textit{overlap}. 
-   	\par 
-   	Algoritma ini dapat direpresentasikan secara matematis sebagai berikut : 
-   	
-   	\begin{center}
-   		\Large $\hat{u}_{j|i} = W_{ij}u_{i}$
-   	\end{center}
-   	
-   	\par
-   	\textit{Pose} vektor $u_{i}$ dirotasikan dan ditranslasi oleh matriks $W_{ij}$ menjadi vektor $\hat{u}_{j|i}$ yang memprediksikan keluaran dari \textit{capsule} orangtua.
-   	
-   	\begin{center}
-   		\Large $s_{j} = \Sigma c_{ij} \hat{u}_{j|i}$
-   	\end{center}
-   
-   \par
-   \textit{Capsule} $s_{j}$ di lapisan yang lebih tinggi akan diberikan jumlahan dari prediksi-prediksi semua \textit{capsule-capsule} di lapisan yang lebih rendah, dimana setiap prediksi dikalikan dengan koefisien $c_{ij}$.
-   	
-   	\subsection{Training}
-   	CapsNet dilatih secara \textit{supervised} dengan cara meminimalisir jarak euclidean antara gambar dan keluaran dari sebuah CNN yang merekonstruksikan gambar masukan dari keluaran \textit{capsule-capsule} terminal. Jaringan dilatih secara diskriminatif dengan menggunakan \textit{routing-by-agreement} iteratif. 
-   	\par
-   	Terdapat dua tipe \textit{loss} yang digunakan untuk melatih model. \textit{Loss} tipe pertama adalah \textit{margin loss}. Panjang dari sebuah vektor instansiasi merepresentasikan probabilitas bahwa entitas dari \textit{capsule} terdapat pada sebuah gambar. Untuk membolehkan keberadaan entitas-entitas dengan jumlah banyak, \textit{margin loss} terpisah harus dihitung untuk setiap \textit{capsule}. Menurunkan bobot \textit{loss} dari entitas-entitas yang absen menghentikan pembelajaran mengecilkan panjang vektor aktivitas untuk semua entitas. \textit{Loss} total adalah jumlah dari \textit{loss} setiap entitas. Hinton menggunakan \textit{loss function} sebagai berikut :
-   	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=450px]{/rumus/rumus_loss.png}
-	\end{figure}
-	
+    \subsection{Perangkat Uji Coba}
+    \subsection{Dataset}
+    \subsection{Metode Prapemrosesan}
+    \subsection{CapsNet}
+	   	\subsubsection{Introduksi CapsNet}
+	   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. 
+	   	\par
+	   	Salah satu keuntungan utama CapsNet adalah CapsNet dapat menjadi solusi “\textit{Picasso Problem}” di bidang pengenalan gambar. Contoh “\textit{Picasso Problem}” adalah ketika sebuah gambar wajah seseorang memiliki semua fitur-fitur seperti hidung dan mulut, namun posisi hidung ditukar dengan posisi mulut. \textit{Convolutional Neural Network} biasa akan kesulitan mendeteksi gambar tersebut sebagai sebuah wajah. CapsNet dapat mengatasi masalah ini dengan mengeksploitasi fakta bahwa walaupun perubahan sudut pandang memiliki efek non-linear di tingkat pixel, efeknya linear di tingkat objek.
 	   	
-	Hilton menggunakan nilai 0.9 untuk $m^{+}$ dan nilai 0.1 untuk $m^{-}$ supaya panjang tidak terlalu maksimal atau jatuh. Penurunan bobot dari bobot inisial kelas-kelas yang abses diatur dengan $\lambda$, dimana Hilton menggunakan nilai 0.5. 
-   	\par 
-   	\textit{Loss} tipe kedua adalah \textit{reconstruction loss}. \textit{Reconstruction loss} mendorong entitas-entitas untuk  menyandikan parameter-parameter instansiasi dari masukan mereka. Vektor aktivitas final lalu digunakan untuk merekonstruksi gambar masukan menggunakan CNN \textit{decoder} yang terdiri dari tiga lapisan yang terhubung penuh. Rekonstruksi meminimalisir jumlah dari kuadrat perbedaan antara keluaran unit logistik dan intensitas pixel. Hilton menggunakan nilai 0.0005 sebagai koefisien untuk memperkecil \textit{reconstruction loss} supaya tidak mendominasi \textit{margin loss} ketika latihan. 
-   	
-   	\subsection{Kelebihan CapsNet}
-   	CapsNet diklaim memiliki empat kelebihan konseptual dibandingkan \textit{convolutional neural networks} :
-   	
-   	\begin{enumerate}
-   	 \item \textit{Viewpoint invariance} : penggunaan matriks pose membolehkan jaringan CapsNet untuk mengenali objek-objek tanpa mempedulikan perspektif dari mana mereka dipandang.
-   	 \item Parameter lebih sedikit : \textit{capsule} mengelompokkan neuron, sehingga koneksi antar lapisan membutuhkan lebih sedikit parameter.
-   	 \item Generalisasi lebih baik untuk sudut pandang baru : CapsNet lebih baik mengenali objek dari beberapa rotasi berbeda karena matriks \textit{pose} menangkap karakteristik-karakteristik ini sebagai transformasi linear.
-   	 \item Dapat menangani \textit{white-box adversarial attacks} : \textit{Fast Gradient Sign Method} (FGSM) biasanya digunakan untuk menyerang CNN biasa dengan mengevaluasi gradien dari tiap pixel terhadap \textit{loss} dari jaringan, lalu mengubah setiap pixel dengan maksimum epsilon (\textit{error term}) untuk memaksimalkan \textit{loss}. Metode ini dapat mengurangi akurasi CNN secara drastis (hingga di bawah 20 persen), namun CapsNet dapat mempertahankan akurasi di atas 70 persen. 
-   	\end{enumerate}
-   	
+	   	\subsubsection{Latar Belakang}
+	   	Awal mula perkembangan CapsNet terjadi pada tahun 2000, dimana Geoffrey Hinton mendeskripsikan sistem untuk merepresentasikan gambar dengan menggunakan gabungan teknik \textit{segmentation} dan \textit{parse trees}. Sistem ini terbukti berguna dalam mengklasifikasikan digit-digit tulisan tangan di dataset MNIST. 
+	   	\par
+	   	Pada tahun 2017, Hinton dan timnya memperkenalkan mekanisme \textit{dynamic routing}\cite{hinton} untuk \textit{capsule networks}. Pendekatan ini berhasil meningkatkan performa model dalam mengolah data MNIST dan mengurangi ukuran data latihan. Hasilnya diklaim mengalahkan performa CNN terutama pada digit-digit yang \textit{overlap}.
+	   	
+	   	\subsubsection{Transformasi}
+	   	Dalam bidang citra komputer, terdapat tiga jenis sifat yang dapat dimiliki sebuah objek : 
+	   	
+	   	\begin{enumerate}
+	   	 \item \textit{Invariant} : sifat objek yang tidak berubah sebagai hasil dari suatu bentuk transformasi. Sebagai contoh, area dari lingkaran tidak berubah ketika lingkaran digeser ke kiri atau kanan.
+	   	 \item \textit{Equivariant} : sifat objek yang perubahannya dapat diprediksi bila dilakukan sebuah transformasi. Contohnya adalah titik pusat lingkaran berubah sesuai dengan arah gerak lingkaran tersebut.
+	   	 \item \textit{Non-equivariant} : sifat objek yang perubahannya tidak dapat diprediksi bila dilakukan sebuah transformasi. Contohnya adalah bila sebuah lingkaran ditransformasi menjadi sebuah oval, rumus untuk menghitung keliling objek tersebut sudah bukan 2 $\pi$ r. 
+	   	\end{enumerate}
+	   	
+	   	\par
+	   	Kelas sebuah objek dalam citra komputer diharapkan bersifat \textit{invariant} ketika diterapkan banyak transformasi. Sebagai contoh, sebuah mobil harusnya tetap diklasifikasikan sebagai mobil walaupun gambarnya dibalik atau dikecilkan. Namun pada kenyataannya, sebagian besar karakteristik gambar bersifat \textit{equivariant}. \par
+	   	Karakteristik-karakteristik \textit{equivariant} seperti volume dan letak bagian-bagian objek disimpan dalam sebuah \textit{pose}. \textit{Pose} adalah data yang mendeskripsikan translasi, rotasi, skala, dan refleksi dari objek. Translasi adalah perubahan lokasi di satu atau lebih dimensi, rotasi adalah perubahan orientasi, skala adalah perubahan ukuran, dan refleksi adalah gambar yang dicerminkan. \par
+	   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.\cite{hinton_2}
+	   	
+	   	\subsubsection{Pooling}
+	   	Dalam CNN konvensional, digunakan teknik \textit{pooling layer} yang berguna untuk mengurangi jumlah detail informasi yang diproses di lapisan yang lebih tinggi. \textit{Pooling} mengizinkan sedikit \textit{invariance translasional} (objek berada di lokasi yang berbeda) dan meningkatkan jumlah tipe fitur yang dapat direpresentasikan. CapsNet menolak penggunaan teknik \textit{pooling}, dengan alasan :
+	   	
+	   	\begin{enumerate}
+	   	 \item \textit{Pooling} melanggar persepsi bentuk biologis karena tidak ada bingkai koordinat intrinsik;
+	   	 \item \textit{Pooling} membuang informasi posisional, sehingga menghasilkan \textit{invariance} dan bukan \textit{equivariance};
+	   	 \item \textit{Pooling} mengabaikan \textit{linear manifold} yang mendasari banyak variasi dalam gambar-gambar;
+	   	 \item \textit{Pooling} membuat rute informasi antar lapisan secara statis, tidak mengkomunikasikan info potensial ke fitur-fitur secara dinamis;
+	   	 \item \textit{Pooling} merusak detektor fitur yang dengan dengan \textit{pooling layer}, karena ada sejumlah informasi yang dihapus.
+	   	\end{enumerate}
+	   	
+	   	\subsubsection{Capsules}
+	   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll \cite{hinton}. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
+	   	\par
+	   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
+	   	\par
+	   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 persen karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. 
+	   	\par
+	   	\textit{Capsules} di lapisan lebih tinggi mengambil keluaran dari \textit{capsules} di lapisan lebih rendah, lalu menerima dari \textit{capsules} yang keluarannya berkelompok. Sebuah kelompok akan menyebabkan \textit{capsule} lebih tinggi untuk menghasilkan keluaran dengan probabilitas tinggi bahwa entitas terdapat dalam observasi tersebut. \textit{Capsules} tingkat tinggi mengabaikan \textit{outlier} karena mereka hanya berkonsentrasi pada keluaran yang berkelompok dengan keluaran-keluaran lain.
+	   	
+	   	\subsubsection{Routing-by-agreement}
+	   	Keluaran dari suatu \textit{capsule} (anak) akan dihubungkan ke \textit{capsule} (orangtua) di lapisan berikutnya sesuai dengan kemampuan \textit{capsule} anak untuk memprediksi keluaran dari \textit{capsule} orangtua. Setelah melalui beberapa iterasi, keluaran setiap \textit{capsule} orangtua dapat bersatu dengan prediksi beberapa \textit{capsule} anak dan berpisah dengan beberapa \textit{capsule} anak lain. 
+	   	\par
+	   	Untuk setiap \textit{capsule} orangtua yang mungkin, setiap \textit{capsule} anak menghitung vektor prediksi dengan mengalikan keluarannya dengan matriks beban yang dilatih dengan \textit{backpropagation}. Lalu, keluaran dari \textit{capsule} orangtua dihitung sebagai produk skalar dari sebuah prediksi dengan koefisien yang merepresentasikan probabilitas bahwa \textit{capsule} anak  adalah milik \textit{capsule} orangtua tersebut. Sebuah \textit{capsule} anak yang prediksinya relatif dekat dengan keluaran hasilnya akan meningkatkan koefisien antara \textit{capsule} anak dan \textit{capsule} orangtua, sedangkan prediksi yang relatif jauh akan mengurangi koefisien. Koefisien yang meningkat akan meningkatkan kontribusi dari \textit{capsule} anak ke \textit{capsule} orangtua, meningkatkan produk skalar dari prediksi \textit{capsule} dengan keluaran \textit{capsule} orangtua. Setelah beberapa iterasi, koefisien yang dihasilkan akan menghubungkan secara kuat \textit{capsule} orangtua dengan \textit{capsule-capsule} yang paling mungkin sebagai anak. Hal ini mengindikasikan bahwa keberadaan \textit{capsule-capsule} anak mengimplikasikan keberadaan entitas yang direpresentasikan \textit{capsule} orangtua. Semakin banyak \textit{capsule} anak yang prediksinya mirip dengan keluaran \textit{capsule} orangtua, semakin cepat koefisien bertambah dan mempercepat konvergensi. \textit{Pose} dari \textit{capsule} orangtua secara progresif menjadi lebih cocok dengan \textit{pose} anak-anaknya. 
+	   	\par
+	   	Logit awal dari koefisien-koefisien adalah probabilitas log prior bahwa sebuah \textit{capsule} anak adalah miliki sebuah \textit{capsule} orangtua. Prior-prior dapat dilatih bersama dengan beban-beban pada matriks beban. Prior tergantung lokasi dan tipe dari \textit{capsule} orangtua dan anak, namun tidak tergantung masukan yang sedang diolah. Di setiap iterasi, koefisien akan disesuaikan melalui metode \textit{softmax} sehingga jumlah setiap koefisien adalah 1. \textit{Softmax} akan semakin memperbesar nilai-nilai yang besar dan semakin mengurangi nilai-nilai kecil.
+	   	\par
+	   	Mekanisme pembuatan rute dinamis ini menyediakan sarana yang dibutuhkan untuk memisahkan objek-objek yang \textit{overlap}. 
+	   	\par 
+	   	Algoritma ini dapat direpresentasikan secara matematis sebagai berikut : 
+	   	
+	   	\begin{center}
+	   		\Large $\hat{u}_{j|i} = W_{ij}u_{i}$
+	   	\end{center}
+	   	
+	   	\par
+	   	\textit{Pose} vektor $u_{i}$ dirotasikan dan ditranslasi oleh matriks $W_{ij}$ menjadi vektor $\hat{u}_{j|i}$ yang memprediksikan keluaran dari \textit{capsule} orangtua.
+	   	
+	   	\begin{center}
+	   		\Large $s_{j} = \Sigma c_{ij} \hat{u}_{j|i}$
+	   	\end{center}
+	   
+	   \par
+	   \textit{Capsule} $s_{j}$ di lapisan yang lebih tinggi akan diberikan jumlahan dari prediksi-prediksi semua \textit{capsule-capsule} di lapisan yang lebih rendah, dimana setiap prediksi dikalikan dengan koefisien $c_{ij}$.
+	   	
+	   	\subsubsection{Training}
+	   	CapsNet dilatih secara \textit{supervised} dengan cara meminimalisir jarak euclidean antara gambar dan keluaran dari sebuah CNN yang merekonstruksikan gambar masukan dari keluaran \textit{capsule-capsule} terminal. Jaringan dilatih secara diskriminatif dengan menggunakan \textit{routing-by-agreement} iteratif. 
+	   	\par
+	   	Terdapat dua tipe \textit{loss} yang digunakan untuk melatih model. \textit{Loss} tipe pertama adalah \textit{margin loss}. Panjang dari sebuah vektor instansiasi merepresentasikan probabilitas bahwa entitas dari \textit{capsule} terdapat pada sebuah gambar. Untuk membolehkan keberadaan entitas-entitas dengan jumlah banyak, \textit{margin loss} terpisah harus dihitung untuk setiap \textit{capsule}. Menurunkan bobot \textit{loss} dari entitas-entitas yang absen menghentikan pembelajaran mengecilkan panjang vektor aktivitas untuk semua entitas. \textit{Loss} total adalah jumlah dari \textit{loss} setiap entitas. Hinton menggunakan \textit{loss function} sebagai berikut :
+	   	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=450px]{/rumus/rumus_loss.png}
+		\end{figure}
+		
+		   	
+		Hilton menggunakan nilai 0.9 untuk $m^{+}$ dan nilai 0.1 untuk $m^{-}$ supaya panjang tidak terlalu maksimal atau jatuh. Penurunan bobot dari bobot inisial kelas-kelas yang abses diatur dengan $\lambda$, dimana Hilton menggunakan nilai 0.5. 
+	   	\par 
+	   	\textit{Loss} tipe kedua adalah \textit{reconstruction loss}. \textit{Reconstruction loss} mendorong entitas-entitas untuk  menyandikan parameter-parameter instansiasi dari masukan mereka. Vektor aktivitas final lalu digunakan untuk merekonstruksi gambar masukan menggunakan CNN \textit{decoder} yang terdiri dari tiga lapisan yang terhubung penuh. Rekonstruksi meminimalisir jumlah dari kuadrat perbedaan antara keluaran unit logistik dan intensitas pixel. Hilton menggunakan nilai 0.0005 sebagai koefisien untuk memperkecil \textit{reconstruction loss} supaya tidak mendominasi \textit{margin loss} ketika latihan. 
+	   	
+	   	\subsubsection{Kelebihan CapsNet}
+	   	CapsNet diklaim memiliki empat kelebihan konseptual dibandingkan \textit{convolutional neural networks} :
+	   	
+	   	\begin{enumerate}
+	   	 \item \textit{Viewpoint invariance} : penggunaan matriks pose membolehkan jaringan CapsNet untuk mengenali objek-objek tanpa mempedulikan perspektif dari mana mereka dipandang.
+	   	 \item Parameter lebih sedikit : \textit{capsule} mengelompokkan neuron, sehingga koneksi antar lapisan membutuhkan lebih sedikit parameter.
+	   	 \item Generalisasi lebih baik untuk sudut pandang baru : CapsNet lebih baik mengenali objek dari beberapa rotasi berbeda karena matriks \textit{pose} menangkap karakteristik-karakteristik ini sebagai transformasi linear.
+	   	 \item Dapat menangani \textit{white-box adversarial attacks} : \textit{Fast Gradient Sign Method} (FGSM) biasanya digunakan untuk menyerang CNN biasa dengan mengevaluasi gradien dari tiap pixel terhadap \textit{loss} dari jaringan, lalu mengubah setiap pixel dengan maksimum epsilon (\textit{error term}) untuk memaksimalkan \textit{loss}. Metode ini dapat mengurangi akurasi CNN secara drastis (hingga di bawah 20 persen), namun CapsNet dapat mempertahankan akurasi di atas 70 persen. 
+	   	\end{enumerate}
+   	\subsection{Evaluasi}
    \section{Desain dan Implementasi Penambangan Data}
    \section{Analisis}
+    \subsection{Analisis Exploratory Data Analysis}
+     \begin{itemize}
+     	
+	    \begin{figure}[H]
+	    	\centering
+	    	\includegraphics[width=300px]{/grafik eda/gender.png}
+	    \end{figure}
+    	\item Dalam dataset jumlah pasien COVID-19 pria jauh melebihi jumlah pasien wanita.
+    	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=200px]{/grafik eda/umur.png}
+			\includegraphics[width=200px]{/grafik eda/umur2.png}
+		\end{figure}
+		\item Distribusi umur menunjukkan bahwa sebagian besar pasien berusia paruh baya dengan terpusat pada kisaran umur 50-80. Tidak ada perbedaan signifikan antara distribusi umur pasien pria dan pasien wanita.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=300px]{/grafik eda/suhu.png}
+		\end{figure}
+		\item Grafik menunjukkan bahwa terdapat perbedaan jarak interkuartil antara pasien yang selamat dan pasien yang meninggal. Pasien yang selamat menunjukkan suhu tubuh sebagian besar di antara 37.75-39.0 derajat celcius, sedangkan pasien yang meninggal menunjukkan jarak yang lebih kecil antara 38.25-38.75 derajat celcius. Pasien-pasien yang masih dirawat sehingga kondisi keselamatannya masih belum diketahui memiliki suhu median yang lebih rendah dibandingkan pasien yang sudah dipastikan status keselamatannya. Hal ini mungkin menunjukkan bahwa pasien-pasien yang baru masuk dan masih dirawat sudah dapat ditangani dengan lebih baik sehingga suhu tubuh pasien secara keseluruhan menurun.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=200px]{/grafik eda/po2.png}
+			\includegraphics[width=200px]{/grafik eda/leukosit.png}
+			\includegraphics[width=200px]{/grafik eda/limfosit.png}
+			\includegraphics[width=200px]{/grafik eda/neutrofil.png}
+		\end{figure}
+		\item Saturasi PO2 pasien COVID-19 berada di kisaran 50-100 dengan sebagian besar berada di kisaran 90-100. Angka leukosit pasien berada di kisaran 2.5-11.0 dengan terpusat di angka 7.5. Angka limfosit pasien berada di kisaran 0.2-1.75 dengan sebagain besar berada di sekitar angka 0.75. Angka neutrofil pasien terpisah menjadi dua daerah, dimana sebagian pasien yang memiliki angka neutrofil diantara 1.8-3.0 dan sebagian pasien memiliki angka neutrofil diantara 4.2-5.8.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=300px]{/grafik eda/correlation.png}
+		\end{figure}
+		\item Heatmap korelasi fitur menunjukkan bahwa keselamatan pasien sangat ditentukan oleh umur, dimana umur yang lebih tinggi akan menurunkan kemungkinan keselamatan pasien. Suhu tubuh terlihat tidak memiliki korelasi yang signifikan dengan keselamatan pasien, ditunjukkan dengan warna ungu yang memberi arti korelasi dekat dengan 0. Tingkat saturasi PO2 terlihat memiliki korelasi positif yang cukup signifikan dengan tingkat keselamatan pasien, dimana pasien dengan saturasi PO2 tinggi memiliki kemungkinan lebih tinggi untuk selamat. 
+    	
+     \end{itemize}
+   	\subsection{Analisis Hasil Model CapsNet}
    \section{Kesimpulan}
    \section{Dokumentasi}
    
