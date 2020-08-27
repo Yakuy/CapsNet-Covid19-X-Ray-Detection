@@ -14,6 +14,7 @@
 \usepackage[backend=biber]{biblatex}
 \addbibresource{daftar_pustaka.bib}
 \graphicspath{ {./images/} }
+\renewcommand*\contentsname{Daftar Isi}
 
 \begin{document}
   \begin{titlepage}
@@ -62,6 +63,8 @@
 
   \newpage
   \pagenumbering{arabic}
+  \tableofcontents
+  \newpage
 
   \section{Latar Belakang}
    Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
@@ -96,7 +99,11 @@
 
    \section{Metode Penambangan Data}
     \subsection{Perangkat Uji Coba}
+    Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. Library-library yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
+    
     \subsection{Dataset}
+    
+    
     \subsection{Metode Prapemrosesan}
     \subsection{CapsNet}
 	   	\subsubsection{Introduksi CapsNet}
@@ -119,8 +126,10 @@
 	   	\end{enumerate}
 	   	
 	   	\par
-	   	Kelas sebuah objek dalam citra komputer diharapkan bersifat \textit{invariant} ketika diterapkan banyak transformasi. Sebagai contoh, sebuah mobil harusnya tetap diklasifikasikan sebagai mobil walaupun gambarnya dibalik atau dikecilkan. Namun pada kenyataannya, sebagian besar karakteristik gambar bersifat \textit{equivariant}. \par
-	   	Karakteristik-karakteristik \textit{equivariant} seperti volume dan letak bagian-bagian objek disimpan dalam sebuah \textit{pose}. \textit{Pose} adalah data yang mendeskripsikan translasi, rotasi, skala, dan refleksi dari objek. Translasi adalah perubahan lokasi di satu atau lebih dimensi, rotasi adalah perubahan orientasi, skala adalah perubahan ukuran, dan refleksi adalah gambar yang dicerminkan. \par
+	   	Kelas sebuah objek dalam citra komputer diharapkan bersifat \textit{invariant} ketika diterapkan banyak transformasi. Sebagai contoh, sebuah mobil harusnya tetap diklasifikasikan sebagai mobil walaupun gambarnya dibalik atau dikecilkan. Namun pada kenyataannya, sebagian besar karakteristik gambar bersifat \textit{equivariant}. 
+	   	\par
+	   	Karakteristik-karakteristik \textit{equivariant} seperti volume dan letak bagian-bagian objek disimpan dalam sebuah \textit{pose}. \textit{Pose} adalah data yang mendeskripsikan translasi, rotasi, skala, dan refleksi dari objek. Translasi adalah perubahan lokasi di satu atau lebih dimensi, rotasi adalah perubahan orientasi, skala adalah perubahan ukuran, dan refleksi adalah gambar yang dicerminkan. 
+	   	\par
 	   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.\cite{hinton_2}
 	   	
 	   	\subsubsection{Pooling}
@@ -192,7 +201,40 @@
 	   	 \item Generalisasi lebih baik untuk sudut pandang baru : CapsNet lebih baik mengenali objek dari beberapa rotasi berbeda karena matriks \textit{pose} menangkap karakteristik-karakteristik ini sebagai transformasi linear.
 	   	 \item Dapat menangani \textit{white-box adversarial attacks} : \textit{Fast Gradient Sign Method} (FGSM) biasanya digunakan untuk menyerang CNN biasa dengan mengevaluasi gradien dari tiap pixel terhadap \textit{loss} dari jaringan, lalu mengubah setiap pixel dengan maksimum epsilon (\textit{error term}) untuk memaksimalkan \textit{loss}. Metode ini dapat mengurangi akurasi CNN secara drastis (hingga di bawah 20 persen), namun CapsNet dapat mempertahankan akurasi di atas 70 persen. 
 	   	\end{enumerate}
+   	
    	\subsection{Evaluasi}
+   	Evaluasi model adalah proses dimana performa model diukur untuk mengetahui kualitas dari model. Evaluasi pada masalah klasifikasi dapat dilakukan dengan melihat \textit{confusion matrix}, \textit{accuracy}, \textit{precision}, \textit{recall}, dan \textit{F-measure}. \textit{Confusion matrix} merangkum kinerja \textit{classifier} terhadap data testing \cite{hossin}. Contoh \textit{confusion matrix} dapat dilihat di tabel di bawah:
+   	
+   	\begin{center}
+   		\begin{tabular}{|c|c|c|}
+   			\hline
+   			& Actual Positive Class & Actual Negative Class \\
+   			\hline
+   			Predicted Positive Class & True Positive(TP) & False Positive(FP) \\
+   			\hline
+   			Predicted Negative Class & False Negative(FN) & True Negative(TN) \\
+   			\hline
+   		\end{tabular}
+   	\end{center}
+   	\par
+   	TP menunjukkan jumlah kelas positif yang diklasifikasikan dengan tepat, TN menunjukkan jumlah kelas negatif yang diklasifikasikan dengan tepat, FP menunjukkan jumlah kelas negatif yang diklasifikasikan secara salah, dan FN menunjukkan jumlah kelas positif yang diklasifikasikan secara salah.
+   	\par
+   	Metrik-metrik yang digunakan untuk mengevaluasi performa model klasifikas adalah \textit{accuracy}, \textit{precision}, \textit{recall}, dan \textit{F-measure}. Berikut adalah rumus-rumus untuk mengkalkulasi metrik-metrik tersebut :
+   	
+   	\begin{equation}
+   		accuracy(acc) = \frac{TP + TN}{TP + FP + FN + TN}
+   	\end{equation}
+   	\begin{equation}
+   		precision(p) = \frac{TP}{TP + FP}
+   	\end{equation}
+   	\begin{equation}
+   		recall(r) = \frac{TP}{TP + FN}
+   	\end{equation}
+   	\begin{equation}
+   		F-measure(Fm) = \frac{2 * p * r}{p + r}
+   	\end{equation}
+   	
+   	
    \section{Desain dan Implementasi Penambangan Data}
    \section{Analisis}
     \subsection{Analisis Exploratory Data Analysis}
@@ -236,7 +278,6 @@
    	\subsection{Analisis Hasil Model CapsNet}
    \section{Kesimpulan}
    \section{Dokumentasi}
-   
-   \printbibliography
+   \printbibliography[title=Daftar Pustaka]
 
 \end{document}

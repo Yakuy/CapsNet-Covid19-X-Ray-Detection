@@ -146,6 +146,37 @@
       \field{year}{2017}
       \keyw{routing}
     \endentry
+    \entry{hossin}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4741c76391546bcee5fbc441e16a69da}{%
+           family={Hossin},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8a2bd68ff39a3d46df3aa78196b71c30}{%
+           family={Sulaiman},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c31a4cd22a11155edcb5613ca2e01909}
+      \strng{fullhash}{c31a4cd22a11155edcb5613ca2e01909}
+      \strng{bibnamehash}{c31a4cd22a11155edcb5613ca2e01909}
+      \strng{authorbibnamehash}{c31a4cd22a11155edcb5613ca2e01909}
+      \strng{authornamehash}{c31a4cd22a11155edcb5613ca2e01909}
+      \strng{authorfullhash}{c31a4cd22a11155edcb5613ca2e01909}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Data Mining and Knowledge Management Process (IJDKP)}
+      \field{number}{2}
+      \field{title}{A Review on Evaluation Metrics for Data Classification Evaluations}
+      \field{volume}{5}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 11}
+      \range{pages}{11}
+    \endentry
     \entry{mangal}{article}{}
       \name{author}{7}{}{%
         {{hash=8f3620e36b8999288ca53f72c708be59}{%
