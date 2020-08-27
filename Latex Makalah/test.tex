@@ -11,6 +11,8 @@
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{daftar_pustaka.bib}
 \graphicspath{ {./images/} }
 
 \begin{document}
@@ -62,10 +64,10 @@
   \pagenumbering{arabic}
 
   \section{Latar Belakang}
-   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar [6]. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
+   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
    \par
    Jumlah alat testing yang terbatas membuat tidak mungkin setiap pasien dengan penyakit pernafasan untuk dites dengan teknik konvensional (RT-PCR) untuk mendeteksi COVID-19. Jumlah ruang di rumah sakit, jumlah ventilator, dan jumlah alat protektif (PPE) bagi tenaga medis sangat terbatas, sehingga perlu digunakan dengan seefisien mungkin. Untuk meningkatkan efisiensi penggunaan alat medis, sangat penting untuk dapat membedakan pasien dengan \textit{severe acute respiratory illness} (SARI) yang mungkin terinfeksi COVID-19. Oleh karena itu, kami mencoba menggunakan gambar X-Ray dada untuk mendeteksi infeksi COVID-19.
-   Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional [5] :
+   Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional \cite{mangal} :
    
    \begin{enumerate}
    	\item Pengambilan gambar X-Ray lebih banyak digunakan dan lebih murah dibandingkan tes konvensional.
@@ -73,7 +75,7 @@
    	\item Berbeda dengan CT Scan, terdapat alat-alat pengambil gambar X-Ray portable sehingga tes dapat dilakukan di ruangan-ruangan isolasi. Hal ini menyebabkan kurangnya penggunaan alat-alat protektif dan mengurangi risiko infeksi tersebar ke pasien-pasien lain di rumah sakit.
    \end{enumerate}
  
-   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney [3] yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Sumber kedua adalah dari COVID-19 Chest X-Ray dataset (2020) milik Bachir [4] yang berisi 357 gambar X-Ray dada yang terinfeksi COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
+   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Sumber kedua adalah dari COVID-19 Chest X-Ray dataset (2020) milik Bachir \cite{bachir_2} yang berisi 357 gambar X-Ray dada yang terinfeksi COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
    
    \section{Tujuan dan Manfaat}
    Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
@@ -86,8 +88,8 @@
    Batasan masalah yang akan kami gunakan adalah sebagai berikut :
    
    \begin{itemize}
-   	\item Makalah ini akan membahas eksplorasi metadata dan penyusunan model untuk mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien.
-   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney [3] dan COVID-19 Chest X-Ray dataset (2020) milik Bachir [4].
+   	\item Makalah ini akan membahas eksplorasi metadata dan penyusunan model untuk mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien\cite{cohen}.
+   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} dan COVID-19 Chest X-Ray dataset (2020) milik Bachir \cite{bachir_2}.
    	\item Jenis penyakit yang akan diklasifikasi dibatasi pada COVID-19 dan Pneumonia saja.
    	\item Metode penambangan data yang akan kami gunakan adalah Capsule Networks (CapsNets).
    \end{itemize}
@@ -101,7 +103,7 @@
    	\subsection{Latar Belakang}
    	Awal mula perkembangan CapsNet terjadi pada tahun 2000, dimana Geoffrey Hinton mendeskripsikan sistem untuk merepresentasikan gambar dengan menggunakan gabungan teknik \textit{segmentation} dan \textit{parse trees}. Sistem ini terbukti berguna dalam mengklasifikasikan digit-digit tulisan tangan di dataset MNIST. 
    	\par
-   	Pada tahun 2017, Hinton dan timnya memperkenalkan mekanisme \textit{dynamic routing} untuk \textit{capsule networks}. Pendekatan ini berhasil meningkatkan performa model dalam mengolah data MNIST dan mengurangi ukuran data latihan. Hasilnya diklaim mengalahkan performa CNN terutama pada digit-digit yang \textit{overlap}.
+   	Pada tahun 2017, Hinton dan timnya memperkenalkan mekanisme \textit{dynamic routing}\cite{hinton} untuk \textit{capsule networks}. Pendekatan ini berhasil meningkatkan performa model dalam mengolah data MNIST dan mengurangi ukuran data latihan. Hasilnya diklaim mengalahkan performa CNN terutama pada digit-digit yang \textit{overlap}.
    	
    	\subsection{Transformasi}
    	Dalam bidang citra komputer, terdapat tiga jenis sifat yang dapat dimiliki sebuah objek : 
@@ -115,7 +117,7 @@
    	\par
    	Kelas sebuah objek dalam citra komputer diharapkan bersifat \textit{invariant} ketika diterapkan banyak transformasi. Sebagai contoh, sebuah mobil harusnya tetap diklasifikasikan sebagai mobil walaupun gambarnya dibalik atau dikecilkan. Namun pada kenyataannya, sebagian besar karakteristik gambar bersifat \textit{equivariant}. \par
    	Karakteristik-karakteristik \textit{equivariant} seperti volume dan letak bagian-bagian objek disimpan dalam sebuah \textit{pose}. \textit{Pose} adalah data yang mendeskripsikan translasi, rotasi, skala, dan refleksi dari objek. Translasi adalah perubahan lokasi di satu atau lebih dimensi, rotasi adalah perubahan orientasi, skala adalah perubahan ukuran, dan refleksi adalah gambar yang dicerminkan. \par
-   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.
+   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.\cite{hinton_2}
    	
    	\subsection{Pooling}
    	Dalam CNN konvensional, digunakan teknik \textit{pooling layer} yang berguna untuk mengurangi jumlah detail informasi yang diproses di lapisan yang lebih tinggi. \textit{Pooling} mengizinkan sedikit \textit{invariance translasional} (objek berada di lokasi yang berbeda) dan meningkatkan jumlah tipe fitur yang dapat direpresentasikan. CapsNet menolak penggunaan teknik \textit{pooling}, dengan alasan :
@@ -129,7 +131,7 @@
    	\end{enumerate}
    	
    	\subsection{Capsules}
-   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll [7]. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
+   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll \cite{hinton}. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
    	\par
    	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
    	\par
@@ -191,18 +193,7 @@
    \section{Analisis}
    \section{Kesimpulan}
    \section{Dokumentasi}
-   \section{Daftar Pustaka}
    
-   \begin{enumerate}
-    \item Cohen, J.P., Morrison, P., Dao, L.: Covid-19 image data collection. arXiv 2003.11597 (2020), \url{https://github.com/ieee8023/covid-chestxray-dataset} .
-    \item Bachir: Detecting COVID-19 in X-ray images with TensorFlow (2020), \url{https://www.kaggle.com/bachrr/detecting-covid-19-in-x-ray-images-with-tensorflow} .
-    \item Mooney, P.: Kaggle chest x-ray images (pneumonia) dataset (2018), \url{https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia} .
-    \item Bachir: COVID-19 chest x-ray dataset (2020), \url{https://www.kaggle.com/bachrr/covid-chest-xray} .
-    \item Mangal, A., Kalia, S., Rajgopal, H., Rangarajan, K., Namboodiri, V., Banerjee, S., Arora, C. : CovidAID: COVID-19 Detection Using Chest X-Ray. arXiv:2004.09803v1 [eess.IV] (2020)
-    \item Zuraya, N. : Tiga Dampak Besar Pandemi Covid-19 bagi Ekonomi RI (2020). \url{https://republika.co.id/berita/qdgt5p383/tiga-dampak-besar-pandemi-covid19-bagi-ekonomi-ri}.
-    \item Hinton, G., Sabour, S., Frosst, N. : Dynamic Routing Between Capsules. arXiv:1710.09829v2 [cs.CV] (2017)
-    \item Hinton, G., Krizhevsky, A., Wang, S. : Transforming Auto-encoders. 
-   \end{enumerate}
-   
+   \printbibliography
 
 \end{document}
