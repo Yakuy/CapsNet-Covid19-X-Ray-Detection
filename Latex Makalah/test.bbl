@@ -19,33 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{bachir_2}{online}{}
-      \name{author}{1}{}{%
-        {{hash=54976a1505844eabf0d2a96351e03897}{%
-           family={Bachir},
-           familyi={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{54976a1505844eabf0d2a96351e03897}
-      \strng{fullhash}{54976a1505844eabf0d2a96351e03897}
-      \strng{bibnamehash}{54976a1505844eabf0d2a96351e03897}
-      \strng{authorbibnamehash}{54976a1505844eabf0d2a96351e03897}
-      \strng{authornamehash}{54976a1505844eabf0d2a96351e03897}
-      \strng{authorfullhash}{54976a1505844eabf0d2a96351e03897}
-      \field{sortinit}{B}
-      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(2020)}
-      \field{title}{COVID-19 chest x-ray dataset}
-      \verb{urlraw}
-      \verb https://www.kaggle.com/bachrr/covid-chest-xray
-      \endverb
-      \verb{url}
-      \verb https://www.kaggle.com/bachrr/covid-chest-xray
-      \endverb
-      \keyw{covid xray}
-    \endentry
-    \entry{cohen}{online}{}
+    \entry{cohen}{article}{}
       \name{author}{3}{}{%
         {{hash=f27b44345cffad748e7ac05bbcb3523d}{%
            family={Cohen},
@@ -73,8 +47,9 @@
       \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{addendum}{arXiv 2003.11597 (2020)}
+      \field{journaltitle}{arXiv 2003.1159}
       \field{title}{Covid-19 image data collection}
+      \field{year}{2020}
       \verb{urlraw}
       \verb https://github.com/ieee8023/covid-chestxray-dataset
       \endverb
@@ -146,6 +121,28 @@
       \field{year}{2017}
       \keyw{routing}
     \endentry
+    \entry{robert}{book}{}
+      \name{author}{1}{}{%
+        {{hash=36eea0e60e8fcec12171375e8e4dafe1}{%
+           family={Hirsch},
+           familyi={H\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \strng{fullhash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \strng{bibnamehash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \strng{authorbibnamehash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \strng{authornamehash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \strng{authorfullhash}{36eea0e60e8fcec12171375e8e4dafe1}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{ISBN 1-85669-420-8}
+      \field{journaltitle}{Laurence King Publishing}
+      \field{title}{Exploring Colour Photography: A Complete Guide}
+    \endentry
     \entry{hossin}{article}{}
       \name{author}{2}{}{%
         {{hash=4741c76391546bcee5fbc441e16a69da}{%
@@ -176,6 +173,66 @@
       \field{year}{2015}
       \field{pages}{1\bibrangedash 11}
       \range{pages}{11}
+    \endentry
+    \entry{kermany}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3afc8b505de8683602b269b824f8f813}{%
+           family={Kermany},
+           familyi={K\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=25b49ae9660c763222a6e0c5e8f355f6}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Kang},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4529d160647c075f4855f57cce9801cf}{%
+           family={Goldbaum},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \strng{fullhash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \strng{bibnamehash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \strng{authorbibnamehash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \strng{authornamehash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \strng{authorfullhash}{57c3511d7fb0527188cd8d3ff2efa7e0}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mendeley Data}
+      \field{title}{Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification}
+      \field{volume}{2}
+      \field{year}{2018}
+    \endentry
+    \entry{krig}{article}{}
+      \name{author}{1}{}{%
+        {{hash=066ddd75b9a904f4c23d2f87495b909b}{%
+           family={Krig},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{066ddd75b9a904f4c23d2f87495b909b}
+      \strng{fullhash}{066ddd75b9a904f4c23d2f87495b909b}
+      \strng{bibnamehash}{066ddd75b9a904f4c23d2f87495b909b}
+      \strng{authorbibnamehash}{066ddd75b9a904f4c23d2f87495b909b}
+      \strng{authornamehash}{066ddd75b9a904f4c23d2f87495b909b}
+      \strng{authorfullhash}{066ddd75b9a904f4c23d2f87495b909b}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Vision Metrics}
+      \field{title}{Image pre-processing}
+      \field{year}{1993}
+      \field{pages}{56\bibrangedash 111}
+      \range{pages}{56}
+      \verb{doi}
+      \verb 10.1007/978-3-319-50490-23
+      \endverb
     \endentry
     \entry{mangal}{article}{}
       \name{author}{7}{}{%
@@ -256,6 +313,35 @@
       \verb https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
       \endverb
       \keyw{pneumonia image}
+    \endentry
+    \entry{pal}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0af1cf6ae19fee089b4f6e6cab12236c}{%
+           family={Pal},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=679f292672f14ad4a1cbd41c1516d61b}{%
+           family={Sudeep},
+           familyi={S\bibinitperiod},
+           given={K.\bibnamedelimi S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{da170058301d309cfc572383f39815a1}
+      \strng{fullhash}{da170058301d309cfc572383f39815a1}
+      \strng{bibnamehash}{da170058301d309cfc572383f39815a1}
+      \strng{authorbibnamehash}{da170058301d309cfc572383f39815a1}
+      \strng{authornamehash}{da170058301d309cfc572383f39815a1}
+      \strng{authorfullhash}{da170058301d309cfc572383f39815a1}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781509007745}
+      \field{journaltitle}{IEEE International Conference On Recent Trends In Electronics Information Communication Technology}
+      \field{title}{Preprocessing for Image Classification by Convolutional Neural Networks}
+      \field{pages}{1778\bibrangedash 1781}
+      \range{pages}{4}
     \endentry
     \entry{zuraya}{online}{}
       \name{author}{1}{}{%

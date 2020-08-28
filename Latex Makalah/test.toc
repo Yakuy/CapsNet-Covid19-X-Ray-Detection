@@ -14,34 +14,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Metode Prapemrosesan}{3}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}CapsNet}{3}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.3.1}Konversi ke RGB}{4}{subsubsection.4.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.1}Introduksi CapsNet}{3}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Resizing}{4}{subsubsection.4.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.2}Latar Belakang}{3}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Konversi ke PyTorch Tensor}{4}{subsubsection.4.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.3}Transformasi}{3}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4}CapsNet}{4}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.4}Pooling}{4}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Introduksi CapsNet}{4}{subsubsection.4.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.5}Capsules}{4}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.2}Latar Belakang}{4}{subsubsection.4.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.6}Routing-by-agreement}{4}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.3}Transformasi}{5}{subsubsection.4.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.7}Training}{5}{subsubsection.4.4.7}%
+\contentsline {subsubsection}{\numberline {4.4.4}Pooling}{5}{subsubsection.4.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.8}Kelebihan CapsNet}{5}{subsubsection.4.4.8}%
+\contentsline {subsubsection}{\numberline {4.4.5}Capsules}{5}{subsubsection.4.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Evaluasi}{6}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}Routing-by-agreement}{6}{subsubsection.4.4.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Desain dan Implementasi Penambangan Data}{6}{section.5}%
+\contentsline {subsubsection}{\numberline {4.4.7}Training}{6}{subsubsection.4.4.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Analisis}{6}{section.6}%
+\contentsline {subsubsection}{\numberline {4.4.8}Kelebihan CapsNet}{7}{subsubsection.4.4.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Analisis Exploratory Data Analysis}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {4.5}Evaluasi}{7}{subsection.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Analisis Hasil Model CapsNet}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {5}Desain dan Implementasi Penambangan Data}{8}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Kesimpulan}{9}{section.7}%
+\contentsline {section}{\numberline {6}Analisis}{8}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Dokumentasi}{9}{section.8}%
+\contentsline {subsection}{\numberline {6.1}Analisis Exploratory Data Analysis}{8}{subsection.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Analisis Hasil Model CapsNet}{10}{subsection.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Kesimpulan}{10}{section.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Dokumentasi}{10}{section.8}%

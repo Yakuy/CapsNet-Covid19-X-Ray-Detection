@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  27 AUG 2020 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  28 AUG 2020 11:13
 entering extended mode
 **./test.tex
 (test.tex
@@ -552,7 +552,7 @@ Package biblatex Info: ... file 'test.bbl' found.
  (test.bbl)
 Package biblatex Info: Reference section=0 on input line 19.
 Package biblatex Info: Reference segment=0 on input line 19.
-<./images//logo/Lambang UGM.jpg, id=95, 341.3553pt x 341.3553pt>
+<./images//logo/Lambang UGM.jpg, id=107, 341.3553pt x 341.3553pt>
 File: ./images//logo/Lambang UGM.jpg Graphic file (type jpg)
 <use ./images//logo/Lambang UGM.jpg>
 Package pdftex.def Info: ./images//logo/Lambang UGM.jpg  used on input line 33.
@@ -576,115 +576,135 @@ been already used, duplicate ignored
                    \relax 
 l.67   \newpage
                 [1] [2]
-Overfull \hbox (1.82285pt too wide) in paragraph at lines 110--111
+<./images//contoh dataset/pneumonia.png, id=172, 594.22pt x 195.73125pt>
+File: ./images//contoh dataset/pneumonia.png Graphic file (type png)
+<use ./images//contoh dataset/pneumonia.png>
+Package pdftex.def Info: ./images//contoh dataset/pneumonia.png  used on input 
+line 109.
+(pdftex.def)             Requested size: 401.50146pt x 132.25624pt.
+<./images//contoh dataset/covid.png, id=174, 936.49875pt x 229.85875pt>
+File: ./images//contoh dataset/covid.png Graphic file (type png)
+<use ./images//contoh dataset/covid.png>
+Package pdftex.def Info: ./images//contoh dataset/covid.png  used on input line
+ 119.
+(pdftex.def)             Requested size: 401.50146pt x 98.5462pt.
+ [3 <./images//contoh dataset/pneumonia.png> <./images//contoh dataset/covid.pn
+g>]
+<./images//contoh dataset/preprocessed.png, id=186, 869.2475pt x 200.75pt>
+File: ./images//contoh dataset/preprocessed.png Graphic file (type png)
+<use ./images//contoh dataset/preprocessed.png>
+Package pdftex.def Info: ./images//contoh dataset/preprocessed.png  used on inp
+ut line 144.
+(pdftex.def)             Requested size: 401.50146pt x 92.72595pt.
+
+Overfull \hbox (1.82285pt too wide) in paragraph at lines 150--151
 \OT1/cmr/m/n/10 yang da-pat mem-o-d-elkan hubungan-hubungan bersi-fat hi-er-ark
 is. Pen-dekatan ini dikem-bangkan den-gan mengikuti
  []
 
-[3] [4]
+[4 <./images//contoh dataset/preprocessed.png>] [5]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 167.
-<./images//rumus/rumus_loss.png, id=176, 590.70688pt x 56.21pt>
+(Font)              <14.4> on input line 207.
+<./images//rumus/rumus_loss.png, id=211, 590.70688pt x 56.21pt>
 File: ./images//rumus/rumus_loss.png Graphic file (type png)
 <use ./images//rumus/rumus_loss.png>
-Package pdftex.def Info: ./images//rumus/rumus_loss.png  used on input line 187
+Package pdftex.def Info: ./images//rumus/rumus_loss.png  used on input line 227
 .
 (pdftex.def)             Requested size: 451.68915pt x 42.98248pt.
 
-Overfull \hbox (3.47374pt too wide) in paragraph at lines 193--194
+Overfull \hbox (3.47374pt too wide) in paragraph at lines 233--234
 []\OT1/cmr/m/it/10 Loss \OT1/cmr/m/n/10 tipe ke-dua adalah \OT1/cmr/m/it/10 re-
 con-struc-tion loss\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Re-con-struc-tion loss \O
 T1/cmr/m/n/10 men-dorong entitas-entitas un-tuk menyandikan
  []
 
-[5 <./images//rumus/rumus_loss.png>]
-<./images//grafik eda/gender.png, id=192, 391.4625pt x 264.99pt>
+[6 <./images//rumus/rumus_loss.png>]
+<./images//grafik eda/gender.png, id=224, 391.4625pt x 264.99pt>
 File: ./images//grafik eda/gender.png Graphic file (type png)
 <use ./images//grafik eda/gender.png>
-Package pdftex.def Info: ./images//grafik eda/gender.png  used on input line 24
-5.
+Package pdftex.def Info: ./images//grafik eda/gender.png  used on input line 28
+4.
 (pdftex.def)             Requested size: 301.1261pt x 203.84885pt.
-<./images//grafik eda/umur.png, id=193, 385.44pt x 279.0425pt>
+ [7]
+<./images//grafik eda/umur.png, id=238, 385.44pt x 279.0425pt>
 File: ./images//grafik eda/umur.png Graphic file (type png)
 <use ./images//grafik eda/umur.png>
-Package pdftex.def Info: ./images//grafik eda/umur.png  used on input line 251.
+Package pdftex.def Info: ./images//grafik eda/umur.png  used on input line 290.
 
 (pdftex.def)             Requested size: 200.75073pt x 145.33286pt.
-<./images//grafik eda/umur2.png, id=194, 392.46625pt x 279.0425pt>
+<./images//grafik eda/umur2.png, id=239, 392.46625pt x 279.0425pt>
 File: ./images//grafik eda/umur2.png Graphic file (type png)
 <use ./images//grafik eda/umur2.png>
-Package pdftex.def Info: ./images//grafik eda/umur2.png  used on input line 252
+Package pdftex.def Info: ./images//grafik eda/umur2.png  used on input line 291
 .
 (pdftex.def)             Requested size: 200.75073pt x 142.73557pt.
- [6 <./images//grafik eda/gender.png>]
-<./images//grafik eda/suhu.png, id=207, 393.47pt x 279.0425pt>
+<./images//grafik eda/suhu.png, id=240, 393.47pt x 279.0425pt>
 File: ./images//grafik eda/suhu.png Graphic file (type png)
 <use ./images//grafik eda/suhu.png>
-Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 258.
+Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 297.
 
 (pdftex.def)             Requested size: 301.1261pt x 213.55196pt.
-<./images//grafik eda/po2.png, id=208, 379.4175pt x 280.04625pt>
+ [8 <./images//grafik eda/gender.png> <./images//grafik eda/umur.png> <./images
+//grafik eda/umur2.png> <./images//grafik eda/suhu.png>]
+<./images//grafik eda/po2.png, id=249, 379.4175pt x 280.04625pt>
 File: ./images//grafik eda/po2.png Graphic file (type png)
 <use ./images//grafik eda/po2.png>
-Package pdftex.def Info: ./images//grafik eda/po2.png  used on input line 264.
+Package pdftex.def Info: ./images//grafik eda/po2.png  used on input line 303.
 (pdftex.def)             Requested size: 200.75073pt x 148.17595pt.
-<./images//grafik eda/leukosit.png, id=209, 385.44pt x 280.04625pt>
+<./images//grafik eda/leukosit.png, id=250, 385.44pt x 280.04625pt>
 File: ./images//grafik eda/leukosit.png Graphic file (type png)
 <use ./images//grafik eda/leukosit.png>
 Package pdftex.def Info: ./images//grafik eda/leukosit.png  used on input line 
-265.
+304.
 (pdftex.def)             Requested size: 200.75073pt x 145.85562pt.
-<./images//grafik eda/limfosit.png, id=210, 373.395pt x 280.04625pt>
+<./images//grafik eda/limfosit.png, id=251, 373.395pt x 280.04625pt>
 File: ./images//grafik eda/limfosit.png Graphic file (type png)
 <use ./images//grafik eda/limfosit.png>
 Package pdftex.def Info: ./images//grafik eda/limfosit.png  used on input line 
-266.
+305.
 (pdftex.def)             Requested size: 200.75073pt x 150.56036pt.
-<./images//grafik eda/neutrofil.png, id=211, 381.425pt x 280.04625pt>
+<./images//grafik eda/neutrofil.png, id=252, 381.425pt x 280.04625pt>
 File: ./images//grafik eda/neutrofil.png Graphic file (type png)
 <use ./images//grafik eda/neutrofil.png>
 Package pdftex.def Info: ./images//grafik eda/neutrofil.png  used on input line
- 267.
+ 306.
 (pdftex.def)             Requested size: 200.75073pt x 147.39397pt.
-
-[7 <./images//grafik eda/umur.png> <./images//grafik eda/umur2.png> <./images//
-grafik eda/suhu.png>]
-<./images//grafik eda/correlation.png, id=219, 423.5825pt x 332.24126pt>
+<./images//grafik eda/correlation.png, id=253, 423.5825pt x 332.24126pt>
 File: ./images//grafik eda/correlation.png Graphic file (type png)
 <use ./images//grafik eda/correlation.png>
 Package pdftex.def Info: ./images//grafik eda/correlation.png  used on input li
-ne 273.
+ne 312.
 (pdftex.def)             Requested size: 301.1261pt x 236.19711pt.
- [8 <./images//grafik eda/po2.png> <./images//grafik eda/leukosit.png> <./image
+ [9 <./images//grafik eda/po2.png> <./images//grafik eda/leukosit.png> <./image
 s//grafik eda/limfosit.png> <./images//grafik eda/neutrofil.png> <./images//gra
 fik eda/correlation.png>]
-Overfull \hbox (31.93219pt too wide) in paragraph at lines 281--281
+Overfull \hbox (36.9322pt too wide) in paragraph at lines 320--320
 []\OT1/cmr/m/n/10 P. Mooney. \OT1/cmr/m/it/10 Kag-gle chest x-ray im-ages (pneu
 -mo-nia) dataset\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : []$\OT1
 /cmtt/m/n/10 https : / / www . kaggle . com / paultimothymooney /
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
+[10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
  (test.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
 Package rerunfilecheck Info: File `test.out' has not changed.
-(rerunfilecheck)             Checksum: B65F55261FD642E97E4C91F9D60C2055;1481.
+(rerunfilecheck)             Checksum: 2E2482B2BC314948CA0E90F0B4FC0155;1710.
 Package logreq Info: Writing requests to 'test.run.xml'.
 \openout1 = `test.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 322.
  ) 
 Here is how much of TeX's memory you used:
- 12882 strings out of 481212
- 229461 string characters out of 2906442
- 882573 words of memory out of 3000000
- 28253 multiletter control sequences out of 15000+200000
+ 12918 strings out of 481212
+ 230512 string characters out of 2906442
+ 882687 words of memory out of 3000000
+ 28277 multiletter control sequences out of 15000+200000
  539276 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,6n,45p,1532b,1294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,6n,45p,1532b,1263s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\asus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 000.pk><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -702,9 +722,9 @@ cmsy10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmti10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on test.pdf (10 pages, 532519 bytes).
+Output written on test.pdf (11 pages, 937262 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

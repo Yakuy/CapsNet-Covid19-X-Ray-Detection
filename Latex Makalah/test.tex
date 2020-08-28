@@ -78,7 +78,7 @@
    	\item Berbeda dengan CT Scan, terdapat alat-alat pengambil gambar X-Ray portable sehingga tes dapat dilakukan di ruangan-ruangan isolasi. Hal ini menyebabkan kurangnya penggunaan alat-alat protektif dan mengurangi risiko infeksi tersebar ke pasien-pasien lain di rumah sakit.
    \end{enumerate}
  
-   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Sumber kedua adalah dari COVID-19 Chest X-Ray dataset (2020) milik Bachir \cite{bachir_2} yang berisi 357 gambar X-Ray dada yang terinfeksi COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
+   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Paul Mooney mendapatkan data tersebut dari \textit{paper} "Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification" karya Kermany, D., Zhang, K., dan Goldbaum, M. \cite{kermany}.Sumber kedua adalah dari \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 884 gambar X-Ray dada pasien dengan penyakit paru-paru termasuk COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
    
    \section{Tujuan dan Manfaat}
    Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
@@ -92,19 +92,59 @@
    
    \begin{itemize}
    	\item Makalah ini akan membahas eksplorasi metadata dan penyusunan model untuk mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien\cite{cohen}.
-   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} dan COVID-19 Chest X-Ray dataset (2020) milik Bachir \cite{bachir_2}.
+   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P, dan Dao, L. \cite{cohen}.
    	\item Jenis penyakit yang akan diklasifikasi dibatasi pada COVID-19 dan Pneumonia saja.
    	\item Metode penambangan data yang akan kami gunakan adalah Capsule Networks (CapsNets).
    \end{itemize}
 
    \section{Metode Penambangan Data}
     \subsection{Perangkat Uji Coba}
-    Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. Library-library yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
+    Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. \textit{Library-library} yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
     
     \subsection{Dataset}
+    Dataset yang akan kami gunakan adalah Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 884 gambar X-Ray dada pasien COVID-19. Berikut adalah contoh dari gambar yang terdapat pada Kaggle Chest X-Ray Images (Pneumonia) dataset :
     
-    
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=400px]{/contoh dataset/pneumonia.png}
+    \end{figure} 
+
+	\par
+	Gambar-gambar X-Ray dada pada Kaggle Chest X-Ray Images (Pneumonia) dataset dipisah menjadi tiga kelas, yaitu \textit{Normal}, \textit{Bacterial Pneumonia}, dan \textit{Viral Pneumonia}. Untuk memenuhi tujuan dari makalah ini, kami tidak perlu membedakan antara \textit{Bacterial Pneumonia} dan \textit{Viral Pneumonia}, sehingga kami menggabungkan kedua kelas tersebut menjadi satu kelas \textit{Pneumonia}.
+	\par
+	Berikut adalah contoh dari gambar yang terdapat pada Covid-19 Image Data Collection :
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=400px]{/contoh dataset/covid.png}
+	\end{figure}   
+	    
+	\par
+	
+	
     \subsection{Metode Prapemrosesan}
+    Prapemrosesan adalah semua transformasi yang diaplikasikan ke data mentah sebagai bentuk persiapan untuk dimasukkan ke algoritma pembelajaran mesin. Prapemrosesan citra mungkin memiliki efek positif pada kualitas ekstraksi fitur dan hasil analisis gambar \cite{krig}. Pelatihan pada algoritma pembelajaran dengan citra mentah tanpa adanya prapemrosesan akan menyebabkan kinerja klasifikasi yang buruk \cite{pal}.
+    	\subsubsection{Konversi ke RGB}
+    	RGB (\textit{Red, Green, Blue}) adalah model warna aditif dimana warna merah, hijau, dan biru ditambahkan bersama dengan berbagai cara untuk mereproduksikan sejumlah besar warna \cite{robert}. Tujuan utama model warna RGB adalah untuk mendeteksi, merepresentasikan, dan menampilkan gambar-gambar di sistem-sistem elektronik.
+    	\par
+    	Transformasi pertama yang kami lakukan terhadap gambar-gambar masukan adalah mengkonversi model warna gambar menjadi RGB. Konversi tersebut perlu dilakukan model CapsNet mengambil masukan gambar dengan tiga \textit{channel} warna : merah, hijau, dan biru. Transformasi dilakukan dengan fungsi \textit{convert} pada \textit{library} python PIL yang mengubah gambar dengan \textit{channel} warna RGBA atau \textit{greyscale} menjadi RGB.  
+    	
+    	\subsubsection{Resizing}
+    	\textit{Resizing} adalah proses dalam prapemrosesan citra untuk	memastikan bahwa gambar memiliki ukuran yang sama. Hal ini perlu dilakukan sebab gambar-gambar pada data latihan dan data ujian memiliki ukuran yang berbeda-beda. Metode klasifikasi yang digunakan pada makalah ini mengharuskan gambar masukan memiliki ukuran yang sama. Gambar masukan dipotong ukurannya dengan ukuran panjang dan lebar sebesar (224, 224).
+    	
+    	\subsubsection{Konversi ke PyTorch Tensor}
+    	PyTorch \textit{Tensor} adalah matriks berdimensi banyak yang mengandung elemen-elemen dengan tipe data yang sama. PyTorch \textit{Tensor} memiliki banyak kemiripan dengan numpy array; keduanya adalah array n-dimensional generik untuk digunakan untuk komputasi numerik. Perbedaan utamanya adalah PyTorch \textit{Tensor} dapat dijalankan pada CPU atau GPU.
+    	\par
+    	Model yang digunakan pada makalah ini dijalankan menggunakan GPU, sehingga mengharuskan gambar masukan masuk dalam bentuk PyTorch \textit{Tensor}. Gambar masukan yang masih dalam model warna RGB dikonversi menjadi PyTorch \textit{Tensor} dengan fungsi torchvision.transforms.ToTensor(). 
+    	
+    	\par
+    	Berikut adalah hasil dari proses prapemrosesan :
+    	\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=400px]{/contoh dataset/preprocessed.png}
+    	\end{figure} 
+    	
+    
     \subsection{CapsNet}
 	   	\subsubsection{Introduksi CapsNet}
 	   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. 
@@ -233,7 +273,6 @@
    	\begin{equation}
    		F-measure(Fm) = \frac{2 * p * r}{p + r}
    	\end{equation}
-   	
    	
    \section{Desain dan Implementasi Penambangan Data}
    \section{Analisis}

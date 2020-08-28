@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.14
 [0] Config.pm:307> INFO - Logfile is 'test.blg'
-[142] biber-MSWIN64:322> INFO - === 
-[257] Biber.pm:415> INFO - Reading 'test.bcf'
-[374] Biber.pm:943> INFO - Found 8 citekeys in bib section 0
-[395] Biber.pm:4256> INFO - Processing section 0
-[395] Utils.pm:75> INFO - Globbing data source 'daftar_pustaka.bib'
-[421] Utils.pm:91> INFO - Globbed data source 'daftar_pustaka.bib' to daftar_pustaka.bib
-[488] Biber.pm:4455> INFO - Looking for bibtex format file 'daftar_pustaka.bib' for section 0
-[497] bibtex.pm:1653> INFO - LaTeX decoding ...
-[520] bibtex.pm:1471> INFO - Found BibTeX data source 'daftar_pustaka.bib'
-[668] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[668] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[668] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[668] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[726] bbl.pm:652> INFO - Writing 'test.bbl' with encoding 'UTF-8'
-[731] bbl.pm:755> INFO - Output to test.bbl
+[119] biber-MSWIN64:322> INFO - === 
+[150] Biber.pm:415> INFO - Reading 'test.bcf'
+[332] Biber.pm:943> INFO - Found 11 citekeys in bib section 0
+[360] Biber.pm:4256> INFO - Processing section 0
+[360] Utils.pm:75> INFO - Globbing data source 'daftar_pustaka.bib'
+[374] Utils.pm:91> INFO - Globbed data source 'daftar_pustaka.bib' to daftar_pustaka.bib
+[400] Biber.pm:4455> INFO - Looking for bibtex format file 'daftar_pustaka.bib' for section 0
+[406] bibtex.pm:1653> INFO - LaTeX decoding ...
+[447] bibtex.pm:1471> INFO - Found BibTeX data source 'daftar_pustaka.bib'
+[645] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[645] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[645] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[645] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[673] bbl.pm:652> INFO - Writing 'test.bbl' with encoding 'UTF-8'
+[685] bbl.pm:755> INFO - Output to test.bbl
