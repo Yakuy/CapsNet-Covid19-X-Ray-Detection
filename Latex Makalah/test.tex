@@ -163,7 +163,16 @@
     	
     	\subsubsection{Resizing}
     	\textit{Resizing} adalah proses dalam prapemrosesan citra untuk	memastikan bahwa gambar memiliki ukuran yang sama. Hal ini perlu dilakukan sebab gambar-gambar pada data latihan dan data ujian memiliki ukuran yang berbeda-beda. Metode klasifikasi yang digunakan pada makalah ini mengharuskan gambar masukan memiliki ukuran yang sama. Gambar masukan dipotong ukurannya dengan ukuran panjang dan lebar sebesar (224, 224).
-    	
+		
+		\subsubsection{Normalisasi}
+		Normalisasi adalah proses yang mengubah kisaran intensitas pixel dan memastikan setiap patameter \textit{input} memiliki ditribusi yang serupa. 
+		Tujuan dari normalisasi pada gambar adalah untuk membuat gambar lebih akrab atau terlihat normal bagi indra manusia.\par
+		Saat kami melakukan train model, gambar yang di normalisasi membuat model tidak bisa membedakan gambar dan membuat loss menjadi tinggi. Hal ini terjadi karena 
+		CapsNet memiliki keunggulan dapat menyimpan data positional gambar, maka CapsNet memiliki kemampuan baik ketika gambar terkena transformasi affine atau 
+		transformasi yang dapat mengakibatkan perubahan.\par
+		Ini dapat ditunjukan ketika terjadi transformasi normalisasi CNNs mendapatkan keuntungan sedangkan CapsNet tidak diuntungkan. Jadi kami berkesimpulan
+		bahwa normalisasi pada model dalam makalah ini tidak dapat membantu.\par
+
     	\subsubsection{Konversi ke PyTorch Tensor}
     	PyTorch \textit{Tensor} adalah matriks berdimensi banyak yang mengandung elemen-elemen dengan tipe data yang sama. PyTorch \textit{Tensor} memiliki banyak kemiripan dengan numpy array; keduanya adalah array n-dimensional generik untuk digunakan untuk komputasi numerik. Perbedaan utamanya adalah PyTorch \textit{Tensor} dapat dijalankan pada CPU atau GPU.
     	\par
@@ -174,9 +183,8 @@
     	\begin{figure}[H]
     		\centering
     		\includegraphics[width=400px]{/contoh dataset/preprocessed.png}
-    	\end{figure} 
-    	
-    
+		\end{figure} 
+
     \subsection{CapsNet}
 	   	\subsubsection{Introduksi CapsNet}
 	   	CapsNet (Capsule Neural Network) adalah sistem pembelajaran mesin bertipe \textit{Artificial Neural Network} yang dapat memodelkan hubungan-hubungan bersifat hierarkis. Pendekatan ini dikembangkan dengan mengikuti organisasi syaraf biologis. Perbedaan CapsNet dengan \textit{Convolutional Neural Network} (CNN) biasa adalah penambahan struktur \textit{capsule}, dimana \textit{capsule} dengan tingkat lebih tinggi akan menggunakan kembali keluaran dari beberapa \textit{capsule} tingkat rendah untuk menghasilkan representasi informasi yang lebih stabil. Keluaran dari CapsNet adalah vektor berisi probabilitas dan \textit{pose} (kombinasi dari posisi dan orientasi) dari sebuah observasi. 
