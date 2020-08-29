@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  28 AUG 2020 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  29 AUG 2020 15:19
 entering extended mode
 **./test.tex
 (test.tex
@@ -202,16 +202,360 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.s
+ty
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
+common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen149
+\pgfutil@tempdimb=\dimen150
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
+common-lists.tex))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
+latex.def
+\pgfutil@abb=\box47
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.c
+ode.tex
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.s
+ty
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.s
+ty
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
+code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysf
+iltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen151
+\pgf@y=\dimen152
+\pgf@xa=\dimen153
+\pgf@ya=\dimen154
+\pgf@xb=\dimen155
+\pgf@yb=\dimen156
+\pgf@xc=\dimen157
+\pgf@yc=\dimen158
+\pgf@xd=\dimen159
+\pgf@yd=\dimen160
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count190
+\c@pgf@countb=\count191
+\c@pgf@countc=\count192
+\c@pgf@countd=\count193
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count194
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cf
+g
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+-pdftex.def
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+-common-pdf.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+softpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count195
+\pgfsyssoftpath@bigbuffer@items=\count196
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+protocol.code.tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
+tex
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.c
+ode.tex
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.c
+ode.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser
+.code.tex
+\pgfmath@dimen=\dimen161
+\pgfmath@count=\count197
+\pgfmath@box=\box48
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.code.tex
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.basic.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.trigonometric.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.random.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.comparison.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.base.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.round.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.misc.code.tex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.integerarithmetics.code.tex)))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.
+code.tex
+\c@pgfmathroundto@lastzeros=\count198
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.t
+ex)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+points.code.tex
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen162
+\pgf@picmaxx=\dimen163
+\pgf@picminy=\dimen164
+\pgf@picmaxy=\dimen165
+\pgf@pathminx=\dimen166
+\pgf@pathmaxx=\dimen167
+\pgf@pathminy=\dimen168
+\pgf@pathmaxy=\dimen169
+\pgf@xx=\dimen170
+\pgf@xy=\dimen171
+\pgf@yx=\dimen172
+\pgf@yy=\dimen173
+\pgf@zx=\dimen174
+\pgf@zy=\dimen175
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen176
+\pgf@path@lasty=\dimen177
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathusage.code.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen178
+\pgf@shorten@start@additional=\dimen179
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+scopes.code.tex
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box49
+\pgf@hbox=\box50
+\pgf@layerbox@main=\box51
+\pgf@picture@serial@count=\count199
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+graphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen180
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+transformations.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen181
+\pgf@pt@y=\dimen182
+\pgf@pt@temp=\dimen183
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+quick.code.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+objects.code.tex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+arrows.code.tex
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen184
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+shade.code.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen185
+\pgf@sys@shading@range@num=\count266
+\pgf@shadingcount=\count267
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+image.code.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+external.code.tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box52
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+layers.code.tex
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+transparency.code.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+patterns.code.tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+rdf.code.tex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodules
+hapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box53
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulep
+lot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
+p-version-0-65.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen186
+\pgf@nodesepend=\dimen187
+)
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
+p-version-1-18.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.st
+y
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
+code.tex))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
+tex))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.c
+ode.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
+tex)
+\pgffor@iter=\dimen188
+\pgffor@skip=\dimen189
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+\tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+ryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count268
+\pgfplotmarksize=\dimen190
+)
+\tikz@lastx=\dimen191
+\tikz@lasty=\dimen192
+\tikz@lastxsaved=\dimen193
+\tikz@lastysaved=\dimen194
+\tikz@lastmovetox=\dimen195
+\tikz@lastmovetoy=\dimen196
+\tikzleveldistance=\dimen197
+\tikzsiblingdistance=\dimen198
+\tikz@figbox=\box54
+\tikz@figbox@bg=\box55
+\tikz@tempbox=\box56
+\tikz@tempbox@bg=\box57
+\tikztreelevel=\count269
+\tikznumberofchildren=\count270
+\tikznumberofcurrentchild=\count271
+\tikz@fig@count=\count272
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulem
+atrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count273
+\pgfmatrixcurrentcolumn=\count274
+\pgf@matrix@numberofcolumns=\count275
+)
+\tikz@expandcount=\count276
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\p
+gflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+ryarrows.code.tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen199
+))
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
 
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/07/15 v2.5i e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count190
+\etb@tempcnta=\count277
 )
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count191
+\lrq@indent=\count278
 
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -219,47 +563,47 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count192
-\c@listtotal=\count193
-\c@listcount=\count194
-\c@liststart=\count195
-\c@liststop=\count196
-\c@citecount=\count197
-\c@citetotal=\count198
-\c@multicitecount=\count199
-\c@multicitetotal=\count266
-\c@instcount=\count267
-\c@maxnames=\count268
-\c@minnames=\count269
-\c@maxitems=\count270
-\c@minitems=\count271
-\c@citecounter=\count272
-\c@maxcitecounter=\count273
-\c@savedcitecounter=\count274
-\c@uniquelist=\count275
-\c@uniquename=\count276
-\c@refsection=\count277
-\c@refsegment=\count278
-\c@maxextratitle=\count279
-\c@maxextratitleyear=\count280
-\c@maxextraname=\count281
-\c@maxextradate=\count282
-\c@maxextraalpha=\count283
-\c@abbrvpenalty=\count284
-\c@highnamepenalty=\count285
-\c@lownamepenalty=\count286
-\c@maxparens=\count287
-\c@parenlevel=\count288
-\blx@tempcnta=\count289
-\blx@tempcntb=\count290
-\blx@tempcntc=\count291
-\blx@maxsection=\count292
-\blx@maxsegment@0=\count293
-\blx@notetype=\count294
-\blx@parenlevel@text=\count295
-\blx@parenlevel@foot=\count296
-\blx@sectionciteorder@0=\count297
-\blx@entrysetcounter=\count298
+\c@tabx@nest=\count279
+\c@listtotal=\count280
+\c@listcount=\count281
+\c@liststart=\count282
+\c@liststop=\count283
+\c@citecount=\count284
+\c@citetotal=\count285
+\c@multicitecount=\count286
+\c@multicitetotal=\count287
+\c@instcount=\count288
+\c@maxnames=\count289
+\c@minnames=\count290
+\c@maxitems=\count291
+\c@minitems=\count292
+\c@citecounter=\count293
+\c@maxcitecounter=\count294
+\c@savedcitecounter=\count295
+\c@uniquelist=\count296
+\c@uniquename=\count297
+\c@refsection=\count298
+\c@refsegment=\count299
+\c@maxextratitle=\count300
+\c@maxextratitleyear=\count301
+\c@maxextraname=\count302
+\c@maxextradate=\count303
+\c@maxextraalpha=\count304
+\c@abbrvpenalty=\count305
+\c@highnamepenalty=\count306
+\c@lownamepenalty=\count307
+\c@maxparens=\count308
+\c@parenlevel=\count309
+\blx@tempcnta=\count310
+\blx@tempcntb=\count311
+\blx@tempcntc=\count312
+\blx@maxsection=\count313
+\blx@maxsegment@0=\count314
+\blx@notetype=\count315
+\blx@parenlevel@text=\count316
+\blx@parenlevel@foot=\count317
+\blx@sectionciteorder@0=\count318
+\blx@entrysetcounter=\count319
 \labelnumberwidth=\skip50
 \labelalphawidth=\skip51
 \biblabelsep=\skip52
@@ -268,12 +612,12 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibinitsep=\skip55
 \bibparsep=\skip56
 \bibhang=\skip57
-\blx@bcfin=\read2
-\blx@bcfout=\write3
+\blx@bcfin=\read3
+\blx@bcfout=\write4
 \blx@langwohyphens=\language79
-\c@mincomprange=\count299
-\c@maxcomprange=\count300
-\c@mincompwidth=\count301
+\c@mincomprange=\count320
+\c@maxcomprange=\count321
+\c@mincompwidth=\count322
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -282,74 +626,74 @@ File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count302
-\c@savedafterword=\count303
-\c@annotator=\count304
-\c@savedannotator=\count305
-\c@author=\count306
-\c@savedauthor=\count307
-\c@bookauthor=\count308
-\c@savedbookauthor=\count309
-\c@commentator=\count310
-\c@savedcommentator=\count311
-\c@editor=\count312
-\c@savededitor=\count313
-\c@editora=\count314
-\c@savededitora=\count315
-\c@editorb=\count316
-\c@savededitorb=\count317
-\c@editorc=\count318
-\c@savededitorc=\count319
-\c@foreword=\count320
-\c@savedforeword=\count321
-\c@holder=\count322
-\c@savedholder=\count323
-\c@introduction=\count324
-\c@savedintroduction=\count325
-\c@namea=\count326
-\c@savednamea=\count327
-\c@nameb=\count328
-\c@savednameb=\count329
-\c@namec=\count330
-\c@savednamec=\count331
-\c@translator=\count332
-\c@savedtranslator=\count333
-\c@shortauthor=\count334
-\c@savedshortauthor=\count335
-\c@shorteditor=\count336
-\c@savedshorteditor=\count337
-\c@labelname=\count338
-\c@savedlabelname=\count339
-\c@institution=\count340
-\c@savedinstitution=\count341
-\c@lista=\count342
-\c@savedlista=\count343
-\c@listb=\count344
-\c@savedlistb=\count345
-\c@listc=\count346
-\c@savedlistc=\count347
-\c@listd=\count348
-\c@savedlistd=\count349
-\c@liste=\count350
-\c@savedliste=\count351
-\c@listf=\count352
-\c@savedlistf=\count353
-\c@location=\count354
-\c@savedlocation=\count355
-\c@organization=\count356
-\c@savedorganization=\count357
-\c@origlocation=\count358
-\c@savedoriglocation=\count359
-\c@origpublisher=\count360
-\c@savedorigpublisher=\count361
-\c@publisher=\count362
-\c@savedpublisher=\count363
-\c@language=\count364
-\c@savedlanguage=\count365
-\c@origlanguage=\count366
-\c@savedoriglanguage=\count367
-\c@pageref=\count368
-\c@savedpageref=\count369
+\c@afterword=\count323
+\c@savedafterword=\count324
+\c@annotator=\count325
+\c@savedannotator=\count326
+\c@author=\count327
+\c@savedauthor=\count328
+\c@bookauthor=\count329
+\c@savedbookauthor=\count330
+\c@commentator=\count331
+\c@savedcommentator=\count332
+\c@editor=\count333
+\c@savededitor=\count334
+\c@editora=\count335
+\c@savededitora=\count336
+\c@editorb=\count337
+\c@savededitorb=\count338
+\c@editorc=\count339
+\c@savededitorc=\count340
+\c@foreword=\count341
+\c@savedforeword=\count342
+\c@holder=\count343
+\c@savedholder=\count344
+\c@introduction=\count345
+\c@savedintroduction=\count346
+\c@namea=\count347
+\c@savednamea=\count348
+\c@nameb=\count349
+\c@savednameb=\count350
+\c@namec=\count351
+\c@savednamec=\count352
+\c@translator=\count353
+\c@savedtranslator=\count354
+\c@shortauthor=\count355
+\c@savedshortauthor=\count356
+\c@shorteditor=\count357
+\c@savedshorteditor=\count358
+\c@labelname=\count359
+\c@savedlabelname=\count360
+\c@institution=\count361
+\c@savedinstitution=\count362
+\c@lista=\count363
+\c@savedlista=\count364
+\c@listb=\count365
+\c@savedlistb=\count366
+\c@listc=\count367
+\c@savedlistc=\count368
+\c@listd=\count369
+\c@savedlistd=\count370
+\c@liste=\count371
+\c@savedliste=\count372
+\c@listf=\count373
+\c@savedlistf=\count374
+\c@location=\count375
+\c@savedlocation=\count376
+\c@organization=\count377
+\c@savedorganization=\count378
+\c@origlocation=\count379
+\c@savedoriglocation=\count380
+\c@origpublisher=\count381
+\c@savedorigpublisher=\count382
+\c@publisher=\count383
+\c@savedpublisher=\count384
+\c@language=\count385
+\c@savedlanguage=\count386
+\c@origlanguage=\count387
+\c@savedoriglanguage=\count388
+\c@pageref=\count389
+\c@savedpageref=\count390
 \shorthandwidth=\skip58
 \shortjournalwidth=\skip59
 \shortserieswidth=\skip60
@@ -374,19 +718,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-\c@textcitecount=\count370
-\c@textcitetotal=\count371
-\c@textcitemaxnames=\count372
-\c@biburlbigbreakpenalty=\count373
-\c@biburlbreakpenalty=\count374
-\c@biburlnumpenalty=\count375
-\c@biburlucpenalty=\count376
-\c@biburllcpenalty=\count377
+\c@textcitecount=\count391
+\c@textcitetotal=\count392
+\c@textcitemaxnames=\count393
+\c@biburlbigbreakpenalty=\count394
+\c@biburlbreakpenalty=\count395
+\c@biburlnumpenalty=\count396
+\c@biburlucpenalty=\count397
+\c@biburllcpenalty=\count398
 \biburlbigskip=\muskip17
 \biburlnumskip=\muskip18
 \biburlucskip=\muskip19
 \biburllcskip=\muskip20
-\c@smartand=\count378
+\c@smartand=\count399
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -399,8 +743,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bb
 x
 File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count379
-\c@bbx:relatedtotal=\count380
+\c@bbx:relatedcount=\count400
+\c@bbx:relatedtotal=\count401
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -424,33 +768,33 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
  (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 ))
-\@quotelevel=\count381
-\@quotereset=\count382
+\@quotelevel=\count402
+\@quotereset=\count403
 
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfm
 ode.def
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count383
-\l__pdf_internal_box=\box47
+\l__kernel_color_stack_int=\count404
+\l__pdf_internal_box=\box58
 ) (test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -490,17 +834,17 @@ LaTeX Font Info:    ... okay on input line 19.
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count384
-\scratchdimen=\dimen149
-\scratchbox=\box48
-\nofMPsegments=\count385
-\nofMParguments=\count386
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count387
-\MPscratchDim=\dimen150
-\MPnumerator=\count388
-\makeMPintoPDFobject=\count389
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count405
+\scratchdimen=\dimen256
+\scratchbox=\box59
+\nofMPsegments=\count406
+\nofMParguments=\count407
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count408
+\MPscratchDim=\dimen257
+\MPnumerator=\count409
+\makeMPintoPDFobject=\count410
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -515,8 +859,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 )
-\AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring OFF on input line 19.
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 30.
  (C:\Users\asus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -527,15 +871,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 estring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count390
+\c@section@level=\count411
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
  (test.out) (test.out)
-\@outlinefile=\write4
-\openout4 = `test.out'.
+\@outlinefile=\write5
+\openout5 = `test.out'.
 
+ ABD: EveryShipout initializing macros
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -545,17 +890,17 @@ File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `test.bcf'.
+\openout4 = `test.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'test.bbl' found.
  (test.bbl)
-Package biblatex Info: Reference section=0 on input line 19.
-Package biblatex Info: Reference segment=0 on input line 19.
-<./images//logo/Lambang UGM.jpg, id=107, 341.3553pt x 341.3553pt>
+Package biblatex Info: Reference section=0 on input line 30.
+Package biblatex Info: Reference segment=0 on input line 30.
+<./images//logo/Lambang UGM.jpg, id=114, 341.3553pt x 341.3553pt>
 File: ./images//logo/Lambang UGM.jpg Graphic file (type jpg)
 <use ./images//logo/Lambang UGM.jpg>
-Package pdftex.def Info: ./images//logo/Lambang UGM.jpg  used on input line 33.
+Package pdftex.def Info: ./images//logo/Lambang UGM.jpg  used on input line 44.
 
 (pdftex.def)             Requested size: 200.75073pt x 200.752pt.
  [1
@@ -563,148 +908,152 @@ Package pdftex.def Info: ./images//logo/Lambang UGM.jpg  used on input line 33.
 {C:/Users/asus/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./images//logo/L
 ambang UGM.jpg>] (test.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 11.
+(Font)              <7> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 11.
+(Font)              <5> on input line 5.
 )
-\tf@toc=\write5
-\openout5 = `test.toc'.
+\tf@toc=\write6
+\openout6 = `test.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67   \newpage
-                [1] [2]
-<./images//contoh dataset/pneumonia.png, id=172, 594.22pt x 195.73125pt>
+l.78   \newpage
+                [1] [2] [3]
+<./images//contoh dataset/pneumonia.png, id=184, 594.22pt x 195.73125pt>
 File: ./images//contoh dataset/pneumonia.png Graphic file (type png)
 <use ./images//contoh dataset/pneumonia.png>
 Package pdftex.def Info: ./images//contoh dataset/pneumonia.png  used on input 
-line 109.
+line 120.
 (pdftex.def)             Requested size: 401.50146pt x 132.25624pt.
-<./images//contoh dataset/covid.png, id=174, 936.49875pt x 229.85875pt>
+<./images//contoh dataset/covid.png, id=186, 936.49875pt x 229.85875pt>
 File: ./images//contoh dataset/covid.png Graphic file (type png)
 <use ./images//contoh dataset/covid.png>
 Package pdftex.def Info: ./images//contoh dataset/covid.png  used on input line
- 119.
+ 130.
 (pdftex.def)             Requested size: 401.50146pt x 98.5462pt.
- [3 <./images//contoh dataset/pneumonia.png> <./images//contoh dataset/covid.pn
+ [4 <./images//contoh dataset/pneumonia.png> <./images//contoh dataset/covid.pn
 g>]
-<./images//contoh dataset/preprocessed.png, id=186, 869.2475pt x 200.75pt>
+<./images//contoh dataset/preprocessed.png, id=196, 869.2475pt x 200.75pt>
 File: ./images//contoh dataset/preprocessed.png Graphic file (type png)
 <use ./images//contoh dataset/preprocessed.png>
 Package pdftex.def Info: ./images//contoh dataset/preprocessed.png  used on inp
-ut line 144.
+ut line 176.
 (pdftex.def)             Requested size: 401.50146pt x 92.72595pt.
 
-Overfull \hbox (1.82285pt too wide) in paragraph at lines 150--151
+Overfull \hbox (1.82285pt too wide) in paragraph at lines 182--183
 \OT1/cmr/m/n/10 yang da-pat mem-o-d-elkan hubungan-hubungan bersi-fat hi-er-ark
 is. Pen-dekatan ini dikem-bangkan den-gan mengikuti
  []
 
-[4 <./images//contoh dataset/preprocessed.png>] [5]
+[5 <./images//contoh dataset/preprocessed.png>] [6]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 207.
-<./images//rumus/rumus_loss.png, id=211, 590.70688pt x 56.21pt>
+(Font)              <14.4> on input line 239.
+<./images//rumus/rumus_loss.png, id=224, 590.70688pt x 56.21pt>
 File: ./images//rumus/rumus_loss.png Graphic file (type png)
 <use ./images//rumus/rumus_loss.png>
-Package pdftex.def Info: ./images//rumus/rumus_loss.png  used on input line 227
+Package pdftex.def Info: ./images//rumus/rumus_loss.png  used on input line 259
 .
 (pdftex.def)             Requested size: 451.68915pt x 42.98248pt.
-
-Overfull \hbox (3.47374pt too wide) in paragraph at lines 233--234
+ [7]
+Overfull \hbox (3.47374pt too wide) in paragraph at lines 265--266
 []\OT1/cmr/m/it/10 Loss \OT1/cmr/m/n/10 tipe ke-dua adalah \OT1/cmr/m/it/10 re-
 con-struc-tion loss\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Re-con-struc-tion loss \O
 T1/cmr/m/n/10 men-dorong entitas-entitas un-tuk menyandikan
  []
 
-[6 <./images//rumus/rumus_loss.png>]
-<./images//grafik eda/gender.png, id=224, 391.4625pt x 264.99pt>
+[8 <./images//rumus/rumus_loss.png>]
+Overfull \hbox (41.26443pt too wide) in paragraph at lines 358--359
+ [] 
+ []
+
+[9]
+<./images//grafik eda/gender.png, id=253, 391.4625pt x 264.99pt>
 File: ./images//grafik eda/gender.png Graphic file (type png)
 <use ./images//grafik eda/gender.png>
-Package pdftex.def Info: ./images//grafik eda/gender.png  used on input line 28
-4.
+Package pdftex.def Info: ./images//grafik eda/gender.png  used on input line 36
+7.
 (pdftex.def)             Requested size: 301.1261pt x 203.84885pt.
- [7]
-<./images//grafik eda/umur.png, id=238, 385.44pt x 279.0425pt>
+<./images//grafik eda/umur.png, id=254, 385.44pt x 279.0425pt>
 File: ./images//grafik eda/umur.png Graphic file (type png)
 <use ./images//grafik eda/umur.png>
-Package pdftex.def Info: ./images//grafik eda/umur.png  used on input line 290.
+Package pdftex.def Info: ./images//grafik eda/umur.png  used on input line 373.
 
 (pdftex.def)             Requested size: 200.75073pt x 145.33286pt.
-<./images//grafik eda/umur2.png, id=239, 392.46625pt x 279.0425pt>
+<./images//grafik eda/umur2.png, id=255, 392.46625pt x 279.0425pt>
 File: ./images//grafik eda/umur2.png Graphic file (type png)
 <use ./images//grafik eda/umur2.png>
-Package pdftex.def Info: ./images//grafik eda/umur2.png  used on input line 291
+Package pdftex.def Info: ./images//grafik eda/umur2.png  used on input line 374
 .
 (pdftex.def)             Requested size: 200.75073pt x 142.73557pt.
-<./images//grafik eda/suhu.png, id=240, 393.47pt x 279.0425pt>
+<./images//grafik eda/suhu.png, id=256, 393.47pt x 279.0425pt>
 File: ./images//grafik eda/suhu.png Graphic file (type png)
 <use ./images//grafik eda/suhu.png>
-Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 297.
+Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 380.
 
 (pdftex.def)             Requested size: 301.1261pt x 213.55196pt.
- [8 <./images//grafik eda/gender.png> <./images//grafik eda/umur.png> <./images
-//grafik eda/umur2.png> <./images//grafik eda/suhu.png>]
-<./images//grafik eda/po2.png, id=249, 379.4175pt x 280.04625pt>
+ [10 <./images//grafik eda/gender.png> <./images//grafik eda/umur.png> <./image
+s//grafik eda/umur2.png> <./images//grafik eda/suhu.png>]
+<./images//grafik eda/po2.png, id=265, 379.4175pt x 280.04625pt>
 File: ./images//grafik eda/po2.png Graphic file (type png)
 <use ./images//grafik eda/po2.png>
-Package pdftex.def Info: ./images//grafik eda/po2.png  used on input line 303.
+Package pdftex.def Info: ./images//grafik eda/po2.png  used on input line 386.
 (pdftex.def)             Requested size: 200.75073pt x 148.17595pt.
-<./images//grafik eda/leukosit.png, id=250, 385.44pt x 280.04625pt>
+<./images//grafik eda/leukosit.png, id=266, 385.44pt x 280.04625pt>
 File: ./images//grafik eda/leukosit.png Graphic file (type png)
 <use ./images//grafik eda/leukosit.png>
 Package pdftex.def Info: ./images//grafik eda/leukosit.png  used on input line 
-304.
+387.
 (pdftex.def)             Requested size: 200.75073pt x 145.85562pt.
-<./images//grafik eda/limfosit.png, id=251, 373.395pt x 280.04625pt>
+<./images//grafik eda/limfosit.png, id=267, 373.395pt x 280.04625pt>
 File: ./images//grafik eda/limfosit.png Graphic file (type png)
 <use ./images//grafik eda/limfosit.png>
 Package pdftex.def Info: ./images//grafik eda/limfosit.png  used on input line 
-305.
+388.
 (pdftex.def)             Requested size: 200.75073pt x 150.56036pt.
-<./images//grafik eda/neutrofil.png, id=252, 381.425pt x 280.04625pt>
+<./images//grafik eda/neutrofil.png, id=268, 381.425pt x 280.04625pt>
 File: ./images//grafik eda/neutrofil.png Graphic file (type png)
 <use ./images//grafik eda/neutrofil.png>
 Package pdftex.def Info: ./images//grafik eda/neutrofil.png  used on input line
- 306.
+ 389.
 (pdftex.def)             Requested size: 200.75073pt x 147.39397pt.
-<./images//grafik eda/correlation.png, id=253, 423.5825pt x 332.24126pt>
+<./images//grafik eda/correlation.png, id=269, 423.5825pt x 332.24126pt>
 File: ./images//grafik eda/correlation.png Graphic file (type png)
 <use ./images//grafik eda/correlation.png>
 Package pdftex.def Info: ./images//grafik eda/correlation.png  used on input li
-ne 312.
+ne 395.
 (pdftex.def)             Requested size: 301.1261pt x 236.19711pt.
- [9 <./images//grafik eda/po2.png> <./images//grafik eda/leukosit.png> <./image
-s//grafik eda/limfosit.png> <./images//grafik eda/neutrofil.png> <./images//gra
-fik eda/correlation.png>]
-Overfull \hbox (36.9322pt too wide) in paragraph at lines 320--320
+ [11 <./images//grafik eda/po2.png> <./images//grafik eda/leukosit.png> <./imag
+es//grafik eda/limfosit.png> <./images//grafik eda/neutrofil.png> <./images//gr
+afik eda/correlation.png>] [12] [13]
+Overfull \hbox (36.9322pt too wide) in paragraph at lines 405--405
 []\OT1/cmr/m/n/10 P. Mooney. \OT1/cmr/m/it/10 Kag-gle chest x-ray im-ages (pneu
 -mo-nia) dataset\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : []$\OT1
 /cmtt/m/n/10 https : / / www . kaggle . com / paultimothymooney /
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
+[14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 407.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 407.
  (test.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 407.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 407.
 Package rerunfilecheck Info: File `test.out' has not changed.
-(rerunfilecheck)             Checksum: 2E2482B2BC314948CA0E90F0B4FC0155;1710.
+(rerunfilecheck)             Checksum: C24F46B1285B262FBE6B1796B1694745;1799.
 Package logreq Info: Writing requests to 'test.run.xml'.
 \openout1 = `test.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 322.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 407.
  ) 
 Here is how much of TeX's memory you used:
- 12918 strings out of 481212
- 230512 string characters out of 2906442
- 882687 words of memory out of 3000000
- 28277 multiletter control sequences out of 15000+200000
+ 24427 strings out of 481212
+ 482781 string characters out of 2906442
+ 1108825 words of memory out of 3000000
+ 39550 multiletter control sequences out of 15000+200000
  539276 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,6n,45p,1532b,1263s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,7n,60p,1532b,1263s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\asus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 000.pk><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -722,9 +1071,9 @@ cmsy10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmti10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on test.pdf (11 pages, 937262 bytes).
+Output written on test.pdf (15 pages, 945615 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 299 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,6 +11,17 @@
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=blue!30, text width=2cm]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{double-arrow} = [thick,<->,>=stealth]
+
 \usepackage[backend=biber]{biblatex}
 \addbibresource{daftar_pustaka.bib}
 \graphicspath{ {./images/} }
@@ -24,7 +35,7 @@
       {
       \huge \bfseries MAKALAH}\\
       [1cm]
-      {\LARGE Deteksi COVID-19 pada Dataset X-Ray Dada dengan Metode Capsule Networks (CapsNets)}\\
+      {\LARGE Deteksi COVID-19 pada Dataset X-Ray Dada dengan Metode Capsule Neural Network (CapsNet)}\\
           
       \vspace{2cm}
 
@@ -65,38 +76,38 @@
   \pagenumbering{arabic}
   \tableofcontents
   \newpage
-
-  \section{Latar Belakang}
-   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
-   \par
-   Jumlah alat testing yang terbatas membuat tidak mungkin setiap pasien dengan penyakit pernafasan untuk dites dengan teknik konvensional (RT-PCR) untuk mendeteksi COVID-19. Jumlah ruang di rumah sakit, jumlah ventilator, dan jumlah alat protektif (PPE) bagi tenaga medis sangat terbatas, sehingga perlu digunakan dengan seefisien mungkin. Untuk meningkatkan efisiensi penggunaan alat medis, sangat penting untuk dapat membedakan pasien dengan \textit{severe acute respiratory illness} (SARI) yang mungkin terinfeksi COVID-19. Oleh karena itu, kami mencoba menggunakan gambar X-Ray dada untuk mendeteksi infeksi COVID-19.
-   Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional \cite{mangal} :
-   
-   \begin{enumerate}
-   	\item Pengambilan gambar X-Ray lebih banyak digunakan dan lebih murah dibandingkan tes konvensional.
-   	\item Gambar X-Ray dapat dengan mudah ditransfer tanpa perlu ada alat transportasi dari tempat pengambilan gambar ke tempat analisis gambar, sehingga proses diagnostik dapat dilaksanakan dengan cepat.
-   	\item Berbeda dengan CT Scan, terdapat alat-alat pengambil gambar X-Ray portable sehingga tes dapat dilakukan di ruangan-ruangan isolasi. Hal ini menyebabkan kurangnya penggunaan alat-alat protektif dan mengurangi risiko infeksi tersebar ke pasien-pasien lain di rumah sakit.
-   \end{enumerate}
- 
-   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Paul Mooney mendapatkan data tersebut dari \textit{paper} "Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification" karya Kermany, D., Zhang, K., dan Goldbaum, M. \cite{kermany}.Sumber kedua adalah dari \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 884 gambar X-Ray dada pasien dengan penyakit paru-paru termasuk COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
-   
-   \section{Tujuan dan Manfaat}
-   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
-   \par
-   Perlu kami tekankan bahwa kami tidak mengusulkan penggunaan model ini untuk menggantikan metode tes diagnostik konvensional. Kami berharap bahwa model ini dapat bersifat saling melengkapi dengan tes konvensional, dimana hasil prediksi dari model dapat memastikan hasil dari tes konvensional atau menjadi metode alternatif bila tes konvensional tidak memungkinkan. 
-   \par
-   Tujuan kedua dari penambangan data yang kami lakukan adalah untuk mengeksplorasi metadata dari dataset yang tersedia melalui \textit{Exploratory Data Analysis}. Kami mencoba untuk menelusuri apa pengaruh unsur-unsur seperti jenis kelamin dan umur terhadap infeksi COVID-19. Kami berharap informasi yang dapat kami ekstraksi dapat bermanfaat dalam upaya pendeteksi dan pengendalian kasus COVID-19.
-   
-   \section{Batasan yang Digunakan}
-   Batasan masalah yang akan kami gunakan adalah sebagai berikut :
-   
-   \begin{itemize}
-   	\item Makalah ini akan membahas eksplorasi metadata dan penyusunan model untuk mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien\cite{cohen}.
-   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P, dan Dao, L. \cite{cohen}.
-   	\item Jenis penyakit yang akan diklasifikasi dibatasi pada COVID-19 dan Pneumonia saja.
-   	\item Metode penambangan data yang akan kami gunakan adalah Capsule Networks (CapsNets).
-   \end{itemize}
-
+  \section{Pendahuluan}
+	  \subsection{Latar Belakang}
+	   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
+	   \par
+	   Jumlah alat testing yang terbatas membuat tidak mungkin setiap pasien dengan penyakit pernafasan untuk dites dengan teknik konvensional (RT-PCR) untuk mendeteksi COVID-19. Jumlah ruang di rumah sakit, jumlah ventilator, dan jumlah alat protektif (PPE) bagi tenaga medis sangat terbatas, sehingga perlu digunakan dengan seefisien mungkin. Untuk meningkatkan efisiensi penggunaan alat medis, sangat penting untuk dapat membedakan pasien dengan \textit{severe acute respiratory illness} (SARI) yang mungkin terinfeksi COVID-19. Oleh karena itu, kami mencoba menggunakan gambar X-Ray dada untuk mendeteksi infeksi COVID-19 dengan metode CapsNet.
+	   Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional \cite{mangal} :
+	   
+	   \begin{enumerate}
+	   	\item Pengambilan gambar X-Ray lebih banyak digunakan dan lebih murah dibandingkan tes konvensional.
+	   	\item Gambar X-Ray dapat dengan mudah ditransfer tanpa perlu ada alat transportasi dari tempat pengambilan gambar ke tempat analisis gambar, sehingga proses diagnostik dapat dilaksanakan dengan cepat.
+	   	\item Berbeda dengan CT Scan, terdapat alat-alat pengambil gambar X-Ray portable sehingga tes dapat dilakukan di ruangan-ruangan isolasi. Hal ini menyebabkan kurangnya penggunaan alat-alat protektif dan mengurangi risiko infeksi tersebar ke pasien-pasien lain di rumah sakit.
+	   \end{enumerate}
+	 
+	   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Paul Mooney mendapatkan data tersebut dari \textit{paper} "Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification" karya Kermany, D., Zhang, K., dan Goldbaum, M. \cite{kermany}.Sumber kedua adalah dari \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 454 gambar X-Ray dada pasien dengan penyakit paru-paru termasuk COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
+	   
+	   \subsection{Tujuan dan Manfaat}
+	   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
+	   \par
+	   Perlu kami tekankan bahwa kami tidak mengusulkan penggunaan model ini untuk menggantikan metode tes diagnostik konvensional. Kami berharap bahwa model ini dapat bersifat saling melengkapi dengan tes konvensional, dimana hasil prediksi dari model dapat memastikan hasil dari tes konvensional atau menjadi metode alternatif bila tes konvensional tidak memungkinkan. 
+	   \par
+	   Tujuan kedua dari penambangan data yang kami lakukan adalah untuk mengeksplorasi metadata dari dataset yang tersedia melalui \textit{Exploratory Data Analysis}. Kami mencoba untuk menelusuri apa pengaruh unsur-unsur seperti jenis kelamin dan umur terhadap infeksi COVID-19. Kami berharap informasi yang dapat kami ekstraksi dapat bermanfaat dalam upaya pendeteksi dan pengendalian kasus COVID-19.
+	   
+	   \subsection{Batasan yang Digunakan}
+	   Batasan masalah yang akan kami gunakan adalah sebagai berikut :
+	   
+	   \begin{itemize}
+	   	\item Makalah ini akan membahas eksplorasi metadata dan penyusunan model untuk mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien\cite{cohen}.
+	   	\item Dataset yang akan digunakan dibatasi pada Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P, dan Dao, L. \cite{cohen}.
+	   	\item Jenis penyakit yang akan diklasifikasi dibatasi pada COVID-19 dan Pneumonia saja.
+	   	\item Metode penambangan data yang akan kami gunakan adalah Capsule Networks (CapsNets).
+	   \end{itemize}
+`  \newpage
    \section{Metode Penambangan Data}
     \subsection{Perangkat Uji Coba}
     Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. \textit{Library-library} yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
@@ -120,7 +131,28 @@
 	\end{figure}   
 	    
 	\par
-	
+	Gambar-gambar dari Kaggle Chest X-Ray Images (Pneumonia) dataset dan Covid-19 Image Data Collection disatukan menjadi dataset gabungan. Jumlah total gambar di dataset gabungan adalah 6310 : 1583 \textit{Normal Case}, 4273 \textit{Pneumonia Case}, dan 454 \textit{Covid Case}. Dataset gabungan dipisah menjadi 3 bagian (\textit{train, val, test}) dengan menggunakan metode \textit{stratified 
+	sampling}. Metode \textit{sampling} digunakan untuk memastikan adanya setiap kelas pada dataset baru yang 
+	akan diklasifikasi. Pembagian dataset dilakukan dengan  perbandingan \textit{train}:\textit{val}:\textit{test} = 6:2:2. \textit{Training set} (\textit{train})
+	adalah dataset untuk proses pembelajaran model, \textit{Validation set} (\textit{val}) adalah dataset yang digunakan 
+	untuk memberikan evaluasi tidak bias pada saat menyesuaikan hyperparameter dari model, dan \textit{Test 
+	set} (\textit{test}) adalah dataset terakhir dimana dataset ini hanya digunakan ketika melakukan pengujian 
+	akhir. Dataset-dataset tersebut dibuat dengan tujuan model tidak mengalami \textit{overfit} dan model dapat 
+	menggeneralisasi data lain diluar dataset yang ada dengan baik.
+
+   	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			& \textit{Normal Case} & \textit{Pneumonia Case} & \textit{Covid Case} \\
+			\hline
+			\textit{Train} & 950 & 2564 & 272 \\
+			\hline
+			\textit{Val} & 316 & 855 & 91 \\
+			\hline
+			\textit{Test} & 317 & 854 & 91 \\
+			\hline
+		\end{tabular}
+	\end{center}
 	
     \subsection{Metode Prapemrosesan}
     Prapemrosesan adalah semua transformasi yang diaplikasikan ke data mentah sebagai bentuk persiapan untuk dimasukkan ke algoritma pembelajaran mesin. Prapemrosesan citra mungkin memiliki efek positif pada kualitas ekstraksi fitur dan hasil analisis gambar \cite{krig}. Pelatihan pada algoritma pembelajaran dengan citra mentah tanpa adanya prapemrosesan akan menyebabkan kinerja klasifikasi yang buruk \cite{pal}.
@@ -273,8 +305,59 @@
    	\begin{equation}
    		F-measure(Fm) = \frac{2 * p * r}{p + r}
    	\end{equation}
-   	
+   \newpage
    \section{Desain dan Implementasi Penambangan Data}
+    \begin{center}
+   	\begin{tikzpicture}[node distance=2cm]
+   	
+   	\node (start) [startstop] {Mulai};
+   	\node (pro1) [process, below of=start] {Akuisisi Gambar X-ray};
+   	\node (pro2) [process, below of=pro1] {Pemisahan Data};
+   	\node (dec1) [decision, below of=pro2, yshift=-0.5cm] {Data Train?};
+   	
+   	\node (in1) [io, left of=dec1, xshift=-3cm, yshift=-2cm] {Data Train};
+   	\node (pro-a1) [process, below of=in1] {Prapemrosesan};
+   	\node (pro-a2) [process, below of=pro-a1, yshift=-3cm] {Pelatihan model CapsNet};
+   	\node (out1) [io, below of=pro-a2] {Model CapsNet};
+   	\node(pro-a3) [process, below of=out1] {Evaluasi};
+   	
+   	\node (dec2) [decision, right of=dec1, xshift=3cm, yshift=-3cm] {Data Validation?};
+   	
+   	\node (in2) [io, left of=dec2, xshift=-1cm, yshift=-2cm] {Data Validation};
+   	\node (pro-b1) [process, below of=in2] {Prapemrosesan};
+   	\node (pro-b2) [process, below of=pro-b1] {Validasi model latihan};
+   	
+   	\node (in3) [io, right of=dec2, xshift=1cm, yshift=-2cm] {Data Test};
+   	\node (pro-c1) [process, below of=in3] {Prapemrosesan};
+   	\node (pro-c2) [process, below of=pro-c1, yshift=-2cm] {Klasifikasi Data Test};
+   	\node (pro-c3) [process, below of=pro-c2] {Evaluasi};
+   	
+   	\node (stop) [startstop, below of=start, yshift=-20cm] {Selesai};
+   	
+   	\draw [arrow] (start) -- (pro1);
+   	\draw [arrow] (pro1) -- (pro2);
+   	\draw [arrow] (pro2) -- (dec1);
+   	\draw [arrow] (in1) -- (pro-a1);
+   	\draw [arrow] (pro-a1) -- (pro-a2);
+   	\draw [arrow] (pro-a2) -- (out1);
+   	\draw [arrow] (out1) -- (pro-a3);
+   	\draw [arrow] (pro-a3) |- (stop);
+   	\draw [arrow] (in2) -- (pro-b1);
+   	\draw [arrow] (pro-b1) -- (pro-b2);
+   	\draw [arrow] (in3) -- (pro-c1);
+   	\draw [arrow] (pro-c1) -- (pro-c2);
+   	\draw [arrow] (pro-c2) -- (pro-c3);
+   	\draw [arrow] (pro-c3) |- (stop);
+   	\draw [arrow] (out1) -- (pro-c2);
+   	\draw [double-arrow] (pro-a2) -- (pro-b2);
+   	\draw [arrow] (dec1) -| node[anchor=east]{yes}(in1);
+   	\draw [arrow] (dec1) -| node[anchor=west]{no}(dec2);
+   	\draw [arrow] (dec2) -| node[anchor=east]{yes}(in2);
+   	\draw [arrow] (dec2) -| node[anchor=west]{no}(in3);
+   	
+   	\end{tikzpicture}
+   \end{center}
+   \newpage
    \section{Analisis}
     \subsection{Analisis Exploratory Data Analysis}
      \begin{itemize}
@@ -315,8 +398,10 @@
     	
      \end{itemize}
    	\subsection{Analisis Hasil Model CapsNet}
+   \newpage
    \section{Kesimpulan}
    \section{Dokumentasi}
+   \newpage
    \printbibliography[title=Daftar Pustaka]
 
 \end{document}
