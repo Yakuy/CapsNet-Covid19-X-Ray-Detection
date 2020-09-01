@@ -24,9 +24,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.4}Konversi ke PyTorch Tensor}{5}{subsubsection.2.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}CapsNet}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}CapsNet}{5}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Introduksi CapsNet}{6}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Introduksi CapsNet}{5}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.4.2}Latar Belakang}{6}{subsubsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
@@ -46,12 +46,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Desain dan Implementasi Penambangan Data}{10}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Analisis}{11}{section.4}%
+\contentsline {subsection}{\numberline {3.1}Arsitektur CapsNet}{11}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Analisis Exploratory Data Analysis}{11}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Analisis}{13}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Analisis Hasil Model CapsNet}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.1}Analisis Exploratory Data Analysis}{13}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Kesimpulan}{14}{section.5}%
+\contentsline {subsection}{\numberline {4.2}Analisis Hasil Model CapsNet}{17}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Dokumentasi}{14}{section.6}%
+\contentsline {subsubsection}{\numberline {4.2.1}Analisis Metrik Penilaian}{17}{subsubsection.4.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.2}Hasil Rekonstruksi}{20}{subsubsection.4.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Kesimpulan}{22}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Dokumentasi}{22}{section.6}%

@@ -26,6 +26,8 @@
 \addbibresource{daftar_pustaka.bib}
 \graphicspath{ {./images/} }
 \renewcommand*\contentsname{Daftar Isi}
+\renewcommand{\figurename}{Figur}
+\renewcommand{\tablename}{Tabel}
 
 \begin{document}
   \begin{titlepage}
@@ -78,7 +80,7 @@
   \newpage
   \section{Pendahuluan}
 	  \subsection{Latar Belakang}
-	   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 persen terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 persen pada kuartal I 2019 ke 2,84 persen pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
+	   Jumlah kasus COVID-19 terus meningkat secara eksponensial. Jumlah kasus total COVID-19 di seluruh dunia sudah mencapai lebih dari 19 juta kasus, dengan lebih dari 700 ribu kematian akibat COVID-19. Kasus COVID-19 di Indonesia sudah mencapai lebih dari 120 ribu dengan lebih dari 5 ribu kematian. Dampak negatif dari pandemi COVID-19 ini sangat terasa di Indonesia. Direktur Jenderal Pajak Kementerian Keuangan (Kemenkeu) Suryo Utomo membagi dampak pandemi COVID-19 menjadi tiga garis besar \cite{zuraya}. Dampak pertama adalah membuat konsumsi rumah tangga atau daya beli yang merupakan penopang 60 \% terhadap ekonomi jatuh cukup dalam. Hal ini dibuktikan dengan data dari BPS yang mencatatkan bahwa konsumsi rumah tangga turun dari 5,02 \% pada kuartal I 2019 ke 2,84 \% pada kuartal I tahun ini. Dampak kedua yaitu pandemi menimbulkan adanya ketidakpastian yang berkepanjangan sehingga investasi ikut melemah dan berimplikasi pada terhentinya usaha. Dampak ketiga adalah seluruh dunia mengalami pelemahan ekonomi sehingga menyebabkan harga komoditas turun dan ekspor Indonesia ke beberapa negara juga terhenti. 
 	   \par
 	   Jumlah alat testing yang terbatas membuat tidak mungkin setiap pasien dengan penyakit pernafasan untuk dites dengan teknik konvensional (RT-PCR) untuk mendeteksi COVID-19. Jumlah ruang di rumah sakit, jumlah ventilator, dan jumlah alat protektif (PPE) bagi tenaga medis sangat terbatas, sehingga perlu digunakan dengan seefisien mungkin. Untuk meningkatkan efisiensi penggunaan alat medis, sangat penting untuk dapat membedakan pasien dengan \textit{severe acute respiratory illness} (SARI) yang mungkin terinfeksi COVID-19. Oleh karena itu, kami mencoba menggunakan gambar X-Ray dada untuk mendeteksi infeksi COVID-19 dengan metode CapsNet.
 	   Penggunaan gambar X-Ray memiliki beberapa keuntungan dibandingkan tes konvensional \cite{mangal} :
@@ -113,21 +115,22 @@
     Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. \textit{Library-library} yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
     
     \subsection{Dataset}
-    Dataset yang akan kami gunakan adalah Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 884 gambar X-Ray dada pasien COVID-19. Berikut adalah contoh dari gambar yang terdapat pada Kaggle Chest X-Ray Images (Pneumonia) dataset :
+    Dataset yang akan kami gunakan adalah Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada dan \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 884 gambar X-Ray dada pasien COVID-19.
     
     \begin{figure}[H]
     	\centering
     	\includegraphics[width=400px]{/contoh dataset/pneumonia.png}
+    	\caption{Gambar X-Ray pada dataset Kaggle Chest X-Ray Images (Pneumonia) dataset}
     \end{figure} 
 
 	\par
 	Gambar-gambar X-Ray dada pada Kaggle Chest X-Ray Images (Pneumonia) dataset dipisah menjadi tiga kelas, yaitu \textit{Normal}, \textit{Bacterial Pneumonia}, dan \textit{Viral Pneumonia}. Untuk memenuhi tujuan dari makalah ini, kami tidak perlu membedakan antara \textit{Bacterial Pneumonia} dan \textit{Viral Pneumonia}, sehingga kami menggabungkan kedua kelas tersebut menjadi satu kelas \textit{Pneumonia}.
 	\par
-	Berikut adalah contoh dari gambar yang terdapat pada Covid-19 Image Data Collection :
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=400px]{/contoh dataset/covid.png}
+		\caption{Gambar X-Ray pada dataset Covid-19 Image Data Collection}
 	\end{figure}   
 	    
 	\par
@@ -167,11 +170,7 @@
 		\subsubsection{Normalisasi}
 		Normalisasi adalah proses yang mengubah kisaran intensitas pixel dan memastikan setiap patameter \textit{input} memiliki ditribusi yang serupa. 
 		Tujuan dari normalisasi pada gambar adalah untuk membuat gambar lebih akrab atau terlihat normal bagi indra manusia.\par
-		Saat kami melakukan train model, gambar yang di normalisasi membuat model tidak bisa membedakan gambar dan membuat loss menjadi tinggi. Hal ini terjadi karena 
-		CapsNet memiliki keunggulan dapat menyimpan data positional gambar, maka CapsNet memiliki kemampuan baik ketika gambar terkena transformasi affine atau 
-		transformasi yang dapat mengakibatkan perubahan.\par
-		Ini dapat ditunjukan ketika terjadi transformasi normalisasi CNNs mendapatkan keuntungan sedangkan CapsNet tidak diuntungkan. Jadi kami berkesimpulan
-		bahwa normalisasi pada model dalam makalah ini tidak dapat membantu.\par
+		
 
     	\subsubsection{Konversi ke PyTorch Tensor}
     	PyTorch \textit{Tensor} adalah matriks berdimensi banyak yang mengandung elemen-elemen dengan tipe data yang sama. PyTorch \textit{Tensor} memiliki banyak kemiripan dengan numpy array; keduanya adalah array n-dimensional generik untuk digunakan untuk komputasi numerik. Perbedaan utamanya adalah PyTorch \textit{Tensor} dapat dijalankan pada CPU atau GPU.
@@ -183,6 +182,7 @@
     	\begin{figure}[H]
     		\centering
     		\includegraphics[width=400px]{/contoh dataset/preprocessed.png}
+    		\caption{Gambar X-Ray hasil proses prapemrosesan}
 		\end{figure} 
 
     \subsection{CapsNet}
@@ -228,7 +228,7 @@
 	   	\par
 	   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
 	   	\par
-	   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 persen karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. 
+	   	\textit{Capsules} bersifat mandiri dari satu sama lain, sehingga probabilitas deteksi benar meningkat drastis bila beberapa \textit{capsule} setuju akan suatu prediksi. Dua \textit{capsule} yang mengolah entitas berdimensi enam hanya akan sepakat akan suatu nilai dengan margin 10 \% karena kebetulan hanya terjadi satu dalam satu juta kali percobaan. Bila dimensi entitas bertambah, maka kemungkinan kesepakatan karena kebetulan berkurang secara eksponensial. 
 	   	\par
 	   	\textit{Capsules} di lapisan lebih tinggi mengambil keluaran dari \textit{capsules} di lapisan lebih rendah, lalu menerima dari \textit{capsules} yang keluarannya berkelompok. Sebuah kelompok akan menyebabkan \textit{capsule} lebih tinggi untuk menghasilkan keluaran dengan probabilitas tinggi bahwa entitas terdapat dalam observasi tersebut. \textit{Capsules} tingkat tinggi mengabaikan \textit{outlier} karena mereka hanya berkonsentrasi pada keluaran yang berkelompok dengan keluaran-keluaran lain.
 	   	
@@ -279,12 +279,13 @@
 	   	 \item \textit{Viewpoint invariance} : penggunaan matriks pose membolehkan jaringan CapsNet untuk mengenali objek-objek tanpa mempedulikan perspektif dari mana mereka dipandang.
 	   	 \item Parameter lebih sedikit : \textit{capsule} mengelompokkan neuron, sehingga koneksi antar lapisan membutuhkan lebih sedikit parameter.
 	   	 \item Generalisasi lebih baik untuk sudut pandang baru : CapsNet lebih baik mengenali objek dari beberapa rotasi berbeda karena matriks \textit{pose} menangkap karakteristik-karakteristik ini sebagai transformasi linear.
-	   	 \item Dapat menangani \textit{white-box adversarial attacks} : \textit{Fast Gradient Sign Method} (FGSM) biasanya digunakan untuk menyerang CNN biasa dengan mengevaluasi gradien dari tiap pixel terhadap \textit{loss} dari jaringan, lalu mengubah setiap pixel dengan maksimum epsilon (\textit{error term}) untuk memaksimalkan \textit{loss}. Metode ini dapat mengurangi akurasi CNN secara drastis (hingga di bawah 20 persen), namun CapsNet dapat mempertahankan akurasi di atas 70 persen. 
+	   	 \item Dapat menangani \textit{white-box adversarial attacks} : \textit{Fast Gradient Sign Method} (FGSM) biasanya digunakan untuk menyerang CNN biasa dengan mengevaluasi gradien dari tiap pixel terhadap \textit{loss} dari jaringan, lalu mengubah setiap pixel dengan maksimum epsilon (\textit{error term}) untuk memaksimalkan \textit{loss}. Metode ini dapat mengurangi akurasi CNN secara drastis (hingga di bawah 20 \%), namun CapsNet dapat mempertahankan akurasi di atas 70 \%. 
 	   	\end{enumerate}
    	
    	\subsection{Evaluasi}
    	Evaluasi model adalah proses dimana performa model diukur untuk mengetahui kualitas dari model. Evaluasi pada masalah klasifikasi dapat dilakukan dengan melihat \textit{confusion matrix}, \textit{accuracy}, \textit{precision}, \textit{recall}, dan \textit{F-measure}. \textit{Confusion matrix} merangkum kinerja \textit{classifier} terhadap data testing \cite{hossin}. Contoh \textit{confusion matrix} dapat dilihat di tabel di bawah:
    	
+   	\begin{table}[H]
    	\begin{center}
    		\begin{tabular}{|c|c|c|}
    			\hline
@@ -295,7 +296,9 @@
    			Predicted Negative Class & False Negative(FN) & True Negative(TN) \\
    			\hline
    		\end{tabular}
+   		\caption{Tabel \textit{confusion matrix}}
    	\end{center}
+	\end{table}
    	\par
    	TP menunjukkan jumlah kelas positif yang diklasifikasikan dengan tepat, TN menunjukkan jumlah kelas negatif yang diklasifikasikan dengan tepat, FP menunjukkan jumlah kelas negatif yang diklasifikasikan secara salah, dan FN menunjukkan jumlah kelas positif yang diklasifikasikan secara salah.
    	\par
@@ -315,6 +318,7 @@
    	\end{equation}
    \newpage
    \section{Desain dan Implementasi Penambangan Data}
+    \begin{figure}[H]
     \begin{center}
    	\begin{tikzpicture}[node distance=2cm]
    	
@@ -364,52 +368,220 @@
    	\draw [arrow] (dec2) -| node[anchor=west]{no}(in3);
    	
    	\end{tikzpicture}
-   \end{center}
+   	\caption{Diagram alur implementasi penambangan data}
+    \end{center}
+	\end{figure}
+	\begin{figure}[H]
+		\centering{\includegraphics[width=\linewidth]{./images/arsitektur/arsitektur_fig1.png}}
+		\caption{Arsitektur CapsNet}
+		\label{arsitektur_1}
+	\end{figure}
+	\begin{figure}[H]
+		\centering{\includegraphics[width=300px, height=170px]{./images/arsitektur/arsitektur_fig2.png}}
+		\caption{Arsitektur Decoder Network}
+		\label{arsitektur_2}
+	\end{figure}
+	\subsection{Arsitektur CapsNet}
+	Arsitektur CapsNet yang digunakan dalam makalah ini terdiri dari :
+	\begin{enumerate}
+		\item \textit{Input Layer}\\
+		\textit{Input} menggunakan gambar berukuran 224x224 dengan 3 \textit{channel} yaitu \textit{channel red, green,} dan \textit{blue} atau biasa disebut dengan RGB.
+		
+		\item \textit{Convolutional Layer 1}\\
+		\textit{Layer} ini akan melakukan operasi konvolusi pada gambar \textit{input} menggunakan \textit{out channel} atau \textit{filter} sebanyak 256 dengan \textit{kernel} berukuran 25x25 dan \textit{stride} sebanyak 2. Layer ini akan menghasilkan \textit{feature map}.
+		
+		\item \textit{Primary Capsule}\\
+		\textit{Layer} ini akan mengubah hasil konvolusi menjadi \textit{capsule-capsule}. \textit{Layer} ini terdiri dari beberapa layer, yaitu:
+		\begin{itemize}
+			\item \textit{Convolution Layer 2}\\ 
+			\textit{Layer} ini mendapatkan \textit{input channel} sebanyak 256, lalu operasi konvolusi pada \textit{layer} ini menggunakan \textit{out channel} sebanyak 256 dengan \textit{kernel} berukuran 25x25  dan \textit{stride} sebanyak 16.
+			
+			\item \textit{Reshape}\\
+			Operasi \textit{reshape} digunakan untuk mendapatkan 32x5x5 \textit{capsule} berdimensi 8 setiap \textit{capsule}-nya.
+			
+			\item \textit{Squash}\\
+			\textit{Layer squash} adalah \textit{layer} aktivasi dari primary capsule yang mengubah panjang vektor besar menjadi mendekati 1 dan vektor kecil menjadi 0.
+		\end{itemize}
+		
+		\item \textit{Capsule Layer 1}\\
+		\textit{Layer} ini mendapatkan \textit{input capsule} sebanyak 800 berdimensi 8 untuk setiap \textit{capsule}. Lalu algoritma \textit{Routing-by-agreement} akan dijalankan pada layer ini dan menghasilkan \textit{output capsule} sebanyak 32 berdimensi 12 untuk setiap \textit{capsule}.
+		
+		\item \textit{Capsule Layer 2}\\
+		\textit{Layer} ini mendapatkan \textit{input capsule} sebanyak 32 berdimensi 12 untuk setiap \textit{capsule}. Lalu algoritma \textit{Routing-by-agreement} akan dijalankan pada layer ini dan menghasilkan \textit{output capsule} sebanyak jumlah \textit{class} yaitu 3 dan berdimensi 16 untuk setiap \textit{capsule}.
+		
+		\item \textit{Decoder Network}\\
+		\textit{Decoder Network} adalah \textit{layer} yang digunakan CapsNet untuk menghitung \textit{loss} dan melakukan proses rekonstruksi gambar. \textit{Decoder Network} terdiri dari:
+		\begin{itemize}
+			\item \textit{Fully Connected Layer 1}\\
+			\textit{Layer} ini mendapatkan \textit{input} sebanyak jumlah \textit{output capsule} dikali dimensi \textit{capsule} dari \textit{layer} sebelumnya yaitu 3x16 dan menghasilkan 512 \textit{output neuron}. Fungsi aktivasi yang digunakan pada layer ini adalah ReLu.
+			
+			\item \textit{Fully Connected Layer 2}\\
+			\textit{Layer} ini mendapatkan \textit{input} sebanyak jumlah \textit{output neuron} dari \textit{layer} sebelumnya yaitu 512 dan menghasilkan 1024 \textit{output neuron}. Fungsi aktivasi yang digunakan pada layer ini adalah ReLu.
+			
+			\item \textit{Fully Connected Layer 3}\\
+			\textit{Layer} ini mendapatkan \textit{input} sebanyak jumlah \textit{output neuron} dari \textit{layer} sebelumnya yaitu 1024 dan menghasilkan \textit{output neuron} sebanyak ukuran gambar \textit{input} yaitu 224x224x3. Fungsi aktivasi yang digunakan pada layer ini adalah \textit{sigmoid}.
+		\end{itemize}
+		
+	\end{enumerate}
    \newpage
    \section{Analisis}
     \subsection{Analisis Exploratory Data Analysis}
-     \begin{itemize}
      	
 	    \begin{figure}[H]
 	    	\centering
 	    	\includegraphics[width=300px]{/grafik eda/gender.png}
+	    	\caption{Grafik perbandingan jenis kelamin}
 	    \end{figure}
-    	\item Dalam dataset jumlah pasien COVID-19 pria jauh melebihi jumlah pasien wanita.
+    	\par Dalam dataset jumlah pasien COVID-19 pria jauh melebihi jumlah pasien wanita.
     	
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=200px]{/grafik eda/umur.png}
 			\includegraphics[width=200px]{/grafik eda/umur2.png}
+			\caption{Grafik perbandingan umur}
 		\end{figure}
-		\item Distribusi umur menunjukkan bahwa sebagian besar pasien berusia paruh baya dengan terpusat pada kisaran umur 50-80. Tidak ada perbedaan signifikan antara distribusi umur pasien pria dan pasien wanita.
+		\par Distribusi umur menunjukkan bahwa sebagian besar pasien berusia paruh baya dengan terpusat pada kisaran umur 50-80. Tidak ada perbedaan signifikan antara distribusi umur pasien pria dan pasien wanita.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=300px]{/grafik eda/suhu.png}
+			\caption{Grafik perbandingan suhu tubuh}
 		\end{figure}
-		\item Grafik menunjukkan bahwa terdapat perbedaan jarak interkuartil antara pasien yang selamat dan pasien yang meninggal. Pasien yang selamat menunjukkan suhu tubuh sebagian besar di antara 37.75-39.0 derajat celcius, sedangkan pasien yang meninggal menunjukkan jarak yang lebih kecil antara 38.25-38.75 derajat celcius. Pasien-pasien yang masih dirawat sehingga kondisi keselamatannya masih belum diketahui memiliki suhu median yang lebih rendah dibandingkan pasien yang sudah dipastikan status keselamatannya. Hal ini mungkin menunjukkan bahwa pasien-pasien yang baru masuk dan masih dirawat sudah dapat ditangani dengan lebih baik sehingga suhu tubuh pasien secara keseluruhan menurun.
+		\par Grafik menunjukkan bahwa terdapat perbedaan jarak interkuartil antara pasien yang selamat dan pasien yang meninggal. Pasien yang selamat menunjukkan suhu tubuh sebagian besar di antara 37.75-39.0 derajat celcius, sedangkan pasien yang meninggal menunjukkan jarak yang lebih kecil antara 38.25-38.75 derajat celcius. Pasien-pasien yang masih dirawat sehingga kondisi keselamatannya masih belum diketahui memiliki suhu median yang lebih rendah dibandingkan pasien yang sudah dipastikan status keselamatannya. Hal ini mungkin menunjukkan bahwa pasien-pasien yang baru masuk dan masih dirawat sudah dapat ditangani dengan lebih baik sehingga suhu tubuh pasien secara keseluruhan menurun.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=200px]{/grafik eda/po2.png}
+			\caption{Grafik distribusi angka pO2}
 			\includegraphics[width=200px]{/grafik eda/leukosit.png}
+			\caption{Grafik distribusi jumlah leukosit}
 			\includegraphics[width=200px]{/grafik eda/limfosit.png}
+			\caption{Grafik distribusi jumlah limfosit}
 			\includegraphics[width=200px]{/grafik eda/neutrofil.png}
+			\caption{Grafik distribusi jumlah neutrofil}
 		\end{figure}
-		\item Saturasi PO2 pasien COVID-19 berada di kisaran 50-100 dengan sebagian besar berada di kisaran 90-100. Angka leukosit pasien berada di kisaran 2.5-11.0 dengan terpusat di angka 7.5. Angka limfosit pasien berada di kisaran 0.2-1.75 dengan sebagain besar berada di sekitar angka 0.75. Angka neutrofil pasien terpisah menjadi dua daerah, dimana sebagian pasien yang memiliki angka neutrofil diantara 1.8-3.0 dan sebagian pasien memiliki angka neutrofil diantara 4.2-5.8.
+		\par Saturasi PO2 pasien COVID-19 berada di kisaran 50-100 dengan sebagian besar berada di kisaran 90-100. Angka leukosit pasien berada di kisaran 2.5-11.0 dengan terpusat di angka 7.5. Angka limfosit pasien berada di kisaran 0.2-1.75 dengan sebagain besar berada di sekitar angka 0.75. Angka neutrofil pasien terpisah menjadi dua daerah, dimana sebagian pasien yang memiliki angka neutrofil diantara 1.8-3.0 dan sebagian pasien memiliki angka neutrofil diantara 4.2-5.8.
 		
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=300px]{/grafik eda/correlation.png}
+			\caption{Grafik Heatmap korelasi fitur}
 		\end{figure}
-		\item Heatmap korelasi fitur menunjukkan bahwa keselamatan pasien sangat ditentukan oleh umur, dimana umur yang lebih tinggi akan menurunkan kemungkinan keselamatan pasien. Suhu tubuh terlihat tidak memiliki korelasi yang signifikan dengan keselamatan pasien, ditunjukkan dengan warna ungu yang memberi arti korelasi dekat dengan 0. Tingkat saturasi PO2 terlihat memiliki korelasi positif yang cukup signifikan dengan tingkat keselamatan pasien, dimana pasien dengan saturasi PO2 tinggi memiliki kemungkinan lebih tinggi untuk selamat. 
+		\par Heatmap korelasi fitur menunjukkan bahwa keselamatan pasien sangat ditentukan oleh umur, dimana umur yang lebih tinggi akan menurunkan kemungkinan keselamatan pasien. Suhu tubuh terlihat tidak memiliki korelasi yang signifikan dengan keselamatan pasien, ditunjukkan dengan warna ungu yang memberi arti korelasi dekat dengan 0. Tingkat saturasi PO2 terlihat memiliki korelasi positif yang cukup signifikan dengan tingkat keselamatan pasien, dimana pasien dengan saturasi PO2 tinggi memiliki kemungkinan lebih tinggi untuk selamat. 
     	
-     \end{itemize}
    	\subsection{Analisis Hasil Model CapsNet}
+   		\subsubsection{Analisis Metrik Penilaian}   			
+   			\begin{figure}[H]
+   				\centering
+   				\includegraphics[scale=1]{analisis model/final_acc.eps}
+   				\caption{Grafik akurasi data validasi}
+   			\end{figure}
+   			
+   			\par Grafik akurasi data validasi menunjukkan fluktuasi besar di 5 \textit{epoch} pertama, karena nilai-nilai awal pada matriks beban model bersifat acak sehingga model belum bisa membuat prediksi dengan akurat. Untuk \textit{epoch} ke 10 dan seterusnya, akurasi validasi model sudah stabil dengan akurasi sekitar 90 \%. Akurasi tes yang hanya sedikit kurang dari akurasi validasi akhir membuktikan bahwa model dapat generalisasi dengan baik pada data yang belum pernah dilihatnya. Hasil akurasi validasi di \textit{epoch} terakhir latihan tercatat pada angka 95.56 \%, sedangkan akurasi pada dataset \textit{test} tercatat pada angka 94.29 \%.
+   			
+   			\begin{figure}[H]
+   				\centering
+   				\includegraphics[scale=1]{analisis model/final_acc_norm.eps}
+   				\caption{Grafik perbandingkan akurasi data validasi dengan tambahan proses normalisasi}
+   			\end{figure}
+   			
+   			\par Bila proses normalisasi diaplikasikan ke gambar masukan, akurasi validasi model sedikit berkurang. Normalisasi pada gambar masukan berguna pada model CNN sebab model CNN belajar dengan secara terus-menerus menambahkan gradien \textit{error vector} dikalikan dengan \textit{learning rate} ke berbagai matriks beban. Bila vektor masukan tidak dinormalisasi, maka jarak distribusi nilai-nilai fitur akan berbeda untuk setiap fitur, sehingga hasil kurang maksimal. Namun, tampaknya normalisasi tidak membantu meningkatkan performa model CapsNet, melainkan sedikit menurunkan performanya.
+   			\par
+   			Hal ini terjadi karena 
+   			CapsNet memiliki keunggulan dapat menyimpan data positional gambar, maka CapsNet memiliki kemampuan baik ketika gambar terkena transformasi affine atau 
+   			transformasi yang dapat mengakibatkan perubahan.\par
+   			Ini dapat ditunjukan ketika terjadi transformasi normalisasi CNNs mendapatkan keuntungan sedangkan CapsNet tidak diuntungkan. Jadi kami berkesimpulan
+   			bahwa normalisasi pada model dalam makalah ini tidak dapat membantu.
+   			
+   			\begin{figure}[H]
+   				\centering
+   				\includegraphics[scale=1]{analisis model/final_loss.eps}
+   				\caption{Grafik penurunan fungsi \textit{loss} model}
+   			\end{figure}
+   			
+   			\par Nilai fungsi \textit{loss} dari model terlihat menurun drastis pada 10 \textit{epoch} pertama, lalu menurun secara perlahan di \textit{epoch-epoch} berikutnya. \textit{Loss} pada model ketika latihan dan\textit{loss} pada validasi terlihat mendekati satu sama lain, membuktikan bahwa model tidak mengalami \textit{overfit}.
+   			
+   			\begin{figure}[H]
+   				\centering
+   				\includegraphics[scale=1]{analisis model/covid_learn_acc.eps}
+   				\caption{Grafik akurasi validasi kasus COVID-19}
+   			\end{figure}
+   			
+   			\par Akurasi validasi untuk khusus kasus-kasus COVID-19 terlihat fluktuatif sampai \textit{epoch} ke 60. Pada \textit{epoch} ke 61 dan seterusnya, kami mencoba memasukan lebih banyak gambar-gambar kasus COVID-19 untuk menambahkan informasi yang didapat oleh model. Hasilnya adalah akurasi validasi model mulai lebih stabil di sekitar 95 \%, dan akurasi tes model untuk kasus-kasus COVID-19 tercatat dengan akurasi sekitar 94 \%.
+   			
+   			\begin{table}[H]
+   			\begin{center}
+   				\begin{tabular}{|c|c|c|c|}
+   					\hline
+   					& \textit{Normal (Predicted)} & \textit{Pneumonia (Predicted)} & \textit{Covid (Predicted)} \\
+   					\hline
+   					\textit{Normal (Actual)} & 292 & 24 & 1 \\
+   					\hline
+   					\textit{Pneumonia (Actual)} & 30 & 821 & 3 \\
+   					\hline
+   					\textit{Covid (Actual)} & 4 & 10 & 77 \\
+   					\hline
+   				\end{tabular}
+   				\caption{Tabel \textit{confusion matrix} model}
+   			\end{center}
+   			\end{table}
+   			
+   			\par Hasil \textit{confusion matrix} model akhir menunjukkan bahwa model dapat dengan tepat mengklasifikasikan 77 dari 91 kasus COVID-19. Dari 1171 kasus-kasus yang bukan COVID-19, model hanya mengklasifikasikan secara salah 4 kasus sebagai kasus COVID-19. 
+   			
+   			\begin{table}[H]
+   			\begin{center}
+   				\begin{tabular}{|c|c|c|c|}
+   					\hline
+   					& \textit{Precision} & \textit{Recall} & \textit{F1-score} \\
+   					\hline
+   					\textit{Normal} & 0.90 & 0.92 & 0.91 \\
+   					\hline
+   					\textit{Pneumonia} & 0.96 & 0.96 & 0.96 \\
+   					\hline
+   					\textit{Covid} & 0.95 & 0.85 & 0.90 \\
+   					\hline
+   					\hline
+   					\textit{Macro Avg} & 0.94 & 0.91 & 0.92 \\
+   					\hline
+   					\textit{Weighted Avg} & 0.94 & 0.94 & 0.94 \\
+   					\hline
+   					\hline
+   					\textit{Accuracy} & \multicolumn{3}{|c|}{0.94} \\
+   					\hline
+   				\end{tabular}
+   				\caption{Tabel metrik-metrik penilaian model}
+   			\end{center}
+   			\end{table}
+   			
+   			\par Akurasi keseluruhan model tercatat pada angka 94 \%. \textit{Macro average} menghitung nilai rata-rata \textit{precision}, \textit{recall}, dan \textit{F1-score} dari tiap kelas. \textit{Weighted average} menambahkan nilai \textit{precision}, \textit{recall}, dan \textit{F1-score} masing-masing kelas dengan dikalikan beban yang tergantung dengan jumlah kasus benar dari tiap kelas. Terlihat bahwa \textit{weighted average} dari \textit{precision}, \textit{recall}, dan \textit{F1-score} bernilai konsisten dengan akurasi keseluruhan, yaitu 94 \%.
+   		
+   		\subsubsection{Hasil Rekonstruksi}
+		\par
+		Hasil prediksi pada \textit{Dense Capsule 2} diteruskan kepada \textit{Decoder Network} menghasilkan rekonstruksi gambar dimana hasil ini akan dipakai sebagai $L_{2}$/ \textit{Reconstruction Loss}. Metode hasil rekonstruksi sebagai \textit{loss function} ini digunakan untuk menggeneralisasi data mencegah \textit{overfitting} dengan mendorong \textit{Capsules} untuk dapat \textit{encode} fitur-fitur yang terdapat pada input gambar.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./images/"contoh dataset"/Normal}
+			\caption{Gambar Chest X-Ray Normal (atas) dengan Rekonstruksi (bawah).}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./images/"contoh dataset"/Pneu}
+			\caption{Gambar Chest X-Ray Pneumonia (atas) dengan Rekonstruksi (bawah).}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./images/"contoh dataset"/Cov}
+			\caption{Gambar Chest X-Ray COVID-19 (atas) dengan Rekonstruksi (bawah).}
+		\end{figure}
+		\par
+		Dari hasil rekonstruksi gambar pada figur diatas, walaupun input gambar memiliki perbedaan seperti lebih besar, memiliki kemiringan atau transformasi affine lain. Hasil rekonstruksi akhir model dapat tetap menjaga struktur fitur input gambar awal. Hasil rekonstruksi secara samar memiliki bentuk, struktur dan fitur-fitur yang menyerupai input gambar awal.
    \newpage
    \section{Kesimpulan}
+    Di era digital sekarang ini, kemampuan algoritma \textit{Deep Learning} dapat menyaingi tingkat performa manusia. Tugas manusia memproses data dari suatu gambar sulit dikerjakan oleh komputer, tetapi sekarang dengan kemajuan algoritma dapat dilakukan dengan mesin. Berdasarkan percobaan yang telah kami lakukan, model kami dapat mengklasifikasi perbedaan antara gambar Chest X-Ray normal, pneumonia dan COVID-19 dengan akurasi validasi 0.9556 dan akurasi tes 0.9429.
+   
    \section{Dokumentasi}
+   Hasil dan program dapat ditemukan pada pranala berikut :\url{https://github.com/Yakuy/Gemastik13} (untuk sementara masih bersifat private)
    \newpage
    \printbibliography[title=Daftar Pustaka]
 
