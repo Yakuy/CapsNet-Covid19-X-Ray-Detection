@@ -76,6 +76,8 @@
 
   \newpage
   \pagenumbering{arabic}
+  \textbf{Abstrak.} Pandemi COVID-19 membawa banyak dampak negatif bagi Indonesia dan seluruh dunia, sehingga penting untuk mempunyai sarana untuk mendeteksi dengan cepat dan akurat pasien yang terinfeksi COVID-19. Gambar X-Ray dada pasien dapat membantu untuk mendeteksi apakah pasien terinfeksi COVID-19 atau tidak. Kami melatih model CapsNet untuk dapat mengklasifikasikan X-Ray dada yang terinfeksi dengan virus COVID-19. Model dilatih dengan 6310 gambar X-Ray dada yang terbagi menjadi tiga kelas : Normal, Pneumonia, dan Covid-19. Kelebihan CapsNet dibanding model \textit{Convolutional Neural Network} tradisional adalah antara lain : \textit{viewpoint invariance}, parameter lebih sedikit, dan generalisasi baik pada sudut pandang baru. Hasil yang diperoleh dari model ini adalah akurasi validasi 0.9556 dan akurasi tes 0.9429. Harapan kami adalah model dapat digunakan untuk menyediakan opini kedua untuk memverifikasi hasil dari bentuk-bentuk tes deteksi COVID-19 lain, dan menyediakan sarana untuk mendeteksi COVID-19 di tempat-tempat yang kekurangan alat tes.
+  \newpage
   \tableofcontents
   \newpage
   \section{Pendahuluan}
@@ -578,7 +580,7 @@
 		Dari hasil rekonstruksi gambar pada figur diatas, walaupun input gambar memiliki perbedaan seperti lebih besar, memiliki kemiringan atau transformasi affine lain. Hasil rekonstruksi akhir model dapat tetap menjaga struktur fitur input gambar awal. Hasil rekonstruksi secara samar memiliki bentuk, struktur dan fitur-fitur yang menyerupai input gambar awal.
    \newpage
    \section{Kesimpulan}
-    Di era digital sekarang ini, kemampuan algoritma \textit{Deep Learning} dapat menyaingi tingkat performa manusia. Tugas manusia memproses data dari suatu gambar sulit dikerjakan oleh komputer, tetapi sekarang dengan kemajuan algoritma dapat dilakukan dengan mesin. Berdasarkan percobaan yang telah kami lakukan, model kami dapat mengklasifikasi perbedaan antara gambar Chest X-Ray normal, pneumonia dan COVID-19 dengan akurasi validasi 0.9556 dan akurasi tes 0.9429.
+    Di era digital sekarang ini, kemampuan algoritma \textit{Deep Learning} dapat menyaingi tingkat performa manusia. Tugas manusia memproses data dari suatu gambar sulit dikerjakan oleh komputer, tetapi sekarang dengan kemajuan algoritma dapat dilakukan dengan mesin. Berdasarkan percobaan yang telah kami lakukan, model kami dapat mengklasifikasi perbedaan antara gambar Chest X-Ray Normal, Pneumonia dan COVID-19 dengan akurasi validasi 0.9556 dan akurasi tes 0.9429.
     \par
     Metode yang kami gunakan untuk masalah di makalah ini mencakup pengumpulan data, prapemrosesan, model CapsNet, dan evaluasi. Langkah-langkah prapemrosesan terdiri dari konversi model warna gambar ke RGB, pemotongan ukuran gambar menjadi 224x224, normalisasi, dan konversi ke PyTorch Tensor. Model CapsNet yang kami gunakan  terdiri dari beberapa lapisan : \textit{input layer}, \textit{convolutional layer 1}, \textit{primary capsule}, \textit{capsule layer 1}, \textit{capsule layer 2}, dan \textit{decoder network}.
     \par

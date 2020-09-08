@@ -1,63 +1,63 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Pendahuluan}{2}{section.1}%
+\contentsline {section}{\numberline {1}Pendahuluan}{3}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Latar Belakang}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Latar Belakang}{3}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Tujuan dan Manfaat}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}Tujuan dan Manfaat}{3}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Batasan yang Digunakan}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Batasan yang Digunakan}{3}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Metode Penambangan Data}{4}{section.2}%
+\contentsline {section}{\numberline {2}Metode Penambangan Data}{5}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Perangkat Uji Coba}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Perangkat Uji Coba}{5}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Dataset}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Dataset}{5}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Metode Prapemrosesan}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Metode Prapemrosesan}{6}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.1}Konversi ke RGB}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Konversi ke RGB}{6}{subsubsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.2}\textit {Resizing}}{5}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}\textit {Resizing}}{6}{subsubsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.3}Normalisasi}{5}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3}Normalisasi}{6}{subsubsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.4}Konversi ke PyTorch Tensor}{5}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.4}Konversi ke PyTorch Tensor}{6}{subsubsection.2.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}CapsNet}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}CapsNet}{6}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Introduksi CapsNet}{5}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Introduksi CapsNet}{6}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.2}Latar Belakang}{6}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.2}Latar Belakang}{7}{subsubsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.3}Transformasi}{6}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.3}Transformasi}{7}{subsubsection.2.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.4}\textit {Pooling}}{6}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.4}\textit {Pooling}}{7}{subsubsection.2.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.5}\textit {Capsules}}{7}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.5}\textit {Capsules}}{8}{subsubsection.2.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.6}\textit {Routing-by-agreement}}{7}{subsubsection.2.4.6}%
+\contentsline {subsubsection}{\numberline {2.4.6}\textit {Routing-by-agreement}}{8}{subsubsection.2.4.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.7}\textit {Training}}{8}{subsubsection.2.4.7}%
+\contentsline {subsubsection}{\numberline {2.4.7}\textit {Training}}{9}{subsubsection.2.4.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.8}Kelebihan CapsNet}{8}{subsubsection.2.4.8}%
+\contentsline {subsubsection}{\numberline {2.4.8}Kelebihan CapsNet}{9}{subsubsection.2.4.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Evaluasi}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Evaluasi}{9}{subsection.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Desain dan Implementasi Penambangan Data}{10}{section.3}%
+\contentsline {section}{\numberline {3}Desain dan Implementasi Penambangan Data}{11}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Arsitektur CapsNet}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Arsitektur CapsNet}{12}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Analisis}{13}{section.4}%
+\contentsline {section}{\numberline {4}Analisis}{14}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Analisis \textit {Exploratory Data Analysis}}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Analisis \textit {Exploratory Data Analysis}}{14}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Analisis Hasil Model CapsNet}{17}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Analisis Hasil Model CapsNet}{18}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1}Analisis Metrik Penilaian}{17}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1}Analisis Metrik Penilaian}{18}{subsubsection.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}Hasil Rekonstruksi}{20}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2}Hasil Rekonstruksi}{21}{subsubsection.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Kesimpulan}{22}{section.5}%
+\contentsline {section}{\numberline {5}Kesimpulan}{23}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Dokumentasi}{22}{section.6}%
+\contentsline {section}{\numberline {6}Dokumentasi}{23}{section.6}%
