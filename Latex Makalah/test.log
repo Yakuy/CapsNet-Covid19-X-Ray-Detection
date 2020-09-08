@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  1 SEP 2020 09:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.25)  8 SEP 2020 17:02
 entering extended mode
 **./test.tex
 (test.tex
@@ -951,7 +951,7 @@ is. Pen-dekatan ini dikem-bangkan den-gan mengikuti
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 247.
  [7]
-<./images//rumus/rumus_loss.png, id=255, 590.70688pt x 56.21pt>
+<./images//rumus/rumus_loss.png, id=256, 590.70688pt x 56.21pt>
 File: ./images//rumus/rumus_loss.png Graphic file (type png)
 <use ./images//rumus/rumus_loss.png>
 Package pdftex.def Info: ./images//rumus/rumus_loss.png  used on input line 267
@@ -969,13 +969,13 @@ Overfull \hbox (41.26443pt too wide) in paragraph at lines 370--371
  [] 
  []
 
-<./images/arsitektur/arsitektur_fig1.png, id=277, 983.3538pt x 231.7458pt>
+<./images/arsitektur/arsitektur_fig1.png, id=278, 983.3538pt x 231.7458pt>
 File: ./images/arsitektur/arsitektur_fig1.png Graphic file (type png)
 <use ./images/arsitektur/arsitektur_fig1.png>
 Package pdftex.def Info: ./images/arsitektur/arsitektur_fig1.png  used on input
  line 375.
 (pdftex.def)             Requested size: 483.69684pt x 113.99138pt.
-<./images/arsitektur/arsitektur_fig2.png, id=278, 518.1759pt x 290.5254pt>
+<./images/arsitektur/arsitektur_fig2.png, id=279, 518.1759pt x 290.5254pt>
 File: ./images/arsitektur/arsitektur_fig2.png Graphic file (type png)
 <use ./images/arsitektur/arsitektur_fig2.png>
 Package pdftex.def Info: ./images/arsitektur/arsitektur_fig2.png  used on input
@@ -983,25 +983,25 @@ Package pdftex.def Info: ./images/arsitektur/arsitektur_fig2.png  used on input
 (pdftex.def)             Requested size: 301.13522pt x 170.64157pt.
 [10] [11 <./images/arsitektur/arsitektur_fig1.png> <./images/arsitektur/arsitek
 tur_fig2.png>] [12]
-<./images//grafik eda/gender.png, id=303, 391.4625pt x 264.99pt>
+<./images//grafik eda/gender.png, id=304, 391.4625pt x 264.99pt>
 File: ./images//grafik eda/gender.png Graphic file (type png)
 <use ./images//grafik eda/gender.png>
 Package pdftex.def Info: ./images//grafik eda/gender.png  used on input line 43
 2.
 (pdftex.def)             Requested size: 301.1261pt x 203.84885pt.
-<./images//grafik eda/umur.png, id=304, 385.44pt x 279.0425pt>
+<./images//grafik eda/umur.png, id=305, 385.44pt x 279.0425pt>
 File: ./images//grafik eda/umur.png Graphic file (type png)
 <use ./images//grafik eda/umur.png>
 Package pdftex.def Info: ./images//grafik eda/umur.png  used on input line 439.
 
 (pdftex.def)             Requested size: 200.75073pt x 145.33286pt.
-<./images//grafik eda/umur2.png, id=305, 392.46625pt x 279.0425pt>
+<./images//grafik eda/umur2.png, id=306, 392.46625pt x 279.0425pt>
 File: ./images//grafik eda/umur2.png Graphic file (type png)
 <use ./images//grafik eda/umur2.png>
 Package pdftex.def Info: ./images//grafik eda/umur2.png  used on input line 440
 .
 (pdftex.def)             Requested size: 200.75073pt x 142.73557pt.
-<./images//grafik eda/suhu.png, id=306, 393.47pt x 279.0425pt>
+<./images//grafik eda/suhu.png, id=307, 393.47pt x 279.0425pt>
 File: ./images//grafik eda/suhu.png Graphic file (type png)
 <use ./images//grafik eda/suhu.png>
 Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 447.
@@ -1009,24 +1009,24 @@ Package pdftex.def Info: ./images//grafik eda/suhu.png  used on input line 447.
 (pdftex.def)             Requested size: 301.1261pt x 213.55196pt.
  [13 <./images//grafik eda/gender.png> <./images//grafik eda/umur.png> <./image
 s//grafik eda/umur2.png>]
-<./images//grafik eda/po2.png, id=316, 379.4175pt x 280.04625pt>
+<./images//grafik eda/po2.png, id=317, 379.4175pt x 280.04625pt>
 File: ./images//grafik eda/po2.png Graphic file (type png)
 <use ./images//grafik eda/po2.png>
 Package pdftex.def Info: ./images//grafik eda/po2.png  used on input line 454.
 (pdftex.def)             Requested size: 200.75073pt x 148.17595pt.
-<./images//grafik eda/leukosit.png, id=317, 385.44pt x 280.04625pt>
+<./images//grafik eda/leukosit.png, id=318, 385.44pt x 280.04625pt>
 File: ./images//grafik eda/leukosit.png Graphic file (type png)
 <use ./images//grafik eda/leukosit.png>
 Package pdftex.def Info: ./images//grafik eda/leukosit.png  used on input line 
 456.
 (pdftex.def)             Requested size: 200.75073pt x 145.85562pt.
-<./images//grafik eda/limfosit.png, id=318, 373.395pt x 280.04625pt>
+<./images//grafik eda/limfosit.png, id=319, 373.395pt x 280.04625pt>
 File: ./images//grafik eda/limfosit.png Graphic file (type png)
 <use ./images//grafik eda/limfosit.png>
 Package pdftex.def Info: ./images//grafik eda/limfosit.png  used on input line 
 458.
 (pdftex.def)             Requested size: 200.75073pt x 150.56036pt.
-<./images//grafik eda/neutrofil.png, id=319, 381.425pt x 280.04625pt>
+<./images//grafik eda/neutrofil.png, id=320, 381.425pt x 280.04625pt>
 File: ./images//grafik eda/neutrofil.png Graphic file (type png)
 <use ./images//grafik eda/neutrofil.png>
 Package pdftex.def Info: ./images//grafik eda/neutrofil.png  used on input line
@@ -1035,7 +1035,7 @@ Package pdftex.def Info: ./images//grafik eda/neutrofil.png  used on input line
  [14 <./images//grafik eda/suhu.png>] [15 <./images//grafik eda/po2.png> <./ima
 ges//grafik eda/leukosit.png> <./images//grafik eda/limfosit.png> <./images//gr
 afik eda/neutrofil.png>]
-<./images//grafik eda/correlation.png, id=338, 423.5825pt x 332.24126pt>
+<./images//grafik eda/correlation.png, id=339, 423.5825pt x 332.24126pt>
 File: ./images//grafik eda/correlation.png Graphic file (type png)
 <use ./images//grafik eda/correlation.png>
 Package pdftex.def Info: ./images//grafik eda/correlation.png  used on input li
@@ -1057,7 +1057,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex.exe (file ./images/analisis model/final_acc-eps-conver
 ted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
 allowed
-<./images/analisis model/final_acc-eps-converted-to.pdf, id=339, 433.62pt x 289
+<./images/analisis model/final_acc-eps-converted-to.pdf, id=340, 433.62pt x 289
 .08pt>
 File: ./images/analisis model/final_acc-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -1083,7 +1083,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex.exe (file ./images/analisis model/final_acc_norm-eps-c
 onverted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
 1.5> allowed
-<./images/analisis model/final_acc_norm-eps-converted-to.pdf, id=346, 433.62pt 
+<./images/analisis model/final_acc_norm-eps-converted-to.pdf, id=347, 433.62pt 
 x 289.08pt>
 File: ./images/analisis model/final_acc_norm-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1108,7 +1108,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex.exe (file ./images/analisis model/final_loss-eps-conve
 rted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
  allowed
-<./images/analisis model/final_loss-eps-converted-to.pdf, id=389, 433.62pt x 28
+<./images/analisis model/final_loss-eps-converted-to.pdf, id=390, 433.62pt x 28
 9.08pt>
 File: ./images/analisis model/final_loss-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1134,7 +1134,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex.exe (file ./images/analisis model/covid_learn_acc-eps-
 converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
 <1.5> allowed
-<./images/analisis model/covid_learn_acc-eps-converted-to.pdf, id=431, 433.62pt
+<./images/analisis model/covid_learn_acc-eps-converted-to.pdf, id=432, 433.62pt
  x 289.08pt>
 File: ./images/analisis model/covid_learn_acc-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1144,19 +1144,19 @@ to.pdf  used on input line 507.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 [19 <./images/analisis model/final_loss-eps-converted-to.pdf> <./images/analisi
 s model/covid_learn_acc-eps-converted-to.pdf>]
-<./images/contoh dataset/Normal.png, id=498, 1440.38126pt x 573.14125pt>
+<./images/contoh dataset/Normal.png, id=499, 1440.38126pt x 573.14125pt>
 File: ./images/contoh dataset/Normal.png Graphic file (type png)
 <use ./images/contoh dataset/Normal.png>
 Package pdftex.def Info: ./images/contoh dataset/Normal.png  used on input line
  564.
 (pdftex.def)             Requested size: 338.5863pt x 134.72319pt.
-<./images/contoh dataset/Pneu.png, id=499, 1440.38126pt x 573.14125pt>
+<./images/contoh dataset/Pneu.png, id=500, 1440.38126pt x 573.14125pt>
 File: ./images/contoh dataset/Pneu.png Graphic file (type png)
 <use ./images/contoh dataset/Pneu.png>
 Package pdftex.def Info: ./images/contoh dataset/Pneu.png  used on input line 5
 69.
 (pdftex.def)             Requested size: 338.5863pt x 134.72319pt.
-<./images/contoh dataset/Cov.png, id=500, 1440.38126pt x 573.14125pt>
+<./images/contoh dataset/Cov.png, id=501, 1440.38126pt x 573.14125pt>
 File: ./images/contoh dataset/Cov.png Graphic file (type png)
 <use ./images/contoh dataset/Cov.png>
 Package pdftex.def Info: ./images/contoh dataset/Cov.png  used on input line 57
@@ -1164,53 +1164,54 @@ Package pdftex.def Info: ./images/contoh dataset/Cov.png  used on input line 57
 (pdftex.def)             Requested size: 338.5863pt x 134.72319pt.
  [20 <./images/contoh dataset/Normal.png>] [21 <./images/contoh dataset/Pneu.pn
 g> <./images/contoh dataset/Cov.png>] [22]
-Overfull \hbox (36.9322pt too wide) in paragraph at lines 586--586
+Overfull \hbox (36.9322pt too wide) in paragraph at lines 592--592
 []\OT1/cmr/m/n/10 P. Mooney. \OT1/cmr/m/it/10 Kag-gle chest x-ray im-ages (pneu
 -mo-nia) dataset\OT1/cmr/m/n/10 . \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : []$\OT1
 /cmtt/m/n/10 https : / / www . kaggle . com / paultimothymooney /
  []
 
 [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 594.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 594.
  (test.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 588.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 594.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 594.
 Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: EF1CAA77142DC62674945CA4DCBB7AEF;2101.
 Package logreq Info: Writing requests to 'test.run.xml'.
 \openout1 = `test.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 588.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 594.
  ) 
 Here is how much of TeX's memory you used:
- 24546 strings out of 481212
- 485935 string characters out of 2906442
+ 24549 strings out of 481212
+ 485975 string characters out of 2906442
  1109920 words of memory out of 3000000
- 39611 multiletter control sequences out of 15000+200000
- 539276 words of font info for 43 fonts, out of 3000000 for 9000
+ 39613 multiletter control sequences out of 15000+200000
+ 539994 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,60p,1532b,1259s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,9n,60p,1532b,1261s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\asus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 000.pk><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmcsc10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/asus/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/asus/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/asus/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/asus/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
-/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on test.pdf (24 pages, 3946998 bytes).
+/public/amsfonts/cm/cmbxti10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/asus/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/asus/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/asus/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/asus
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Use
+rs/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr7.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Users/asus/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmti10.pfb><C:/Users/asus/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on test.pdf (24 pages, 3961333 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
+ 615 PDF objects out of 1000 (max. 8388607)
  117 named destinations out of 1000 (max. 500000)
  376 words of extra memory for PDF output out of 10000 (max. 10000000)
 

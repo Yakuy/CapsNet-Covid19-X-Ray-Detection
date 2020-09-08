@@ -164,7 +164,7 @@
     	\par
     	Transformasi pertama yang kami lakukan terhadap gambar-gambar masukan adalah mengkonversi model warna gambar menjadi RGB. Konversi tersebut perlu dilakukan model CapsNet mengambil masukan gambar dengan tiga \textit{channel} warna : merah, hijau, dan biru. Transformasi dilakukan dengan fungsi \textit{convert} pada \textit{library} python PIL yang mengubah gambar dengan \textit{channel} warna RGBA atau \textit{greyscale} menjadi RGB.  
     	
-    	\subsubsection{Resizing}
+    	\subsubsection{\textit{Resizing}}
     	\textit{Resizing} adalah proses dalam prapemrosesan citra untuk	memastikan bahwa gambar memiliki ukuran yang sama. Hal ini perlu dilakukan sebab gambar-gambar pada data latihan dan data ujian memiliki ukuran yang berbeda-beda. Metode klasifikasi yang digunakan pada makalah ini mengharuskan gambar masukan memiliki ukuran yang sama. Gambar masukan dipotong ukurannya dengan ukuran panjang dan lebar sebesar (224, 224).
 		
 		\subsubsection{Normalisasi}
@@ -212,7 +212,7 @@
 	   	\par
 	   	CapsNet mempelajari \textit{linear manifold} global antara objek dan pose objek tersebut dan merepresentasikan informasi dalam bentuk matriks. Dengan menggunakan matriks tersebut, CapsNet dapat mengidentifikasi objek walaupun objek tersebut sudah mengalami sejumlah transformasi. Informasi spasial dari objek dipisah dari informasi untuk mengklasifikasi objek itu sendiri, sehingga objek dapat diklasifikasi secara independen dari \textit{pose}-nya.\cite{hinton_2}
 	   	
-	   	\subsubsection{Pooling}
+	   	\subsubsection{\textit{Pooling}}
 	   	Dalam CNN konvensional, digunakan teknik \textit{pooling layer} yang berguna untuk mengurangi jumlah detail informasi yang diproses di lapisan yang lebih tinggi. \textit{Pooling} mengizinkan sedikit \textit{invariance translasional} (objek berada di lokasi yang berbeda) dan meningkatkan jumlah tipe fitur yang dapat direpresentasikan. CapsNet menolak penggunaan teknik \textit{pooling}, dengan alasan :
 	   	
 	   	\begin{enumerate}
@@ -223,7 +223,7 @@
 	   	 \item \textit{Pooling} merusak detektor fitur yang dengan dengan \textit{pooling layer}, karena ada sejumlah informasi yang dihapus.
 	   	\end{enumerate}
 	   	
-	   	\subsubsection{Capsules}
+	   	\subsubsection{\textit{Capsules}}
 	   	Sebuah \textit{capsule} adalah kumpulan neuron yang memiliki vektor aktivitas yang merepresentasikan berbagai properti-properti dari suatu tipe entitas yang terdapat pada gambar, seperti posisi, ukuran, orientasi, dll \cite{hinton}. Kumpulan neuron tersebut secara kolektif menghasilkan vektor aktivitas yang diderivasi oleh CapsNet dari data masukan. Kemungkinan adanya suatu entitas dalam gambar direpresentasikan oleh panjang vektor, sedangkan orientasi vektor mengkuantifikasikan properti dari \textit{capsule}. 
 	   	\par
 	   	Di struktur \textit{Artificial Network} tradisional, keluaran dari neuron-neuron adalah sebuah nilai skalar yang secara longgar merepresentasikan probabilitas dari sebuah observasi. CapsNet menggantikan detektor fitur yang menghasilkan nilai skalar dengan \textit{capsule-capsule} yang menghasilkan vektor dan \textit{max-pooling} dengan metode \textit{routing-by-agreement}. 
@@ -232,7 +232,7 @@
 	   	\par
 	   	\textit{Capsules} di lapisan lebih tinggi mengambil keluaran dari \textit{capsules} di lapisan lebih rendah, lalu menerima dari \textit{capsules} yang keluarannya berkelompok. Sebuah kelompok akan menyebabkan \textit{capsule} lebih tinggi untuk menghasilkan keluaran dengan probabilitas tinggi bahwa entitas terdapat dalam observasi tersebut. \textit{Capsules} tingkat tinggi mengabaikan \textit{outlier} karena mereka hanya berkonsentrasi pada keluaran yang berkelompok dengan keluaran-keluaran lain.
 	   	
-	   	\subsubsection{Routing-by-agreement}
+	   	\subsubsection{\textit{Routing-by-agreement}}
 	   	Keluaran dari suatu \textit{capsule} (anak) akan dihubungkan ke \textit{capsule} (orangtua) di lapisan berikutnya sesuai dengan kemampuan \textit{capsule} anak untuk memprediksi keluaran dari \textit{capsule} orangtua. Setelah melalui beberapa iterasi, keluaran setiap \textit{capsule} orangtua dapat bersatu dengan prediksi beberapa \textit{capsule} anak dan berpisah dengan beberapa \textit{capsule} anak lain. 
 	   	\par
 	   	Untuk setiap \textit{capsule} orangtua yang mungkin, setiap \textit{capsule} anak menghitung vektor prediksi dengan mengalikan keluarannya dengan matriks beban yang dilatih dengan \textit{backpropagation}. Lalu, keluaran dari \textit{capsule} orangtua dihitung sebagai produk skalar dari sebuah prediksi dengan koefisien yang merepresentasikan probabilitas bahwa \textit{capsule} anak  adalah milik \textit{capsule} orangtua tersebut. Sebuah \textit{capsule} anak yang prediksinya relatif dekat dengan keluaran hasilnya akan meningkatkan koefisien antara \textit{capsule} anak dan \textit{capsule} orangtua, sedangkan prediksi yang relatif jauh akan mengurangi koefisien. Koefisien yang meningkat akan meningkatkan kontribusi dari \textit{capsule} anak ke \textit{capsule} orangtua, meningkatkan produk skalar dari prediksi \textit{capsule} dengan keluaran \textit{capsule} orangtua. Setelah beberapa iterasi, koefisien yang dihasilkan akan menghubungkan secara kuat \textit{capsule} orangtua dengan \textit{capsule-capsule} yang paling mungkin sebagai anak. Hal ini mengindikasikan bahwa keberadaan \textit{capsule-capsule} anak mengimplikasikan keberadaan entitas yang direpresentasikan \textit{capsule} orangtua. Semakin banyak \textit{capsule} anak yang prediksinya mirip dengan keluaran \textit{capsule} orangtua, semakin cepat koefisien bertambah dan mempercepat konvergensi. \textit{Pose} dari \textit{capsule} orangtua secara progresif menjadi lebih cocok dengan \textit{pose} anak-anaknya. 
@@ -257,7 +257,7 @@
 	   \par
 	   \textit{Capsule} $s_{j}$ di lapisan yang lebih tinggi akan diberikan jumlahan dari prediksi-prediksi semua \textit{capsule-capsule} di lapisan yang lebih rendah, dimana setiap prediksi dikalikan dengan koefisien $c_{ij}$.
 	   	
-	   	\subsubsection{Training}
+	   	\subsubsection{\textit{Training}}
 	   	CapsNet dilatih secara \textit{supervised} dengan cara meminimalisir jarak euclidean antara gambar dan keluaran dari sebuah CNN yang merekonstruksikan gambar masukan dari keluaran \textit{capsule-capsule} terminal. Jaringan dilatih secara diskriminatif dengan menggunakan \textit{routing-by-agreement} iteratif. 
 	   	\par
 	   	Terdapat dua tipe \textit{loss} yang digunakan untuk melatih model. \textit{Loss} tipe pertama adalah \textit{margin loss}. Panjang dari sebuah vektor instansiasi merepresentasikan probabilitas bahwa entitas dari \textit{capsule} terdapat pada sebuah gambar. Untuk membolehkan keberadaan entitas-entitas dengan jumlah banyak, \textit{margin loss} terpisah harus dihitung untuk setiap \textit{capsule}. Menurunkan bobot \textit{loss} dari entitas-entitas yang absen menghentikan pembelajaran mengecilkan panjang vektor aktivitas untuk semua entitas. \textit{Loss} total adalah jumlah dari \textit{loss} setiap entitas. Hinton menggunakan \textit{loss function} sebagai berikut :
@@ -425,7 +425,7 @@
 	\end{enumerate}
    \newpage
    \section{Analisis}
-    \subsection{Analisis Exploratory Data Analysis}
+    \subsection{Analisis \textit{Exploratory Data Analysis}}
      	
 	    \begin{figure}[H]
 	    	\centering
@@ -579,9 +579,15 @@
    \newpage
    \section{Kesimpulan}
     Di era digital sekarang ini, kemampuan algoritma \textit{Deep Learning} dapat menyaingi tingkat performa manusia. Tugas manusia memproses data dari suatu gambar sulit dikerjakan oleh komputer, tetapi sekarang dengan kemajuan algoritma dapat dilakukan dengan mesin. Berdasarkan percobaan yang telah kami lakukan, model kami dapat mengklasifikasi perbedaan antara gambar Chest X-Ray normal, pneumonia dan COVID-19 dengan akurasi validasi 0.9556 dan akurasi tes 0.9429.
+    \par
+    Metode yang kami gunakan untuk masalah di makalah ini mencakup pengumpulan data, prapemrosesan, model CapsNet, dan evaluasi. Langkah-langkah prapemrosesan terdiri dari konversi model warna gambar ke RGB, pemotongan ukuran gambar menjadi 224x224, normalisasi, dan konversi ke PyTorch Tensor. Model CapsNet yang kami gunakan  terdiri dari beberapa lapisan : \textit{input layer}, \textit{convolutional layer 1}, \textit{primary capsule}, \textit{capsule layer 1}, \textit{capsule layer 2}, dan \textit{decoder network}.
+    \par
+    Studi ini memiliki beberapa kelebihan dan kekurangan. Metode CapsNet tergolong baru sehingga aplikasinya menggunakan teknik-teknik mutakhir. Keadaan dunia masa kini yang sedang berada dalam situasi pandemik COVID-19 juga sangat menyambut inovasi-inovasi teknologi yang dapat membantu tenaga medis. Hasil dari studi juga cukup memuaskan, dimana performa model pada data tes menghasilkan akurasi 0.9429. Salah satu kekurangan dari studi adalah kurangnya jumlah data gambar X-Ray dada pasien COVID-19 yang tersedia secara umum, sehingga performa model kurang maksimal. Gambar X-Ray dada pasien COVID-19 yang tersedia juga semuanya berasal dari luar Indonesia, sehingga performa model belum dapat dites pada gambar X-Ray dada pasien dari Indonesia. 
+    \par
+    Pihak yang dapat mendapatkan manfaat dari penelitian ini adalah tenaga medis yang sedang menangani kasus-kasus COVID-19. Aplikasi dari model dari makalah ini dapat menyediakan opini kedua yang meningkatkan kepastian dari hasil metode-metode deteksi COVID-19 lain seperti \textit{rapid test} dan \textit{swab test}. Model juga dapat digunakan pada fasilitas-fasilitas medis yang memiliki kemampuan mengambil gambar X-Ray dan kekurangan alat-alat tes lain untuk mendeteksi COVID-19. Hasil yang diharapkan adalah model dapat meningkatkan deteksi pasien-pasien yang terjangkit virus COVID-19 secara cepat dan akurat sehingga menghambat penyebaran virus COVID-19 di Indonesia.  
    
    \section{Dokumentasi}
-   Hasil dan program dapat ditemukan pada pranala berikut :\url{https://github.com/Yakuy/Gemastik13} (untuk sementara masih bersifat private)
+   Hasil dan program dapat ditemukan pada pranala berikut :\url{https://github.com/Yakuy/Gemastik13}
    \newpage
    \printbibliography[title=Daftar Pustaka]
 
