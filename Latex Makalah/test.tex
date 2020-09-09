@@ -37,7 +37,7 @@
       {
       \huge \bfseries MAKALAH}\\
       [1cm]
-      {\LARGE Deteksi COVID-19 pada Dataset X-Ray Dada dengan Metode Capsule Neural Network (CapsNet)}\\
+      {\LARGE Sistem Pembantu Keputusan Deteksi COVID-19 pada Dataset X-Ray Dada dengan Metode Capsule Neural Network (CapsNet)}\\
           
       \vspace{2cm}
 
@@ -76,7 +76,8 @@
 
   \newpage
   \pagenumbering{arabic}
-  \textbf{Abstrak.} Pandemi COVID-19 membawa banyak dampak negatif bagi Indonesia dan seluruh dunia, sehingga penting untuk mempunyai sarana untuk mendeteksi dengan cepat dan akurat pasien yang terinfeksi COVID-19. Gambar X-Ray dada pasien dapat membantu untuk mendeteksi apakah pasien terinfeksi COVID-19 atau tidak. Kami melatih model CapsNet untuk dapat mengklasifikasikan X-Ray dada yang terinfeksi dengan virus COVID-19. Model dilatih dengan 6310 gambar X-Ray dada yang terbagi menjadi tiga kelas : Normal, Pneumonia, dan Covid-19. Kelebihan CapsNet dibanding model \textit{Convolutional Neural Network} tradisional adalah antara lain : \textit{viewpoint invariance}, parameter lebih sedikit, dan generalisasi baik pada sudut pandang baru. Hasil yang diperoleh dari model ini adalah akurasi validasi 0.9556 dan akurasi tes 0.9429. Harapan kami adalah model dapat digunakan untuk menyediakan opini kedua untuk memverifikasi hasil dari bentuk-bentuk tes deteksi COVID-19 lain, dan menyediakan sarana untuk mendeteksi COVID-19 di tempat-tempat yang kekurangan alat tes.
+  \section*{Abstrak}
+  \par Pandemi COVID-19 membawa banyak dampak negatif bagi Indonesia dan seluruh dunia, sehingga penting untuk mempunyai sarana untuk mendeteksi  pasien yang terinfeksi COVID-19. Gambar X-Ray dada pasien dapat membantu untuk mendeteksi apakah pasien terinfeksi COVID-19 atau tidak. Kami melatih model CapsNet untuk dapat mengklasifikasikan X-Ray dada yang terinfeksi dengan virus COVID-19. Model dilatih dengan 6,310 gambar X-Ray dada yang terbagi menjadi tiga kelas : Normal, Pneumonia, dan Covid-19. Kelebihan CapsNet dibanding model \textit{Convolutional Neural Network} tradisional antara lain : \textit{viewpoint invariance}, parameter lebih sedikit, dan generalisasi yang baik. Hasil yang diperoleh dari model ini adalah akurasi validasi 0.9556 dengan akurasi tes 0.9429. Model diharapkan dapat digunakan untuk menyediakan opini tambahan untuk membantu tenaga medis mendeteksi COVID-19 dari X-Ray dada pasien.
   \newpage
   \tableofcontents
   \newpage
@@ -96,7 +97,7 @@
 	   Dataset yang akan kami gunakan berasal dari dua sumber. Sumber pertama adalah  Kaggle Chest X-Ray Images (Pneumonia) dataset (2018) milik Paul Mooney \cite{mooney} yang berisi 5,863 gambar X-Ray dada yang dipilih dari pasien-pasien anak berumur satu sampai lima tahun dari Guangzhou Women and Children’s Medical Center, Guangzhou. Paul Mooney mendapatkan data tersebut dari \textit{paper} "Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification" karya Kermany, D., Zhang, K., dan Goldbaum, M. \cite{kermany}.Sumber kedua adalah dari \textit{repository} Covid-19 Image Data Collection milik Cohen, J.P., Morrison, P., dan Dao, L. \cite{cohen} yang berisi 454 gambar X-Ray dada pasien dengan penyakit paru-paru termasuk COVID-19 dan juga metadata yang mendeskripsikan informasi-informasi seperti jenis kelamin, umur, lokasi, dll dari pasien. 
 	   
 	   \subsection{Tujuan dan Manfaat}
-	   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan aksesibilitas tes deteksi infeksi COVID-19. 
+	   Tujuan utama kami adalah untuk mengusulkan model berbasis \textit{neural network} yang dapat secara akurat mendeteksi infeksi COVID-19 dari gambar X-Ray dada pasien. Model ini diharapkan dapat bertindak sebagai alat otomatis yang dapat memandu petugas kesehatan dalam mendiagnosis gambar X-Ray agar mengambil kesimpulan yang akurat. Manfaat yang diharapkan adalah peningkatan akurasi dan kemudahan bagi tenaga medis dalam mendeteksi infeksi COVID-19. 
 	   \par
 	   Perlu kami tekankan bahwa kami tidak mengusulkan penggunaan model ini untuk menggantikan metode tes diagnostik konvensional. Kami berharap bahwa model ini dapat bersifat saling melengkapi dengan tes konvensional, dimana hasil prediksi dari model dapat memastikan hasil dari tes konvensional atau menjadi metode alternatif bila tes konvensional tidak memungkinkan. 
 	   \par
@@ -111,7 +112,7 @@
 	   	\item Jenis penyakit yang akan diklasifikasi dibatasi pada COVID-19 dan Pneumonia saja.
 	   	\item Metode penambangan data yang akan kami gunakan adalah Capsule Networks (CapsNets).
 	   \end{itemize}
-`  \newpage
+  \newpage
    \section{Metode Penambangan Data}
     \subsection{Perangkat Uji Coba}
     Implementasi model kami dijalankan menggunakan dua \textit{environment} Google Colaboratory. \textit{Environment} pertama memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.30GHz, RAM 13.3 GB, dan GPU Tesla K80. \textit{Environment} kedua memiliki spesifikasi CPU Intel(R) Xeon(R) CPU @ 2.00GHz, RAM 13.3 GB, dan GPU Tesla T4. Bahasa yang digunakan adalah Python 3.6. \textit{Library-library} yang kami gunakan adalah numpy, matplotlib, torch, torchvision, sklearn, seaborn, pandas, dan PIL. 
@@ -136,7 +137,7 @@
 	\end{figure}   
 	    
 	\par
-	Gambar-gambar dari Kaggle Chest X-Ray Images (Pneumonia) dataset dan Covid-19 Image Data Collection disatukan menjadi dataset gabungan. Jumlah total gambar di dataset gabungan adalah 6310 : 1583 \textit{Normal Case}, 4273 \textit{Pneumonia Case}, dan 454 \textit{Covid Case}. Dataset gabungan dipisah menjadi 3 bagian (\textit{train, val, test}) dengan menggunakan metode \textit{stratified 
+	Gambar-gambar dari Kaggle Chest X-Ray Images (Pneumonia) dataset dan Covid-19 Image Data Collection disatukan menjadi dataset gabungan. Jumlah total gambar di dataset gabungan adalah 6,310 : 1,583 \textit{Normal Case}, 4,273 \textit{Pneumonia Case}, dan 454 \textit{Covid Case}. Dataset gabungan dipisah menjadi 3 bagian (\textit{train, val, test}) dengan menggunakan metode \textit{stratified 
 	sampling}. Metode \textit{sampling} digunakan untuk memastikan adanya setiap kelas pada dataset baru yang 
 	akan diklasifikasi. Pembagian dataset dilakukan dengan  perbandingan \textit{train}:\textit{val}:\textit{test} = 6:2:2. \textit{Training set} (\textit{train})
 	adalah dataset untuk proses pembelajaran model, \textit{Validation set} (\textit{val}) adalah dataset yang digunakan 
@@ -174,7 +175,7 @@
 		Tujuan dari normalisasi pada gambar adalah untuk membuat gambar lebih akrab atau terlihat normal bagi indra manusia.\par
 		
 
-    	\subsubsection{Konversi ke PyTorch Tensor}
+    	\subsubsection{Konversi ke PyTorch \textit{Tensor}}
     	PyTorch \textit{Tensor} adalah matriks berdimensi banyak yang mengandung elemen-elemen dengan tipe data yang sama. PyTorch \textit{Tensor} memiliki banyak kemiripan dengan numpy array; keduanya adalah array n-dimensional generik untuk digunakan untuk komputasi numerik. Perbedaan utamanya adalah PyTorch \textit{Tensor} dapat dijalankan pada CPU atau GPU.
     	\par
     	Model yang digunakan pada makalah ini dijalankan menggunakan GPU, sehingga mengharuskan gambar masukan masuk dalam bentuk PyTorch \textit{Tensor}. Gambar masukan yang masih dalam model warna RGB dikonversi menjadi PyTorch \textit{Tensor} dengan fungsi torchvision.transforms.ToTensor(). 
@@ -316,7 +317,7 @@
    		recall(r) = \frac{TP}{TP + FN}
    	\end{equation}
    	\begin{equation}
-   		F-measure(Fm) = \frac{2 * p * r}{p + r}
+   		F-measure(Fm) = \frac{2pr}{p + r}
    	\end{equation}
    \newpage
    \section{Desain dan Implementasi Penambangan Data}
@@ -644,12 +645,12 @@
     \par
     Metode yang kami gunakan untuk masalah di makalah ini mencakup pengumpulan data, prapemrosesan, model CapsNet, dan evaluasi. Langkah-langkah prapemrosesan terdiri dari konversi model warna gambar ke RGB, pemotongan ukuran gambar menjadi 224x224, normalisasi, dan konversi ke PyTorch Tensor. Model CapsNet yang kami gunakan  terdiri dari beberapa lapisan : \textit{input layer}, \textit{convolutional layer 1}, \textit{primary capsule}, \textit{capsule layer 1}, \textit{capsule layer 2}, dan \textit{decoder network}.
     \par
-    Studi ini memiliki beberapa kelebihan dan kekurangan. Metode CapsNet tergolong baru sehingga aplikasinya menggunakan teknik-teknik mutakhir. Keadaan dunia masa kini yang sedang berada dalam situasi pandemik COVID-19 juga sangat menyambut inovasi-inovasi teknologi yang dapat membantu tenaga medis. Hasil dari studi juga cukup memuaskan, dimana performa model pada data tes menghasilkan akurasi 0.9429. Salah satu kekurangan dari studi adalah kurangnya jumlah data gambar X-Ray dada pasien COVID-19 yang tersedia secara umum, sehingga performa model kurang maksimal. Gambar X-Ray dada pasien COVID-19 yang tersedia juga semuanya berasal dari luar Indonesia, sehingga performa model belum dapat dites pada gambar X-Ray dada pasien dari Indonesia. 
+    Studi ini memiliki beberapa kelebihan dan kekurangan. Metode CapsNet tergolong baru sehingga aplikasinya menggunakan teknik-teknik terobosan baru. Keadaan dunia masa kini yang sedang berada dalam situasi pandemi COVID-19 juga sangat menyambut inovasi-inovasi teknologi yang dapat membantu tenaga medis. Hasil dari studi cukup memuaskan, dimana performa model pada data tes menghasilkan akurasi 0.9429. Salah satu kekurangan dari studi adalah kurangnya jumlah data gambar X-Ray dada pasien COVID-19 yang tersedia secara umum, sehingga performa model kurang maksimal. Gambar X-Ray dada pasien COVID-19 yang tersedia juga semuanya berasal dari luar Indonesia, sehingga performa model belum dapat dites pada gambar X-Ray dada pasien dari Indonesia. Perangkat yang digunakan juga terbatas kekuatan komputasinya, sehingga membatasi ukuran dan kompleksitas dari arsitektur model.
     \par
-    Pihak yang dapat mendapatkan manfaat dari penelitian ini adalah tenaga medis yang sedang menangani kasus-kasus COVID-19. Aplikasi dari model dari makalah ini dapat menyediakan opini kedua yang meningkatkan kepastian dari hasil metode-metode deteksi COVID-19 lain seperti \textit{rapid test} dan \textit{swab test}. Model juga dapat digunakan pada fasilitas-fasilitas medis yang memiliki kemampuan mengambil gambar X-Ray dan kekurangan alat-alat tes lain untuk mendeteksi COVID-19. Hasil yang diharapkan adalah model dapat meningkatkan deteksi pasien-pasien yang terjangkit virus COVID-19 secara cepat dan akurat sehingga menghambat penyebaran virus COVID-19 di Indonesia.  
+    Pihak yang dapat mendapatkan manfaat dari penelitian ini adalah tenaga medis yang sedang menangani kasus-kasus COVID-19. Aplikasi model ini dapat menyediakan opini tambahan yang meningkatkan kepastian metode-metode deteksi COVID-19 lain seperti \textit{rapid test}. Model juga dapat dilatih ulang dan digunakan untuk mendeteksi penyakit-penyakit lain yang membutuhkan analisis gambar. Hasil juga diharapkan dapat meningkatkan deteksi pasien-pasien yang terjangkit virus COVID-19 secara cepat dan akurat sehingga menghambat penyebaran virus COVID-19 di Indonesia.  
    
    \section{Dokumentasi}
-   Hasil dan program dapat ditemukan pada pranala berikut :\url{https://github.com/Yakuy/Gemastik13}
+   Hasil dan program dapat ditemukan pada pranala berikut \url{https://github.com/Yakuy/Gemastik13}
    \newpage
    \printbibliography[title=Daftar Pustaka]
 
