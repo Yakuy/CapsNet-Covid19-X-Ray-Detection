@@ -56,8 +56,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.1}Analisis Metrik Penilaian}{18}{subsubsection.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}Hasil Rekonstruksi}{21}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2}Perbandingan Hasil dengan Model ResNet-18}{21}{subsubsection.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Kesimpulan}{23}{section.5}%
+\contentsline {subsubsection}{\numberline {4.2.3}Hasil Rekonstruksi}{22}{subsubsection.4.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Dokumentasi}{23}{section.6}%
+\contentsline {section}{\numberline {5}Kesimpulan}{24}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Dokumentasi}{24}{section.6}%

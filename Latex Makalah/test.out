@@ -26,6 +26,7 @@
 \BOOKMARK [2][-]{subsection.4.1}{Analisis Exploratory Data Analysis}{section.4}% 26
 \BOOKMARK [2][-]{subsection.4.2}{Analisis Hasil Model CapsNet}{section.4}% 27
 \BOOKMARK [3][-]{subsubsection.4.2.1}{Analisis Metrik Penilaian}{subsection.4.2}% 28
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Hasil Rekonstruksi}{subsection.4.2}% 29
-\BOOKMARK [1][-]{section.5}{Kesimpulan}{}% 30
-\BOOKMARK [1][-]{section.6}{Dokumentasi}{}% 31
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Perbandingan Hasil dengan Model ResNet-18}{subsection.4.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Hasil Rekonstruksi}{subsection.4.2}% 30
+\BOOKMARK [1][-]{section.5}{Kesimpulan}{}% 31
+\BOOKMARK [1][-]{section.6}{Dokumentasi}{}% 32
