@@ -9,5 +9,5 @@ Written by Yakuy 2, Universitas Gadjah Mada
 ## Abstract
 The COVID-19 pandemic has many negative impacts on Indonesia and the rest of the world, so it is important to have a rigorous way to detect patients infected with COVID-19. X-Ray image of the patient's chest can help to detect whether the patient is infected with COVID-19 or not. We train Capsule Neural Network model to be able to classify an infected chest X-Ray with the COVID-19 virus. Models were trained with 6.310 Chest X-Ray images divided into three classes: Normal, Pneumonia, and Covid-19. The advantage of using CapsNet compared to traditional Convolutional Neural Network models : viewpoint invariance, less parameters, and good generalizations. We are able to train the model with results, validation accuracy of **0.9556** with test accuracy **0.9429**. The model could be used to provide additional information to help detect COVID-19 from the patient's chest X-Ray.
 ## Results
-With this paper, we were selected and qualified to National Final.<br> 
-[Ministry of Education, GEMASTIK 2020 Finalist Announcement](https://pusatprestasinasional.kemdikbud.go.id/wp-content/uploads/2020/09/Finalis-Gemastik-2020.pdf)
+With this paper, we were selected and qualified to National Final [Ministry of Education, GEMASTIK 2020 Finalist Announcement](https://pusatprestasinasional.kemdikbud.go.id/wp-content/uploads/2020/09/Finalis-Gemastik-2020.pdf)<br>
+and also won Research of The Year Award 2020 by Appreciation Night, Faculty of Mathematics and Natural Sciences
